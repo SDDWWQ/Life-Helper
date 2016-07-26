@@ -1,0 +1,667 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E02D34D1D460A47001F99FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E02D34C1D460A47001F99FE /* main.m */; };
+		7E02D3501D460A47001F99FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E02D34F1D460A47001F99FE /* AppDelegate.m */; };
+		7E02D3531D460A47001F99FE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E02D3521D460A47001F99FE /* ViewController.m */; };
+		7E02D3561D460A47001F99FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E02D3541D460A47001F99FE /* Main.storyboard */; };
+		7E02D3581D460A47001F99FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E02D3571D460A47001F99FE /* Assets.xcassets */; };
+		7E02D35B1D460A47001F99FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E02D3591D460A47001F99FE /* LaunchScreen.storyboard */; };
+		7E02D3661D460A48001F99FE /* LifeHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E02D3651D460A48001F99FE /* LifeHelperTests.m */; };
+		7E02D3711D460A48001F99FE /* LifeHelperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E02D3701D460A48001F99FE /* LifeHelperUITests.m */; };
+		7E02D3801D460F23001F99FE /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E02D37F1D460F23001F99FE /* NewsTableViewController.m */; };
+		7E02D3831D463449001F99FE /* MicroBlogTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E02D3821D463449001F99FE /* MicroBlogTableViewController.m */; };
+		7E02D38B1D463B7D001F99FE /* GroupPurchaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E02D38A1D463B7D001F99FE /* GroupPurchaseTableViewController.m */; };
+		7E02D3901D463EE6001F99FE /* Goods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E02D38F1D463EE6001F99FE /* Goods.m */; };
+		7E02D3941D46418C001F99FE /* GPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E02D3931D46418C001F99FE /* GPTableViewCell.m */; };
+		7EEC0D211D4715640020164D /* WeatherCityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC0D201D4715640020164D /* WeatherCityTableViewController.m */; };
+		7EEC0D261D4715E80020164D /* WeatherCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC0D251D4715E80020164D /* WeatherCity.m */; };
+		7EEC0D291D471DF80020164D /* WeatherCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC0D281D471DF80020164D /* WeatherCityTableViewCell.m */; };
+		7EEC0D2F1D4754CC0020164D /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC0D2E1D4754CC0020164D /* WeatherViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7E02D3621D460A48001F99FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E02D3401D460A47001F99FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E02D3471D460A47001F99FE;
+			remoteInfo = LifeHelper;
+		};
+		7E02D36D1D460A48001F99FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E02D3401D460A47001F99FE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E02D3471D460A47001F99FE;
+			remoteInfo = LifeHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7E02D3481D460A47001F99FE /* LifeHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E02D34C1D460A47001F99FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7E02D34E1D460A47001F99FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7E02D34F1D460A47001F99FE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7E02D3511D460A47001F99FE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7E02D3521D460A47001F99FE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7E02D3551D460A47001F99FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7E02D3571D460A47001F99FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7E02D35A1D460A47001F99FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7E02D35C1D460A47001F99FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E02D3611D460A48001F99FE /* LifeHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E02D3651D460A48001F99FE /* LifeHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LifeHelperTests.m; sourceTree = "<group>"; };
+		7E02D3671D460A48001F99FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E02D36C1D460A48001F99FE /* LifeHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E02D3701D460A48001F99FE /* LifeHelperUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LifeHelperUITests.m; sourceTree = "<group>"; };
+		7E02D3721D460A48001F99FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E02D37E1D460F23001F99FE /* NewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
+		7E02D37F1D460F23001F99FE /* NewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewController.m; sourceTree = "<group>"; };
+		7E02D3811D463449001F99FE /* MicroBlogTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroBlogTableViewController.h; sourceTree = "<group>"; };
+		7E02D3821D463449001F99FE /* MicroBlogTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroBlogTableViewController.m; sourceTree = "<group>"; };
+		7E02D3891D463B7D001F99FE /* GroupPurchaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupPurchaseTableViewController.h; sourceTree = "<group>"; };
+		7E02D38A1D463B7D001F99FE /* GroupPurchaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupPurchaseTableViewController.m; sourceTree = "<group>"; };
+		7E02D38E1D463EE6001F99FE /* Goods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goods.h; sourceTree = "<group>"; };
+		7E02D38F1D463EE6001F99FE /* Goods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goods.m; sourceTree = "<group>"; };
+		7E02D3921D46418C001F99FE /* GPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPTableViewCell.h; sourceTree = "<group>"; };
+		7E02D3931D46418C001F99FE /* GPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPTableViewCell.m; sourceTree = "<group>"; };
+		7EEC0D1F1D4715640020164D /* WeatherCityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCityTableViewController.h; sourceTree = "<group>"; };
+		7EEC0D201D4715640020164D /* WeatherCityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCityTableViewController.m; sourceTree = "<group>"; };
+		7EEC0D241D4715E80020164D /* WeatherCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCity.h; sourceTree = "<group>"; };
+		7EEC0D251D4715E80020164D /* WeatherCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCity.m; sourceTree = "<group>"; };
+		7EEC0D271D471DF80020164D /* WeatherCityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCityTableViewCell.h; sourceTree = "<group>"; };
+		7EEC0D281D471DF80020164D /* WeatherCityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCityTableViewCell.m; sourceTree = "<group>"; };
+		7EEC0D2D1D4754CC0020164D /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
+		7EEC0D2E1D4754CC0020164D /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E02D3451D460A47001F99FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E02D35E1D460A48001F99FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E02D3691D460A48001F99FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E02D33F1D460A47001F99FE = {
+			isa = PBXGroup;
+			children = (
+				7E02D34A1D460A47001F99FE /* LifeHelper */,
+				7E02D3641D460A48001F99FE /* LifeHelperTests */,
+				7E02D36F1D460A48001F99FE /* LifeHelperUITests */,
+				7E02D3491D460A47001F99FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7E02D3491D460A47001F99FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E02D3481D460A47001F99FE /* LifeHelper.app */,
+				7E02D3611D460A48001F99FE /* LifeHelperTests.xctest */,
+				7E02D36C1D460A48001F99FE /* LifeHelperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E02D34A1D460A47001F99FE /* LifeHelper */ = {
+			isa = PBXGroup;
+			children = (
+				7E02D3881D463B01001F99FE /* GroupPurchase */,
+				7E02D3861D463497001F99FE /* Weather */,
+				7E02D3851D46348A001F99FE /* News */,
+				7E02D3841D46347B001F99FE /* MicroBlog */,
+				7E02D34E1D460A47001F99FE /* AppDelegate.h */,
+				7E02D34F1D460A47001F99FE /* AppDelegate.m */,
+				7E02D3511D460A47001F99FE /* ViewController.h */,
+				7E02D3521D460A47001F99FE /* ViewController.m */,
+				7E02D3541D460A47001F99FE /* Main.storyboard */,
+				7E02D3571D460A47001F99FE /* Assets.xcassets */,
+				7E02D3591D460A47001F99FE /* LaunchScreen.storyboard */,
+				7E02D35C1D460A47001F99FE /* Info.plist */,
+				7E02D34B1D460A47001F99FE /* Supporting Files */,
+				7E02D37E1D460F23001F99FE /* NewsTableViewController.h */,
+				7E02D37F1D460F23001F99FE /* NewsTableViewController.m */,
+			);
+			path = LifeHelper;
+			sourceTree = "<group>";
+		};
+		7E02D34B1D460A47001F99FE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E02D34C1D460A47001F99FE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7E02D3641D460A48001F99FE /* LifeHelperTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E02D3651D460A48001F99FE /* LifeHelperTests.m */,
+				7E02D3671D460A48001F99FE /* Info.plist */,
+			);
+			path = LifeHelperTests;
+			sourceTree = "<group>";
+		};
+		7E02D36F1D460A48001F99FE /* LifeHelperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7E02D3701D460A48001F99FE /* LifeHelperUITests.m */,
+				7E02D3721D460A48001F99FE /* Info.plist */,
+			);
+			path = LifeHelperUITests;
+			sourceTree = "<group>";
+		};
+		7E02D3841D46347B001F99FE /* MicroBlog */ = {
+			isa = PBXGroup;
+			children = (
+				7E02D3871D4634A2001F99FE /* Controller */,
+			);
+			name = MicroBlog;
+			sourceTree = "<group>";
+		};
+		7E02D3851D46348A001F99FE /* News */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		7E02D3861D463497001F99FE /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				7EEC0D231D4715C60020164D /* Model */,
+				7EEC0D221D4715B30020164D /* View */,
+				7EEC0D1E1D4713540020164D /* Controller */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
+		7E02D3871D4634A2001F99FE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7E02D3811D463449001F99FE /* MicroBlogTableViewController.h */,
+				7E02D3821D463449001F99FE /* MicroBlogTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		7E02D3881D463B01001F99FE /* GroupPurchase */ = {
+			isa = PBXGroup;
+			children = (
+				7E02D3911D464166001F99FE /* View */,
+				7E02D38D1D463EAA001F99FE /* Model */,
+				7E02D38C1D463E9C001F99FE /* Controller */,
+			);
+			name = GroupPurchase;
+			sourceTree = "<group>";
+		};
+		7E02D38C1D463E9C001F99FE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7E02D3891D463B7D001F99FE /* GroupPurchaseTableViewController.h */,
+				7E02D38A1D463B7D001F99FE /* GroupPurchaseTableViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		7E02D38D1D463EAA001F99FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7E02D38E1D463EE6001F99FE /* Goods.h */,
+				7E02D38F1D463EE6001F99FE /* Goods.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7E02D3911D464166001F99FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7E02D3921D46418C001F99FE /* GPTableViewCell.h */,
+				7E02D3931D46418C001F99FE /* GPTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		7EEC0D1E1D4713540020164D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7EEC0D1F1D4715640020164D /* WeatherCityTableViewController.h */,
+				7EEC0D201D4715640020164D /* WeatherCityTableViewController.m */,
+				7EEC0D2D1D4754CC0020164D /* WeatherViewController.h */,
+				7EEC0D2E1D4754CC0020164D /* WeatherViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		7EEC0D221D4715B30020164D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7EEC0D271D471DF80020164D /* WeatherCityTableViewCell.h */,
+				7EEC0D281D471DF80020164D /* WeatherCityTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		7EEC0D231D4715C60020164D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7EEC0D241D4715E80020164D /* WeatherCity.h */,
+				7EEC0D251D4715E80020164D /* WeatherCity.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E02D3471D460A47001F99FE /* LifeHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E02D3751D460A48001F99FE /* Build configuration list for PBXNativeTarget "LifeHelper" */;
+			buildPhases = (
+				7E02D3441D460A47001F99FE /* Sources */,
+				7E02D3451D460A47001F99FE /* Frameworks */,
+				7E02D3461D460A47001F99FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LifeHelper;
+			productName = LifeHelper;
+			productReference = 7E02D3481D460A47001F99FE /* LifeHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7E02D3601D460A48001F99FE /* LifeHelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E02D3781D460A48001F99FE /* Build configuration list for PBXNativeTarget "LifeHelperTests" */;
+			buildPhases = (
+				7E02D35D1D460A48001F99FE /* Sources */,
+				7E02D35E1D460A48001F99FE /* Frameworks */,
+				7E02D35F1D460A48001F99FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E02D3631D460A48001F99FE /* PBXTargetDependency */,
+			);
+			name = LifeHelperTests;
+			productName = LifeHelperTests;
+			productReference = 7E02D3611D460A48001F99FE /* LifeHelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7E02D36B1D460A48001F99FE /* LifeHelperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E02D37B1D460A48001F99FE /* Build configuration list for PBXNativeTarget "LifeHelperUITests" */;
+			buildPhases = (
+				7E02D3681D460A48001F99FE /* Sources */,
+				7E02D3691D460A48001F99FE /* Frameworks */,
+				7E02D36A1D460A48001F99FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E02D36E1D460A48001F99FE /* PBXTargetDependency */,
+			);
+			name = LifeHelperUITests;
+			productName = LifeHelperUITests;
+			productReference = 7E02D36C1D460A48001F99FE /* LifeHelperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E02D3401D460A47001F99FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = SDD;
+				TargetAttributes = {
+					7E02D3471D460A47001F99FE = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 22U5BK4X7S;
+					};
+					7E02D3601D460A48001F99FE = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 7E02D3471D460A47001F99FE;
+					};
+					7E02D36B1D460A48001F99FE = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 7E02D3471D460A47001F99FE;
+					};
+				};
+			};
+			buildConfigurationList = 7E02D3431D460A47001F99FE /* Build configuration list for PBXProject "LifeHelper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7E02D33F1D460A47001F99FE;
+			productRefGroup = 7E02D3491D460A47001F99FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E02D3471D460A47001F99FE /* LifeHelper */,
+				7E02D3601D460A48001F99FE /* LifeHelperTests */,
+				7E02D36B1D460A48001F99FE /* LifeHelperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E02D3461D460A47001F99FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E02D35B1D460A47001F99FE /* LaunchScreen.storyboard in Resources */,
+				7E02D3581D460A47001F99FE /* Assets.xcassets in Resources */,
+				7E02D3561D460A47001F99FE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E02D35F1D460A48001F99FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E02D36A1D460A48001F99FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E02D3441D460A47001F99FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E02D3801D460F23001F99FE /* NewsTableViewController.m in Sources */,
+				7EEC0D2F1D4754CC0020164D /* WeatherViewController.m in Sources */,
+				7E02D3531D460A47001F99FE /* ViewController.m in Sources */,
+				7E02D38B1D463B7D001F99FE /* GroupPurchaseTableViewController.m in Sources */,
+				7EEC0D291D471DF80020164D /* WeatherCityTableViewCell.m in Sources */,
+				7E02D3831D463449001F99FE /* MicroBlogTableViewController.m in Sources */,
+				7E02D3501D460A47001F99FE /* AppDelegate.m in Sources */,
+				7E02D34D1D460A47001F99FE /* main.m in Sources */,
+				7E02D3941D46418C001F99FE /* GPTableViewCell.m in Sources */,
+				7EEC0D261D4715E80020164D /* WeatherCity.m in Sources */,
+				7E02D3901D463EE6001F99FE /* Goods.m in Sources */,
+				7EEC0D211D4715640020164D /* WeatherCityTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E02D35D1D460A48001F99FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E02D3661D460A48001F99FE /* LifeHelperTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E02D3681D460A48001F99FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E02D3711D460A48001F99FE /* LifeHelperUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E02D3631D460A48001F99FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E02D3471D460A47001F99FE /* LifeHelper */;
+			targetProxy = 7E02D3621D460A48001F99FE /* PBXContainerItemProxy */;
+		};
+		7E02D36E1D460A48001F99FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E02D3471D460A47001F99FE /* LifeHelper */;
+			targetProxy = 7E02D36D1D460A48001F99FE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7E02D3541D460A47001F99FE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E02D3551D460A47001F99FE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7E02D3591D460A47001F99FE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E02D35A1D460A47001F99FE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7E02D3731D460A48001F99FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7E02D3741D460A48001F99FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7E02D3761D460A48001F99FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = LifeHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.sdd.LifeHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7E02D3771D460A48001F99FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = LifeHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.sdd.LifeHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7E02D3791D460A48001F99FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LifeHelperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.sdd.LifeHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LifeHelper.app/LifeHelper";
+			};
+			name = Debug;
+		};
+		7E02D37A1D460A48001F99FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LifeHelperTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.sdd.LifeHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LifeHelper.app/LifeHelper";
+			};
+			name = Release;
+		};
+		7E02D37C1D460A48001F99FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LifeHelperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.sdd.LifeHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LifeHelper;
+			};
+			name = Debug;
+		};
+		7E02D37D1D460A48001F99FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LifeHelperUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.sdd.LifeHelperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LifeHelper;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E02D3431D460A47001F99FE /* Build configuration list for PBXProject "LifeHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E02D3731D460A48001F99FE /* Debug */,
+				7E02D3741D460A48001F99FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E02D3751D460A48001F99FE /* Build configuration list for PBXNativeTarget "LifeHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E02D3761D460A48001F99FE /* Debug */,
+				7E02D3771D460A48001F99FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E02D3781D460A48001F99FE /* Build configuration list for PBXNativeTarget "LifeHelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E02D3791D460A48001F99FE /* Debug */,
+				7E02D37A1D460A48001F99FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E02D37B1D460A48001F99FE /* Build configuration list for PBXNativeTarget "LifeHelperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E02D37C1D460A48001F99FE /* Debug */,
+				7E02D37D1D460A48001F99FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7E02D3401D460A47001F99FE /* Project object */;
+}
