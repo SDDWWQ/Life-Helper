@@ -29,8 +29,8 @@
     _good=good;
     self.titleLabel.text=good.title;
     int price=[good.current_price floatValue];
-    self.priceLabel.text=[NSString stringWithFormat:@"%d",price/100];
-    self.sellCountLabel.text=[NSString stringWithFormat:@"%@",good.sale_num];
+    self.priceLabel.text=[NSString stringWithFormat:@"¥%d",price/100];
+    self.sellCountLabel.text=[NSString stringWithFormat:@"已售：%@",good.sale_num];
     NSURL *pictureUrl=[NSURL URLWithString:good.image];
     NSLog(@"%@",pictureUrl);
     NSData *pictureData=[NSData dataWithContentsOfURL:pictureUrl];

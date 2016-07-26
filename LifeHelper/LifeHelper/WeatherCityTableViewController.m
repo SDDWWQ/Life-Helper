@@ -11,7 +11,7 @@
 #import "WeatherCityTableViewCell.h"
 @interface WeatherCityTableViewController ()<UITableViewDataSource>
 
-@property(nonatomic,strong)NSArray *cities;
+@property(nonatomic,strong)NSMutableArray *cities;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
 @end
@@ -26,6 +26,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+#pragma mark-懒加载初始化
+-(NSMutableArray *)cities{
+    if (!_cities) {
+        //必须得初始化
+        _cities=[NSMutableArray array];
+    }
+    return _cities;
 }
 - (IBAction)searchClick:(id)sender {
     NSString *searchStr=self.searchTextField.text;
@@ -56,12 +64,10 @@
                                    NSError *error;
                                    NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
                                    NSArray *array=(NSArray *)dict[@"retData"];
-                                   NSMutableArray *tempArray=[NSMutableArray array];
                                    for (NSDictionary *cityDict in array) {
                                        WeatherCity *city=[WeatherCity WeatherCityWithDict:cityDict];
-                                       [tempArray addObject:city];
+                                       [self.cities addObject:city];
                                    }
-                                _cities=tempArray;
                                 [self.tableView reloadData];
                                }
                            }];
