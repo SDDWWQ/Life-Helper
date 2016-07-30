@@ -207,48 +207,6 @@
             </objects>
             <point key="canvasLocation" x="110" y="1566"/>
         </scene>
-        <!--天气-->
-        <scene sceneID="f7D-31-AIY">
-            <objects>
-                <viewController id="6OH-9Y-Y0r" customClass="WeatherViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uFO-Zk-ZyX"/>
-                        <viewControllerLayoutGuide type="bottom" id="V1M-8w-fYz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="thA-z2-F7g">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weather_background" translatesAutoresizingMaskIntoConstraints="NO" id="rsa-ef-0a3">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="rsa-ef-0a3" firstAttribute="top" secondItem="uFO-Zk-ZyX" secondAttribute="bottom" id="JCK-8K-Y1C"/>
-                            <constraint firstItem="rsa-ef-0a3" firstAttribute="leading" secondItem="thA-z2-F7g" secondAttribute="leading" id="LiF-BJ-oEI"/>
-                            <constraint firstAttribute="trailing" secondItem="rsa-ef-0a3" secondAttribute="trailing" id="eWS-NM-asQ"/>
-                            <constraint firstItem="V1M-8w-fYz" firstAttribute="top" secondItem="rsa-ef-0a3" secondAttribute="bottom" id="iqe-5f-RzD"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="天气" id="M8z-ZP-lME">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Dlw-S9-Ogk">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0SH-P2-931">
-                                <rect key="frame" x="274" y="7" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="城市"/>
-                                <connections>
-                                    <segue destination="BAB-Wy-Mws" kind="push" id="RqG-bs-FtB"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z6O-ZF-teS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="530" y="338"/>
-        </scene>
         <!--Weather City Table View Controller-->
         <scene sceneID="dKH-Ud-2Jw">
             <objects>
@@ -442,7 +400,6 @@
         <image name="icon_tabbar_merchant_normal" width="38" height="38"/>
         <image name="icon_tabbar_misc" width="38" height="38"/>
         <image name="icon_tabbar_news_normal" width="38" height="38"/>
-        <image name="weather_background" width="318" height="454"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

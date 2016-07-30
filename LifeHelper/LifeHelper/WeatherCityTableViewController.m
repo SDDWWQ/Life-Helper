@@ -21,6 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //
+    UITextField *searchField=[[UITextField alloc]initWithFrame:CGRectMake(0, 0, 100, 30)];
+    searchField.backgroundColor=[UIColor whiteColor];
+    self.navigationItem.titleView=searchField;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,7 +93,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     WeatherCity *city=self.cities[indexPath.row];
-    WeatherCityTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WeatherCity_Cell"];
+    static NSString *ID=@"WeatherCity_Cell";
+    WeatherCityTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        cell=[[WeatherCityTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
     cell.city=city;
     return cell;
 }

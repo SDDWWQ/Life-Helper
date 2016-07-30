@@ -7,7 +7,7 @@
 //
 
 #import "WeatherDetailViewController.h"
-
+#import "WeatherCityTableViewController.h"
 @interface WeatherDetailViewController ()
 
 @end
@@ -24,11 +24,14 @@
     [self.view addSubview:backgroudImageView];
     //添加城市Label控件
     self.navigationItem.title=@"天气";
-    UIBarButtonItem *cityItem=[[UIBarButtonItem alloc]initWithTitle:@"城市" style:UIBarButtonItemStylePlain target:nil action:nil];
+    UIBarButtonItem *cityItem=[[UIBarButtonItem alloc]initWithTitle:@"城市" style:UIBarButtonItemStylePlain target:self action:@selector(jump2WeatherCity)];
     self.navigationItem.rightBarButtonItem=cityItem;
     
 }
-
+-(void)jump2WeatherCity{
+    WeatherCityTableViewController *city=[[WeatherCityTableViewController alloc]init];
+    [self.navigationController pushViewController:city animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
