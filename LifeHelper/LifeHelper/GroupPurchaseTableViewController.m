@@ -10,13 +10,12 @@
 #import "Goods.h"
 #import "GPTableViewCell.h"
 @interface GroupPurchaseTableViewController ()<UITableViewDataSource>
-@property(nonatomic,strong)Goods *good;
-
+@property(nonatomic,strong)NSMutableArray *goods;
 
 @end
 
 @implementation GroupPurchaseTableViewController
-
+//改成Viewwillload
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -35,7 +34,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+#pragma mark-懒加载初始化
+-(NSMutableArray *)goods{
+    if (!_goods) {
+        //必须得初始化
+        _goods=[NSMutableArray array];
+    }
+    return _goods;
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -45,7 +51,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 1;
+    return self.goods.count;
 }
 -(void)request: (NSString*)httpUrl withHttpArg: (NSString*)HttpArg  {
     NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, HttpArg];
@@ -65,17 +71,13 @@
                                    NSLog(@"HttpResponseBody %@",responseString);
                                    //json序列化
                                    NSError *error;
+                                   //json反序列化
                                    NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
                                    NSArray *array=dict[@"deals"];
-//                                   [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                                   Goods *good=[[Goods alloc]init];
-                                   //[good setValuesForKeysWithDictionary:array[0]];
-                                   good.title=array[0][@"title"];
-                                   good.current_price=array[0][@"current_price"];
-                                   good.image=array[0][@"image"];
-                                   good.sale_num=array[0][@"sale_num"];
-                                   NSLog(@"%@",good.title);
-                                   _good=good;
+                                   Goods *good=[Goods GoodWithDict:array[0]];
+                                   for (int i=0; i<5; i++) {
+                                       [self.goods addObject:good];
+                                   }
                                    //重新加载tableView
                                    [self.tableView reloadData];
 //                               }];
@@ -86,9 +88,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"重新加载了");
-    Goods *good=self.good;
-    NSString *ID=@"Good_Cell";
+    //NSLog(@"重新加载了");
+    Goods *good=self.goods[indexPath.row];
+    static NSString *ID=@"Good_Cell";
     GPTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     //3.设置单元格数据
     cell.good=good;

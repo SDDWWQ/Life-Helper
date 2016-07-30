@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Em3-Bk-i3R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q4y-pB-a3c">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -8,7 +8,7 @@
         <!--生活小助手-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,40 +17,102 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBq-EX-4nI">
-                                <rect key="frame" x="46" y="207" width="30" height="30"/>
-                                <state key="normal" title="微博"/>
-                                <connections>
-                                    <segue destination="s6m-HF-GnO" kind="push" id="ppU-tw-Wvl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wn-yz-0Fk">
-                                <rect key="frame" x="54" y="264" width="30" height="30"/>
-                                <state key="normal" title="团购"/>
-                                <connections>
-                                    <segue destination="KSS-Jy-drw" kind="push" id="DfL-2F-zFQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkn-Xq-Sk2">
-                                <rect key="frame" x="54" y="318" width="30" height="30"/>
-                                <state key="normal" title="股票"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJe-XS-QWL">
-                                <rect key="frame" x="46" y="145" width="30" height="30"/>
-                                <state key="normal" title="天气"/>
-                                <connections>
-                                    <segue destination="6OH-9Y-Y0r" kind="push" id="hVn-sU-LJj"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="455" translatesAutoresizingMaskIntoConstraints="NO" id="LyO-Hr-fsb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7J9-ET-llR">
+                                        <rect key="frame" x="137" y="208" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="6OH-9Y-Y0r" kind="push" id="SfD-Y5-mFO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LyO-Hr-fsb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FQt-V5-xxy"/>
+                            <constraint firstItem="LyO-Hr-fsb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Iep-vH-THJ"/>
+                            <constraint firstAttribute="trailing" secondItem="LyO-Hr-fsb" secondAttribute="trailing" id="WlA-UE-PSg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LyO-Hr-fsb" secondAttribute="bottom" id="Wpx-xd-GKb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="生活小助手" id="NUv-qz-Hwp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="125" y="281"/>
+            <point key="canvasLocation" x="167" y="338"/>
+        </scene>
+        <!--新闻-->
+        <scene sceneID="Dzf-D6-VUJ">
+            <objects>
+                <navigationController id="slb-k8-7y3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="新闻" image="icon_tabbar_news_normal" id="Lrm-Ls-pFv"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1rC-9L-rtF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="FQp-LL-FEF" kind="relationship" relationship="rootViewController" id="1to-Qs-KAU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Jz-hG-mCo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-225" y="909"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aWA-dG-5pn">
+            <objects>
+                <viewController id="FQp-LL-FEF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pVU-Eu-XEY"/>
+                        <viewControllerLayoutGuide type="bottom" id="5aA-as-Eot"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UNl-rq-esM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdy-Vu-Di1">
+                                <rect key="frame" x="0.0" y="64" width="320" height="200"/>
+                                <color key="backgroundColor" red="0.90588235289999997" green="0.45415253630000002" blue="0.53269677400000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rdy-Vu-Di1" firstAttribute="leading" secondItem="UNl-rq-esM" secondAttribute="leading" id="Kg0-0e-IdL"/>
+                            <constraint firstAttribute="trailing" secondItem="rdy-Vu-Di1" secondAttribute="trailing" id="das-8A-yCr"/>
+                            <constraint firstItem="rdy-Vu-Di1" firstAttribute="top" secondItem="pVU-Eu-XEY" secondAttribute="bottom" id="j1I-81-oQS"/>
+                            <constraint firstItem="5aA-as-Eot" firstAttribute="top" secondItem="rdy-Vu-Di1" secondAttribute="bottom" constant="255" id="w8w-om-Uot"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="d7B-Tk-QKd"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ze-Xz-x5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125" y="915"/>
+        </scene>
+        <!--团购-->
+        <scene sceneID="Xhb-LW-1od">
+            <objects>
+                <navigationController id="86a-ep-IoU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="团购" image="icon_tabbar_merchant_normal" id="gWk-41-9fg"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mMJ-Ek-YVn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="KSS-Jy-drw" kind="relationship" relationship="rootViewController" id="0lh-XC-Kf3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2WG-lX-RAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-225" y="1566"/>
         </scene>
         <!--团购-->
         <scene sceneID="uWG-eJ-kRk">
@@ -149,7 +211,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAI-np-nV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120" y="899"/>
+            <point key="canvasLocation" x="110" y="1566"/>
         </scene>
         <!--天气-->
         <scene sceneID="f7D-31-AIY">
@@ -163,22 +225,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SH-P2-931">
-                                <rect key="frame" x="28" y="77" width="30" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="weather_background" translatesAutoresizingMaskIntoConstraints="NO" id="rsa-ef-0a3">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rsa-ef-0a3" firstAttribute="top" secondItem="uFO-Zk-ZyX" secondAttribute="bottom" id="JCK-8K-Y1C"/>
+                            <constraint firstItem="rsa-ef-0a3" firstAttribute="leading" secondItem="thA-z2-F7g" secondAttribute="leading" id="LiF-BJ-oEI"/>
+                            <constraint firstAttribute="trailing" secondItem="rsa-ef-0a3" secondAttribute="trailing" id="eWS-NM-asQ"/>
+                            <constraint firstItem="V1M-8w-fYz" firstAttribute="top" secondItem="rsa-ef-0a3" secondAttribute="bottom" id="iqe-5f-RzD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="天气" id="M8z-ZP-lME">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Dlw-S9-Ogk">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0SH-P2-931">
+                                <rect key="frame" x="274" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="城市"/>
                                 <connections>
                                     <segue destination="BAB-Wy-Mws" kind="push" id="RqG-bs-FtB"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="天气" id="M8z-ZP-lME"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6O-ZF-teS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="469" y="281"/>
+            <point key="canvasLocation" x="530" y="338"/>
         </scene>
         <!--Weather City Table View Controller-->
         <scene sceneID="dKH-Ud-2Jw">
@@ -246,7 +321,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psq-BD-mGI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="805" y="281"/>
+            <point key="canvasLocation" x="960" y="273"/>
         </scene>
         <!--微博-->
         <scene sceneID="igc-XI-CHU">
@@ -258,7 +333,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="F78-4R-Iw8">
-                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F78-4R-Iw8" id="1Le-7V-d0h">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -278,10 +353,80 @@
             </objects>
             <point key="canvasLocation" x="499" y="899"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Home Tab Bar Controller-->
+        <scene sceneID="YUc-jd-BEZ">
+            <objects>
+                <tabBarController id="Q4y-pB-a3c" customClass="HomeTabBarController" colorLabel="IBBuiltInLabel-Blue" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <tabBar key="tabBar" autoresizesSubviews="NO" contentMode="scaleToFill" id="NMO-dN-Gru">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Em3-Bk-i3R" kind="relationship" relationship="viewControllers" id="KW4-9k-2AK"/>
+                        <segue destination="slb-k8-7y3" kind="relationship" relationship="viewControllers" id="Iac-US-AHj"/>
+                        <segue destination="86a-ep-IoU" kind="relationship" relationship="viewControllers" id="a4I-ry-nIp"/>
+                        <segue destination="de6-KZ-FSL" kind="relationship" relationship="viewControllers" id="ek2-tz-9Kc"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j4B-eE-hdu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-798" y="357"/>
+        </scene>
+        <!--更多-->
+        <scene sceneID="8RE-wP-iej">
+            <objects>
+                <navigationController id="de6-KZ-FSL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="更多" image="icon_tabbar_misc" id="2jc-eO-juz"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yLS-8k-loi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="QWW-IA-l5T" kind="relationship" relationship="rootViewController" id="cPl-J9-PWr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yw3-GY-bOU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-219" y="-373"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="A6U-HQ-qBg">
+            <objects>
+                <tableViewController id="QWW-IA-l5T" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jdc-tZ-4Po">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3BK-Ne-eq8">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3BK-Ne-eq8" id="JfC-UX-QZN">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QWW-IA-l5T" id="SPo-l0-gPf"/>
+                            <outlet property="delegate" destination="QWW-IA-l5T" id="eQL-k5-dDm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="6yB-Hu-5Gk"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B2A-yI-HYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="167" y="-367"/>
+        </scene>
+        <!--首页-->
         <scene sceneID="5vO-rY-Hc9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Em3-Bk-i3R" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" image="icon_tabbar_homepage" id="Hl1-Ha-J8E"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5BG-Qu-Omk">
@@ -298,4 +443,12 @@
             <point key="canvasLocation" x="-225" y="281"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_tabbar_homepage" width="38" height="38"/>
+        <image name="icon_tabbar_merchant_normal" width="38" height="38"/>
+        <image name="icon_tabbar_misc" width="38" height="38"/>
+        <image name="icon_tabbar_news_normal" width="38" height="38"/>
+        <image name="weather_background" width="318" height="454"/>
+    </resources>
+    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

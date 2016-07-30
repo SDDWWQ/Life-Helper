@@ -43,6 +43,7 @@
     //NSString *httpArg = @"cityname=%E6%9C%9D%E9%98%B3";
     [self request: httpUrl withHttpArg: httpArg];
     [self.tableView reloadData];
+    [self.view endEditing:YES];//收回键盘
 }
 -(void)request: (NSString*)httpUrl withHttpArg: (NSString*)HttpArg  {
     NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, HttpArg];

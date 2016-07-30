@@ -20,7 +20,7 @@
 //商户小标题
 @property(nonatomic,copy)NSString *min_title;
 //商户描述
-@property(nonatomic,copy)NSString *descript;
+@property(nonatomic,copy)NSString *Description;
 //市场价格，单位是分
 @property(nonatomic,strong)NSNumber *market_price;
 //售卖价格，单位是分
@@ -37,6 +37,6 @@
 @property(nonatomic,copy)NSString *deal_url;
 //Wap团详情页
 @property(nonatomic,copy)NSString *deal_murl;
-
-
+-(instancetype)initWithDict:(NSDictionary *)dict;
++(instancetype)GoodWithDict:(NSDictionary *)dict;
 @end
