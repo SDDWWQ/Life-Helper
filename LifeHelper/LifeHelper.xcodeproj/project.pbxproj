@@ -44,7 +44,6 @@
 		7EEC0D211D4715640020164D /* WeatherCityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC0D201D4715640020164D /* WeatherCityTableViewController.m */; };
 		7EEC0D261D4715E80020164D /* WeatherCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC0D251D4715E80020164D /* WeatherCity.m */; };
 		7EEC0D291D471DF80020164D /* WeatherCityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC0D281D471DF80020164D /* WeatherCityTableViewCell.m */; };
-		7EEC0D2F1D4754CC0020164D /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEC0D2E1D4754CC0020164D /* WeatherViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,8 +138,6 @@
 		7EEC0D251D4715E80020164D /* WeatherCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCity.m; sourceTree = "<group>"; };
 		7EEC0D271D471DF80020164D /* WeatherCityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCityTableViewCell.h; sourceTree = "<group>"; };
 		7EEC0D281D471DF80020164D /* WeatherCityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCityTableViewCell.m; sourceTree = "<group>"; };
-		7EEC0D2D1D4754CC0020164D /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
-		7EEC0D2E1D4754CC0020164D /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,8 +381,6 @@
 				7E9B26F91D4CC3AD005CCE11 /* WeatherDetailViewController.m */,
 				7EEC0D1F1D4715640020164D /* WeatherCityTableViewController.h */,
 				7EEC0D201D4715640020164D /* WeatherCityTableViewController.m */,
-				7EEC0D2D1D4754CC0020164D /* WeatherViewController.h */,
-				7EEC0D2E1D4754CC0020164D /* WeatherViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -543,7 +538,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E02D3801D460F23001F99FE /* NewsTableViewController.m in Sources */,
-				7EEC0D2F1D4754CC0020164D /* WeatherViewController.m in Sources */,
 				7E9B26FA1D4CC3AD005CCE11 /* WeatherDetailViewController.m in Sources */,
 				7E427E2B1D484C320031F771 /* UIImage+WebP.m in Sources */,
 				7E427E281D484C320031F771 /* UIButton+WebCache.m in Sources */,

@@ -7,9 +7,10 @@
 //
 
 #import "HomeViewController.h"
-#import "WeatherXib.h"
+//#import "WeatherXib.h"
 #import "WeatherDetailViewController.h"
 #import "WeatherByCityID.h"
+
 @interface HomeViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *homeScrollView;
 @property(nonatomic,strong)WeatherByCityID *weather;
@@ -24,21 +25,31 @@
     NSString *httpUrl = @"http://apis.baidu.com/apistore/weatherservice/cityid";
     NSString *httpArg = @"cityid=101010100";
     [self request: httpUrl withHttpArg: httpArg];//加载天气信息
-    NSLog(@"eee");
-//    if (self.weather.city) {
-//       
-//    }
+    UIView *weatherView=[[UIView alloc]init];
+    weatherView.frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height*0.25);
+    UIButton *weatherBtn=[[UIButton alloc]init];
+    [weatherBtn setBackgroundImage:[UIImage imageNamed:@"weather_background"] forState:UIControlStateNormal];
+    weatherBtn.frame=weatherView.frame;
+    [weatherView addSubview:weatherBtn];
+    UILabel *cityLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, 10, self.view.frame.size.width, 20)];
+    NSString *city=[NSString stringWithFormat:@"%@  %@  %@", self.weather.city,self.weather.date,self.weather.temp];
+    cityLabel.text=city;
+    [weatherBtn addSubview:cityLabel];
+    [self.homeScrollView addSubview:weatherView];
+    
+    [weatherBtn addTarget:self action:@selector(jump2WeatherDetailView) forControlEvents:UIControlEventTouchUpInside];
+
+
     
 }
--(void)viewWillAppear:(BOOL)animated{
-    NSLog(@"www");
-    WeatherXib *weatherView;
-    weatherView.city=[NSString stringWithFormat:@"%@  %@  %@", self.weather.city,self.weather.date,self.weather.temp];
-    weatherView.frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height*0.25);
-    [self.homeScrollView addSubview:weatherView];
-    weatherView=[WeatherXib weatherXibView];
-    [weatherView.weatherBtn addTarget:self action:@selector(jump2WeatherDetailView) forControlEvents:UIControlEventTouchUpInside];
-}
+//-(void)viewWillAppear:(BOOL)animated{
+//    WeatherXib *weatherView;
+//    weatherView.city=[NSString stringWithFormat:@"%@  %@  %@", self.weather.city,self.weather.date,self.weather.temp];
+//    weatherView.frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height*0.25);
+//    [self.homeScrollView addSubview:weatherView];
+//    weatherView=[WeatherXib weatherXibView];
+//    [weatherView.weatherBtn addTarget:self action:@selector(jump2WeatherDetailView) forControlEvents:UIControlEventTouchUpInside];
+//}
 //懒加载
 -(WeatherByCityID *)weather{
     if (!_weather) {
@@ -76,8 +87,8 @@
 //                           }];
 }
 -(void)jump2WeatherDetailView{
-    WeatherDetailViewController *detaiView=[[WeatherDetailViewController alloc]init];
-    [self.navigationController pushViewController:detaiView animated:YES];
+    WeatherDetailViewController *detailView=[[WeatherDetailViewController alloc]init];
+    [self.navigationController pushViewController:detailView animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

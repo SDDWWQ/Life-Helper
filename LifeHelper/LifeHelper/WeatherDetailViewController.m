@@ -23,7 +23,9 @@
     backgroudImageView.frame=CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
     [self.view addSubview:backgroudImageView];
     //添加城市Label控件
-    
+    self.navigationItem.title=@"天气";
+    UIBarButtonItem *cityItem=[[UIBarButtonItem alloc]initWithTitle:@"城市" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.rightBarButtonItem=cityItem;
     
 }
 
