@@ -41,6 +41,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="生活小助手" id="NUv-qz-Hwp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="homeScrollView" destination="LyO-Hr-fsb" id="vmm-g7-AeS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

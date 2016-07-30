@@ -59,6 +59,7 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
     [request setHTTPMethod: @"GET"];
     [request addValue: @"d2dfec542a6c211fa932b11248360ef9" forHTTPHeaderField: @"apikey"];
+    
     [NSURLConnection sendAsynchronousRequest: request
                                        queue: [NSOperationQueue mainQueue]
                            completionHandler: ^(NSURLResponse *response, NSData *data, NSError *error){
@@ -67,7 +68,7 @@
                                } else {
                                    NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
                                    NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                                   NSLog(@"HttpResponseCode:%ld", responseCode);
+//                                   NSLog(@"HttpResponseCode:%ld", responseCode);
                                    NSLog(@"HttpResponseBody %@",responseString);
                                    //json序列化
                                    NSError *error;
@@ -80,7 +81,6 @@
                                    }
                                    //重新加载tableView
                                    [self.tableView reloadData];
-//                               }];
                                    
                                }
                            }];

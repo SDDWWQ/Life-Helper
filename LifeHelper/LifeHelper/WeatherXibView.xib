@@ -34,6 +34,10 @@
                 <constraint firstItem="cSY-lY-Baj" firstAttribute="centerX" secondItem="8wP-tT-SoF" secondAttribute="centerX" id="p1Z-ff-9eC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="cityLabel" destination="cSY-lY-Baj" id="5fb-bc-MWj"/>
+                <outlet property="weatherBtn" destination="jek-Ed-K1c" id="BJi-ts-3DR"/>
+            </connections>
         </view>
     </objects>
     <resources>

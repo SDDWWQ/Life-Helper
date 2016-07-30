@@ -36,6 +36,8 @@
 		7E427E2D1D484C320031F771 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E427E1C1D484C320031F771 /* UIImageView+WebCache.m */; };
 		7E427E2E1D484C320031F771 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E427E1E1D484C320031F771 /* UIView+WebCacheOperation.m */; };
 		7E9B26E91D4CA203005CCE11 /* WeatherXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B26E81D4CA203005CCE11 /* WeatherXib.m */; };
+		7E9B26FA1D4CC3AD005CCE11 /* WeatherDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B26F91D4CC3AD005CCE11 /* WeatherDetailViewController.m */; };
+		7E9B26FD1D4CC7EE005CCE11 /* WeatherByCityID.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B26FC1D4CC7EE005CCE11 /* WeatherByCityID.m */; };
 		7EEB1F831D4C4B1000272BC4 /* HomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEB1F821D4C4B1000272BC4 /* HomeTabBarController.m */; };
 		7EEB1F891D4C914300272BC4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEB1F881D4C914300272BC4 /* HomeViewController.m */; };
 		7EEB1F901D4C965900272BC4 /* WeatherXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EEB1F8F1D4C965900272BC4 /* WeatherXibView.xib */; };
@@ -122,6 +124,10 @@
 		7E427E1E1D484C320031F771 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		7E9B26E71D4CA203005CCE11 /* WeatherXib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherXib.h; sourceTree = "<group>"; };
 		7E9B26E81D4CA203005CCE11 /* WeatherXib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherXib.m; sourceTree = "<group>"; };
+		7E9B26F81D4CC3AD005CCE11 /* WeatherDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDetailViewController.h; sourceTree = "<group>"; };
+		7E9B26F91D4CC3AD005CCE11 /* WeatherDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDetailViewController.m; sourceTree = "<group>"; };
+		7E9B26FB1D4CC7EE005CCE11 /* WeatherByCityID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherByCityID.h; sourceTree = "<group>"; };
+		7E9B26FC1D4CC7EE005CCE11 /* WeatherByCityID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherByCityID.m; sourceTree = "<group>"; };
 		7EEB1F811D4C4B1000272BC4 /* HomeTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTabBarController.h; sourceTree = "<group>"; };
 		7EEB1F821D4C4B1000272BC4 /* HomeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTabBarController.m; sourceTree = "<group>"; };
 		7EEB1F871D4C914300272BC4 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -374,6 +380,8 @@
 		7EEC0D1E1D4713540020164D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7E9B26F81D4CC3AD005CCE11 /* WeatherDetailViewController.h */,
+				7E9B26F91D4CC3AD005CCE11 /* WeatherDetailViewController.m */,
 				7EEC0D1F1D4715640020164D /* WeatherCityTableViewController.h */,
 				7EEC0D201D4715640020164D /* WeatherCityTableViewController.m */,
 				7EEC0D2D1D4754CC0020164D /* WeatherViewController.h */,
@@ -396,6 +404,8 @@
 			children = (
 				7EEC0D241D4715E80020164D /* WeatherCity.h */,
 				7EEC0D251D4715E80020164D /* WeatherCity.m */,
+				7E9B26FB1D4CC7EE005CCE11 /* WeatherByCityID.h */,
+				7E9B26FC1D4CC7EE005CCE11 /* WeatherByCityID.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -534,6 +544,7 @@
 			files = (
 				7E02D3801D460F23001F99FE /* NewsTableViewController.m in Sources */,
 				7EEC0D2F1D4754CC0020164D /* WeatherViewController.m in Sources */,
+				7E9B26FA1D4CC3AD005CCE11 /* WeatherDetailViewController.m in Sources */,
 				7E427E2B1D484C320031F771 /* UIImage+WebP.m in Sources */,
 				7E427E281D484C320031F771 /* UIButton+WebCache.m in Sources */,
 				7E427E251D484C320031F771 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -560,6 +571,7 @@
 				7E427E2D1D484C320031F771 /* UIImageView+WebCache.m in Sources */,
 				7E427E2E1D484C320031F771 /* UIView+WebCacheOperation.m in Sources */,
 				7E427E261D484C320031F771 /* SDWebImageManager.m in Sources */,
+				7E9B26FD1D4CC7EE005CCE11 /* WeatherByCityID.m in Sources */,
 				7E02D3901D463EE6001F99FE /* Goods.m in Sources */,
 				7EEC0D211D4715640020164D /* WeatherCityTableViewController.m in Sources */,
 			);

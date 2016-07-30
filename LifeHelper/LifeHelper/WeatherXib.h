@@ -11,4 +11,7 @@
 @interface WeatherXib : UIView
 @property(nonatomic,copy)NSString *city;
 +(instancetype)weatherXibView;
+@property (weak, nonatomic) IBOutlet UIButton *weatherBtn;
+@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+
 @end

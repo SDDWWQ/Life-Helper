@@ -7,7 +7,9 @@
 //
 
 #import "WeatherXib.h"
+@interface WeatherXib()
 
+@end
 @implementation WeatherXib
 
 /*
@@ -17,8 +19,22 @@
     // Drawing code
 }
 */
-+(instancetype)weatherXibView{
-    return [[NSBundle mainBundle]loadNibNamed:@"WeatherXibView" owner:nil options:nil][0];
+- (void)awakeFromNib {
+    NSLog(@"dddd");
+    [super awakeFromNib];
+    // Initialization code
+    self.cityLabel.text=self.city;
 }
+-(void)setCity:(NSString *)city{
+    _city=city;
+    //[[NSBundle mainBundle]loadNibNamed:@"WeatherXibView" owner:nil options:nil];
+
+}
++(instancetype)weatherXibView{
+    NSLog(@"sss");
+    return [[NSBundle mainBundle]loadNibNamed:@"WeatherXibView" owner:nil options:nil][0];
+
+}
+
 
 @end
