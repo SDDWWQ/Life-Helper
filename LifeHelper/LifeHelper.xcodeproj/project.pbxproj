@@ -35,6 +35,7 @@
 		7E427E2C1D484C320031F771 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E427E1A1D484C320031F771 /* UIImageView+HighlightedWebCache.m */; };
 		7E427E2D1D484C320031F771 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E427E1C1D484C320031F771 /* UIImageView+WebCache.m */; };
 		7E427E2E1D484C320031F771 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E427E1E1D484C320031F771 /* UIView+WebCacheOperation.m */; };
+		7E8421DA1D4DCD0800AB51B6 /* WeatherImage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E8421D91D4DCD0800AB51B6 /* WeatherImage.plist */; };
 		7E9B26E91D4CA203005CCE11 /* WeatherXib.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B26E81D4CA203005CCE11 /* WeatherXib.m */; };
 		7E9B26FA1D4CC3AD005CCE11 /* WeatherDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B26F91D4CC3AD005CCE11 /* WeatherDetailViewController.m */; };
 		7E9B26FD1D4CC7EE005CCE11 /* WeatherByCityID.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B26FC1D4CC7EE005CCE11 /* WeatherByCityID.m */; };
@@ -121,6 +122,7 @@
 		7E427E1C1D484C320031F771 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		7E427E1D1D484C320031F771 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		7E427E1E1D484C320031F771 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		7E8421D91D4DCD0800AB51B6 /* WeatherImage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WeatherImage.plist; sourceTree = "<group>"; };
 		7E9B26E71D4CA203005CCE11 /* WeatherXib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherXib.h; sourceTree = "<group>"; };
 		7E9B26E81D4CA203005CCE11 /* WeatherXib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherXib.m; sourceTree = "<group>"; };
 		7E9B26F81D4CC3AD005CCE11 /* WeatherDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDetailViewController.h; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				7E02D34C1D460A47001F99FE /* main.m */,
+				7E8421D91D4DCD0800AB51B6 /* WeatherImage.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 			files = (
 				7EEB1F901D4C965900272BC4 /* WeatherXibView.xib in Resources */,
 				7E02D35B1D460A47001F99FE /* LaunchScreen.storyboard in Resources */,
+				7E8421DA1D4DCD0800AB51B6 /* WeatherImage.plist in Resources */,
 				7E02D3581D460A47001F99FE /* Assets.xcassets in Resources */,
 				7E02D3561D460A47001F99FE /* Main.storyboard in Resources */,
 			);
