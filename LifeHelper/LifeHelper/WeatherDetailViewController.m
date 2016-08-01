@@ -10,38 +10,35 @@
 #import "WeatherCityTableViewController.h"
 #import "ForecastView.h"
 #import "WeatherDetailByCityID.h"
-@interface WeatherDetailViewController ()
+@interface WeatherDetailViewController ()<WeatherCityDelegate>
 //保存未来天气的视图，用于后边赋值
 @property(nonatomic,strong)NSMutableArray *forecastWeatherViews;
 @property(nonatomic,strong)WeatherDetailByCityID *weather;
+@property(nonatomic,copy)NSString *cityId;
 @end
 
 @implementation WeatherDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    NSString *httpUrl = @"http://apis.baidu.com/apistore/weatherservice/recentweathers";
-    NSString *httpArg = @"cityname=%E5%8C%97%E4%BA%AC&cityid=101010100";
-    [self request: httpUrl withHttpArg: httpArg];
-    //添加背景图片控件
-    UIImageView *backgroudImageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"weather_background"]];
-    backgroudImageView.frame=CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
-    [self.view addSubview:backgroudImageView];
-    //添加城市Label控件
-    self.navigationItem.title=@"天气";
-    UIBarButtonItem *cityItem=[[UIBarButtonItem alloc]initWithTitle:@"城市" style:UIBarButtonItemStylePlain target:self action:@selector(jump2WeatherCity)];
-    self.navigationItem.rightBarButtonItem=cityItem;
-    // 添加Forecast
-    [self setupForecast];
+    //取偏好设置
+    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+    self.cityId=[ud objectForKey:@"weathercityID"];
+    if (self.cityId==nil) {
+        self.cityId=@"101010100";
+    }
+    //请求天气数据
+    [self getWeatherData];
+   
+    //storyboard加载
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    WeatherDetailViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"WeatherDetailView"];
+//    [self.navigationController pushViewController:vc animated:YES];
+    //加载界面
+    [self loadMainView];
     
-    // 设置天气数据
-    [self setupForecastWeather];
 }
--(void)jump2WeatherCity{
-    WeatherCityTableViewController *city=[[WeatherCityTableViewController alloc]init];
-    [self.navigationController pushViewController:city animated:YES];
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -56,26 +53,124 @@
     // Pass the selected object to the new view controller.
 }
 */
-
--(void)request: (NSString*)httpUrl withHttpArg: (NSString*)HttpArg  {
-    NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, HttpArg];
-    NSURL *url = [NSURL URLWithString: urlStr];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
-    [request setHTTPMethod: @"GET"];
-    [request addValue: @"d2dfec542a6c211fa932b11248360ef9" forHTTPHeaderField: @"apikey"];
-    NSData *data=[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];                                   NSError *error;
-                                   NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-                                   dict=dict[@"retData"];
-                                   WeatherDetailByCityID *weather=[WeatherDetailByCityID WeatherDetailWithDict:dict];
-                                   self.weather=weather;
-                                   //NSLog(@"%@",self.weather);
-}
 //懒加载
 -(NSMutableArray*)forecastWeatherViews{
     if (!_forecastWeatherViews) {
         _forecastWeatherViews=[NSMutableArray array];
     }
     return _forecastWeatherViews;
+}
+-(void)getWeatherData{
+    NSString *httpUrl = @"http://apis.baidu.com/apistore/weatherservice/recentweathers";
+    NSString *httpArg = [NSString stringWithFormat: @"cityname=%%E5%%8C%%97%%E4%%BA%%AC&cityid=%@",self.cityId];
+    [self request: httpUrl withHttpArg: httpArg];
+
+}
+//请求数据
+-(void)request: (NSString*)httpUrl withHttpArg: (NSString*)HttpArg  {
+    NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, HttpArg];
+    NSURL *url = [NSURL URLWithString: urlStr];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
+    [request setHTTPMethod: @"GET"];
+    [request addValue: @"d2dfec542a6c211fa932b11248360ef9" forHTTPHeaderField: @"apikey"];
+    NSData *data=[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"HttpResponseBody %@",responseString);
+    NSError *error;
+    NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    dict=dict[@"retData"];
+    WeatherDetailByCityID *weather=[WeatherDetailByCityID WeatherDetailWithDict:dict];
+    self.weather=weather;
+                                   //NSLog(@"%@",self.weather);
+}
+-(void)loadMainView{
+    //添加背景图片控件
+    UIImageView *backgroudImageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"weather_background"]];
+    backgroudImageView.frame=CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
+    [self.view addSubview:backgroudImageView];
+    //添加导航栏城市选择按钮
+    self.navigationItem.title=@"天气预报";
+    UIBarButtonItem *cityItem=[[UIBarButtonItem alloc]initWithTitle:@"城市" style:UIBarButtonItemStylePlain target:self action:@selector(jump2WeatherCity)];
+    self.navigationItem.rightBarButtonItem=cityItem;
+    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc ]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    
+    CGFloat margin=10;
+    //显示城市Label
+    UILabel *cityLabel=[[UILabel alloc]initWithFrame:CGRectMake(20, 70, self.view.frame.size.width*0.5, 15)];
+    cityLabel.text=self.weather.city;
+    cityLabel.font=[UIFont systemFontOfSize:20];
+    [self.view addSubview:cityLabel];
+    
+    //今日日期Label
+    UILabel *timeLabel=[[UILabel alloc]initWithFrame:CGRectMake(20, CGRectGetMaxY(cityLabel.frame)+margin, self.view.frame.size.width*0.5, 10)];
+    timeLabel.text=[NSString stringWithFormat:@"%@ %@",self.weather.today.date,self.weather.today.week];
+    timeLabel.font=[UIFont systemFontOfSize:10];
+    [self.view addSubview:timeLabel];
+    
+    //PM值Label
+    UILabel *PMLabel=[[UILabel alloc]initWithFrame:CGRectMake(20,CGRectGetMaxY(timeLabel.frame)+margin, self.view.frame.size.width*0.5, 10)];
+    if ([self.weather.today.aqi isEqual:nil]) {
+        PMLabel.text=[NSString stringWithFormat:@"PM:%@",self.weather.today.aqi];
+    }
+    PMLabel.font=[UIFont systemFontOfSize:10];
+    [self.view addSubview:PMLabel];
+    
+    //温度Label
+    UILabel *tempratureLabel=[[UILabel alloc]initWithFrame:CGRectMake(20,CGRectGetMaxY(PMLabel.frame)+margin, self.view.frame.size.width*0.5, 10)];
+    tempratureLabel.text=[NSString stringWithFormat:@"%@~%@",self.weather.today.hightemp,self.weather.today.lowtemp];
+    tempratureLabel.font=[UIFont systemFontOfSize:10];
+    [self.view addSubview:tempratureLabel];
+    
+    //风向风力Label
+    UILabel *windDirectionLabel=[[UILabel alloc]initWithFrame:CGRectMake(20, CGRectGetMaxY(tempratureLabel.frame)+margin, self.view.frame.size.width*0.5, 10)];
+    windDirectionLabel.text=[NSString stringWithFormat:@"%@",self.weather.today.fengxiang];
+    windDirectionLabel.font=[UIFont systemFontOfSize:10];
+    [self.view addSubview:windDirectionLabel];
+    
+    //风力Label
+    UILabel *windStrengthLabel=[[UILabel alloc]initWithFrame:CGRectMake(20, CGRectGetMaxY(windDirectionLabel.frame)+margin, self.view.frame.size.width*0.5, 10)];
+    windStrengthLabel.text=[NSString stringWithFormat:@"%@",self.self.weather.today.fengli];
+    windStrengthLabel.font=[UIFont systemFontOfSize:10];
+    [self.view addSubview:windStrengthLabel];
+    
+    //天气图片
+    NSString *weather=self.weather.today.type;
+    NSString *path=[[NSBundle mainBundle]pathForResource:@"WeatherImage" ofType:@"plist"];
+    NSDictionary *weatherImgDict=[NSDictionary dictionaryWithContentsOfFile:path];
+    UIImageView *weatherImageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:weatherImgDict[weather]]];//根据天气获取对应的天气图片
+    weatherImageView.frame=CGRectMake(self.view.frame.size.width*0.5, 70, self.view.frame.size.width*0.5, self.view.frame.size.width*0.5);
+    [self.view addSubview:weatherImageView];
+    
+    //天气Label
+    UILabel *weatherLabel=[[UILabel alloc]initWithFrame:CGRectMake(20,CGRectGetMaxY(windStrengthLabel.frame)+margin, self.view.frame.size.width*0.5, 10)];
+    weatherLabel.text=weather;
+    [self.view addSubview:weatherLabel];
+    
+    //生活指数
+    UILabel *indexLabel=[[UILabel alloc]initWithFrame:CGRectMake(20,self.view.frame.size.height*0.3+20, self.view.frame.size.width-40, 200)];
+    NSString *indexs=@"";
+    for (int i=0; i<self.weather.today.index.count; i++) {
+        indexs=[indexs stringByAppendingString:[NSString stringWithFormat:@"%@:%@\n",[self.weather.today.index[i] name],[self.weather.today.index[i] details]]];
+    }
+    indexLabel.text=indexs;
+    indexLabel.numberOfLines=0;
+    indexLabel.font=[UIFont systemFontOfSize:10];
+    [self.view addSubview:indexLabel];
+    
+    // 添加Forecast界面
+    [self setupForecast];
+    
+    // 设置forecast天气数据
+    [self setupForecastWeather];
+}
+
+-(void)back{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+-(void)jump2WeatherCity{
+    WeatherCityTableViewController *city=[[WeatherCityTableViewController alloc]init];
+    city.delegate=self;//设置自己为代理，便于逆传值
+    [self.navigationController pushViewController:city animated:YES];
 }
 -(void)setupForecast{
     
@@ -93,12 +188,22 @@
 }
 -(void)setupForecastWeather{
     for (int i=0; i<self.forecastWeatherViews.count; i++) {
-        NSLog(@"%@",[self.weather.forecast[i] fengxiang]);
         ForecastView *forecastView=self.forecastWeatherViews[i];
         forecastView.forecast=self.weather.forecast[i];
-        //forecastView.timeLabel.text=[self.weather.forecast[i] fengxiang];
         [self.view addSubview:forecastView];
     }
 }
-
+#pragma mark-WeatherCityTableViewController的代理方法
+-(void)getCityID:(WeatherCityTableViewController *)weatherCity withCityID:(NSString *)cityID{
+    //self.cityId=cityID;
+    NSString *httpUrl = @"http://apis.baidu.com/apistore/weatherservice/recentweathers";
+    NSString *httpArg = [NSString stringWithFormat: @"cityname=%%E5%%8C%%97%%E4%%BA%%AC&cityid=%@",cityID];
+    //存偏好设置preference
+    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+    [ud setObject:cityID forKey:@"weathercityID"];
+    [ud synchronize];//立即写入
+    self.forecastWeatherViews=nil;
+    [self request: httpUrl withHttpArg: httpArg];
+    [self loadMainView];//[self loadView];
+}
 @end

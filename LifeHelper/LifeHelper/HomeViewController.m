@@ -14,6 +14,7 @@
 @interface HomeViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *homeScrollView;
 @property(nonatomic,strong)WeatherByCityID *weather;
+@property(nonatomic,copy)NSString *cityId;
 
 @end
 
@@ -21,27 +22,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //取天气城市偏好设置
+    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+    self.cityId=[ud objectForKey:@"weathercityID"];
+    if (self.cityId==nil) {
+        self.cityId=@"101010100";
+    }
+
     // Do any additional setup after loading the view.
     NSString *httpUrl = @"http://apis.baidu.com/apistore/weatherservice/cityid";
-    NSString *httpArg = @"cityid=101010100";
+    NSString *httpArg = [NSString stringWithFormat:@"cityid=%@",self.cityId];
     [self request: httpUrl withHttpArg: httpArg];//加载天气信息
-    
+    CGFloat margin=10;
     UIView *weatherView=[[UIView alloc]init];
-    weatherView.frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height*0.25);
+    weatherView.frame=CGRectMake(0, 0, self.view.frame.size.width, 150);
     //天气整个大button
     UIButton *weatherBtn=[[UIButton alloc]init];
     [weatherBtn setBackgroundImage:[UIImage imageNamed:@"weather_background"] forState:UIControlStateNormal];
     weatherBtn.frame=weatherView.frame;
     [weatherView addSubview:weatherBtn];
     //显示城市Label
-    UILabel *cityLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, 5, self.view.frame.size.width*0.5, 15)];
-    
-    NSString *city=[NSString stringWithFormat:@"%@  %@  %@", self.weather.city,self.weather.date,self.weather.temp];
+    UILabel *cityLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, margin, self.view.frame.size.width*0.5, 15)];
     cityLabel.text=self.weather.city;
     [weatherBtn addSubview:cityLabel];
     
     //更新时间Label
-    UILabel *timeLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, 25, self.view.frame.size.width*0.5, 10)];
+    UILabel *timeLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(cityLabel.frame)+margin, self.view.frame.size.width*0.5, 12)];
     NSDate *nowDate=[NSDate date];//格林威治时间
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc]init];
     dateFormatter.dateFormat=@"yy-MM-dd HH:mm";
@@ -73,17 +79,20 @@
     [weatherBtn addSubview:timeLabel];
     
     //温度Label
-     UILabel *tempratureLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, 40, self.view.frame.size.width*0.5, 15)];
+     UILabel *tempratureLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(timeLabel.frame)+margin, self.view.frame.size.width*0.5, 16)];
     tempratureLabel.text=[NSString stringWithFormat:@"%@°C",self.weather.temp];
+    tempratureLabel.font=[UIFont systemFontOfSize:12];
     [weatherBtn addSubview:tempratureLabel];
     
     //风向风力Label
-    UILabel *windDirectionLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, 60, self.view.frame.size.width*0.5, 15)];
+    UILabel *windDirectionLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(tempratureLabel.frame)+margin, self.view.frame.size.width*0.5, 16)];
     windDirectionLabel.text=[NSString stringWithFormat:@"%@",self.weather.WD];
+    windDirectionLabel.font=[UIFont systemFontOfSize:12];
     //windDirectionLabel.numberOfLines=0 ;
     [weatherBtn addSubview:windDirectionLabel];
     //风力Label
-    UILabel *windStrengthLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, 80, self.view.frame.size.width*0.5, 15)];
+    UILabel *windStrengthLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(windDirectionLabel.frame)+margin, self.view.frame.size.width*0.5, 16)];
+    windStrengthLabel.font=[UIFont systemFontOfSize:12];
     windStrengthLabel.text=[NSString stringWithFormat:@"%@",self.self.weather.WS];
     //windStrengthLabel.numberOfLines=0 ;
     [weatherBtn addSubview:windStrengthLabel];
@@ -93,11 +102,12 @@
     NSString *path=[[NSBundle mainBundle]pathForResource:@"WeatherImage" ofType:@"plist"];
     NSDictionary *weatherImgDict=[NSDictionary dictionaryWithContentsOfFile:path];
     UIImageView *weatherImageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:weatherImgDict[weather]]];//根据天气获取对应的天气图片
-    weatherImageView.frame=CGRectMake(self.view.frame.size.width*0.5, 10, self.view.frame.size.width*0.5, self.view.frame.size.height*0.2);
+    weatherImageView.frame=CGRectMake(self.view.frame.size.width-120, 10, 100, 100);
     [weatherBtn addSubview:weatherImageView];
     
-    UILabel *weatherLabel=[[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.7, self.view.frame.size.width*0.2+10+5, self.view.frame.size.width*0.5-10, 15)];
+    UILabel *weatherLabel=[[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.5, 100, self.view.frame.size.width*0.5, 15)];
     weatherLabel.text=self.weather.weather;
+    weatherLabel.textAlignment=NSTextAlignmentCenter;
     [weatherBtn addSubview:weatherLabel];
 
 
@@ -107,18 +117,7 @@
     
     [weatherBtn addTarget:self action:@selector(jump2WeatherDetailView) forControlEvents:UIControlEventTouchUpInside];
     
-
-
-    
 }
-//-(void)viewWillAppear:(BOOL)animated{
-//    WeatherXib *weatherView;
-//    weatherView.city=[NSString stringWithFormat:@"%@  %@  %@", self.weather.city,self.weather.date,self.weather.temp];
-//    weatherView.frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height*0.25);
-//    [self.homeScrollView addSubview:weatherView];
-//    weatherView=[WeatherXib weatherXibView];
-//    [weatherView.weatherBtn addTarget:self action:@selector(jump2WeatherDetailView) forControlEvents:UIControlEventTouchUpInside];
-//}
 //懒加载
 -(WeatherByCityID *)weather{
     if (!_weather) {
@@ -134,26 +133,14 @@
     [request setHTTPMethod: @"GET"];
     [request addValue: @"d2dfec542a6c211fa932b11248360ef9" forHTTPHeaderField: @"apikey"];
     NSData *data=[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-//    [NSURLConnection sendAsynchronousRequest: request
-//                                       queue: [NSOperationQueue mainQueue]
-//                           completionHandler: ^(NSURLResponse *response, NSData *data, NSError *error){
-//                               if (error) {
-//                                   NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
-//                               } else {
-//                                   NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
-                                   NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                                   //NSLog(@"HttpResponseCode:%ld", responseCode);
-                                   NSLog(@"HttpResponseBody %@",responseString);
-                                   NSError *error;
-                                   NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-                                   dict=dict[@"retData"];
-                                   WeatherByCityID *weather=[WeatherByCityID WeatherWithDict:dict];
-                                   self.weather=weather;
-                                   NSLog(@"qqq");
-                                   
-                                   
-//                               }
-//                           }];
+    //NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    //NSLog(@"HttpResponseBody %@",responseString);
+    NSError *error;
+    NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    dict=dict[@"retData"];
+    WeatherByCityID *weather=[WeatherByCityID WeatherWithDict:dict];
+    self.weather=weather;
+    //NSLog(@"qqq");
 }
 -(void)jump2WeatherDetailView{
     WeatherDetailViewController *detailView=[[WeatherDetailViewController alloc]init];

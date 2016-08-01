@@ -13,6 +13,7 @@
 
 @property(nonatomic,strong)NSMutableArray *cities;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+@property(nonatomic,copy)NSString *cityId;
 
 @end
 
@@ -21,9 +22,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //
-    UITextField *searchField=[[UITextField alloc]initWithFrame:CGRectMake(0, 0, 100, 30)];
+    UITextField *searchField=[[UITextField alloc]initWithFrame:CGRectMake(0, 0, 200, 35)];
     searchField.backgroundColor=[UIColor whiteColor];
+    searchField.layer.cornerRadius=10;
     self.navigationItem.titleView=searchField;
+    self.searchTextField=searchField;
+    //添加导航栏城市选择按钮
+    UIBarButtonItem *cityItem=[[UIBarButtonItem alloc]initWithTitle:@"搜索" style:UIBarButtonItemStylePlain target:self action:@selector(searchCity)];
+    self.navigationItem.rightBarButtonItem=cityItem;
     
 }
 
@@ -39,15 +45,18 @@
     }
     return _cities;
 }
-- (IBAction)searchClick:(id)sender {
+- (void)searchCity {
+    //NSLog(@"调用了");
+    [self.searchTextField endEditing:YES];//收回键盘
     NSString *searchStr=self.searchTextField.text;
     NSString *httpUrl = @"http://apis.baidu.com/apistore/weatherservice/citylist";
     NSString *searchStrGBK = [searchStr stringByAddingPercentEncodingWithAllowedCharacters:searchStrGBK];
+    //NSLog(@"%@",searchStrGBK);
     NSString *httpArg = [NSString stringWithFormat:@"cityname=%@",searchStrGBK];
     //NSString *httpArg = @"cityname=%E6%9C%9D%E9%98%B3";
     [self request: httpUrl withHttpArg: httpArg];
     [self.tableView reloadData];
-    [self.view endEditing:YES];//收回键盘
+     //NSLog(@"%@",self.cities);
 }
 -(void)request: (NSString*)httpUrl withHttpArg: (NSString*)HttpArg  {
     NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, HttpArg];
@@ -62,13 +71,14 @@
                                    NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
                                } else {
                                    //NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
-                                   //NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                                   NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                                    //NSLog(@"HttpResponseCode:%ld", responseCode);
-                                   //NSLog(@"HttpResponseBody %@",responseString);
+                                   NSLog(@"HttpResponseBody %@",responseString);
                                    //json序列化
                                    NSError *error;
                                    NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
                                    NSArray *array=(NSArray *)dict[@"retData"];
+                                   self.cities=NULL;
                                    for (NSDictionary *cityDict in array) {
                                        WeatherCity *city=[WeatherCity WeatherCityWithDict:cityDict];
                                        [self.cities addObject:city];
@@ -100,6 +110,14 @@
     }
     cell.city=city;
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.cityId=[self.cities[indexPath.row] area_id];
+    if ([self.delegate respondsToSelector:@selector(getCityID:withCityID:)]) {
+        [self.delegate getCityID:self withCityID:self.cityId];
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 @end

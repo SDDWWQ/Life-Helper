@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "LifeIndex.h"
 @interface Today : NSObject
 
 //今天日期:"2015-08-04"

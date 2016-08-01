@@ -15,7 +15,7 @@
     if (self=[super init]) {
         self.city=dict[@"city"];
         self.cityid=dict[@"cityid"];
-        Today *today=[Today TodayWeatherWithDict:dict[@"tody"]];
+        self.today=[Today TodayWeatherWithDict:dict[@"today"]];
         NSMutableArray *tempArray=[NSMutableArray array];
         for (NSDictionary *ForecastDict in dict[@"forecast"]) {
             Forecast *forecast=[Forecast ForecastWithDict:ForecastDict];

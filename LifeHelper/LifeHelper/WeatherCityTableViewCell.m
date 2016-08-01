@@ -8,7 +8,6 @@
 
 #import "WeatherCityTableViewCell.h"
 @interface WeatherCityTableViewCell()
-@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 
 @end
 @implementation WeatherCityTableViewCell
@@ -25,7 +24,11 @@
 }
 -(void)setCity:(WeatherCity *)city{
     _city=city;
-    self.cityLabel.text=[NSString stringWithFormat:@"%@省,%@市,%@区",city.province_cn,city.district_cn,city.name_cn];
-    NSLog(@"%@",self.cityLabel.text);
+    if ([city.district_cn isEqualToString:city.name_cn]) {
+        self.textLabel.text=[NSString stringWithFormat:@"%@省,%@市,%@",city.province_cn,city.district_cn,city.name_cn];
+    }
+    else{
+        self.textLabel.text=[NSString stringWithFormat:@"%@省,%@市,%@区",city.province_cn,city.district_cn,city.name_cn];
+    }
 }
 @end

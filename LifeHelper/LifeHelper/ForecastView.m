@@ -26,7 +26,7 @@
     NSString *image=weatherImgDict[forecast.type];
     self.imageView.image=[UIImage imageNamed:image];
     self.typeLabel.text=forecast.type;
-    self.tempLabel.text=[NSString stringWithFormat:@"%@~%@",forecast.lowtemp,forecast.hightemp];
+    self.tempLabel.text=[NSString stringWithFormat:@"%@~%@",forecast.hightemp,forecast.lowtemp];
     self.windLabel.text=[NSString stringWithFormat:@"%@",forecast.fengli];
     self.backgroundColor=[UIColor clearColor];//让View的背景透明
 }

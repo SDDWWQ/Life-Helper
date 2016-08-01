@@ -12,6 +12,7 @@
 -(instancetype)initWithDict:(NSDictionary *)dict{
     if (self=[super init]) {
         self.date=dict[@"date"];
+        self.week=dict[@"week"];
         self.aqi=dict[@"aqi"];
         self.curTemp=dict[@"curTemp"];
         self.fengli=dict[@"fengli"];
