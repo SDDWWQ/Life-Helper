@@ -8,8 +8,12 @@
 
 #import "WeatherDetailViewController.h"
 #import "WeatherCityTableViewController.h"
+#import "ForecastView.h"
+#import "WeatherDetailByCityID.h"
 @interface WeatherDetailViewController ()
-
+//保存未来天气的视图，用于后边赋值
+@property(nonatomic,strong)NSMutableArray *forecastWeatherViews;
+@property(nonatomic,strong)WeatherDetailByCityID *weather;
 @end
 
 @implementation WeatherDetailViewController
@@ -17,7 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //self.view.backgroundColor=[UIColor redColor];
+    NSString *httpUrl = @"http://apis.baidu.com/apistore/weatherservice/recentweathers";
+    NSString *httpArg = @"cityname=%E5%8C%97%E4%BA%AC&cityid=101010100";
+    [self request: httpUrl withHttpArg: httpArg];
     //添加背景图片控件
     UIImageView *backgroudImageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"weather_background"]];
     backgroudImageView.frame=CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
@@ -26,7 +32,11 @@
     self.navigationItem.title=@"天气";
     UIBarButtonItem *cityItem=[[UIBarButtonItem alloc]initWithTitle:@"城市" style:UIBarButtonItemStylePlain target:self action:@selector(jump2WeatherCity)];
     self.navigationItem.rightBarButtonItem=cityItem;
+    // 添加Forecast
+    [self setupForecast];
     
+    // 设置天气数据
+    [self setupForecastWeather];
 }
 -(void)jump2WeatherCity{
     WeatherCityTableViewController *city=[[WeatherCityTableViewController alloc]init];
@@ -46,5 +56,49 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)request: (NSString*)httpUrl withHttpArg: (NSString*)HttpArg  {
+    NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, HttpArg];
+    NSURL *url = [NSURL URLWithString: urlStr];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
+    [request setHTTPMethod: @"GET"];
+    [request addValue: @"d2dfec542a6c211fa932b11248360ef9" forHTTPHeaderField: @"apikey"];
+    NSData *data=[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];                                   NSError *error;
+                                   NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+                                   dict=dict[@"retData"];
+                                   WeatherDetailByCityID *weather=[WeatherDetailByCityID WeatherDetailWithDict:dict];
+                                   self.weather=weather;
+                                   //NSLog(@"%@",self.weather);
+}
+//懒加载
+-(NSMutableArray*)forecastWeatherViews{
+    if (!_forecastWeatherViews) {
+        _forecastWeatherViews=[NSMutableArray array];
+    }
+    return _forecastWeatherViews;
+}
+-(void)setupForecast{
+    
+    CGFloat forecastX=15;
+    CGFloat forecastY=self.view.frame.size.height-200;
+    CGFloat forecastW=70;
+    CGFloat forecastH=150;
+    CGFloat margin=5;
+    for (int i=0; i<4; i++) {
+        ForecastView *forecastView=[ForecastView forecastView];
+        forecastX=10+i*(forecastW+margin);
+        forecastView.frame=CGRectMake(forecastX, forecastY, forecastW, forecastH);
+        [self.forecastWeatherViews addObject:forecastView];
+    }
+}
+-(void)setupForecastWeather{
+    for (int i=0; i<self.forecastWeatherViews.count; i++) {
+        NSLog(@"%@",[self.weather.forecast[i] fengxiang]);
+        ForecastView *forecastView=self.forecastWeatherViews[i];
+        forecastView.forecast=self.weather.forecast[i];
+        //forecastView.timeLabel.text=[self.weather.forecast[i] fengxiang];
+        [self.view addSubview:forecastView];
+    }
+}
 
 @end

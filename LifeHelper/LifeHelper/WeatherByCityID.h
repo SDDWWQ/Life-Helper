@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface WeatherByCityID : NSObject
-////城市:"北京"
+//城市:"北京"
 @property(nonatomic,copy)NSString *city;
 //城市拼音:"beijing"
 @property(nonatomic,copy)NSString *pinyin;

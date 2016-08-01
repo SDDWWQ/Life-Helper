@@ -25,6 +25,7 @@
     NSString *httpUrl = @"http://apis.baidu.com/apistore/weatherservice/cityid";
     NSString *httpArg = @"cityid=101010100";
     [self request: httpUrl withHttpArg: httpArg];//加载天气信息
+    
     UIView *weatherView=[[UIView alloc]init];
     weatherView.frame=CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height*0.25);
     //天气整个大button

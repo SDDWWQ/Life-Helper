@@ -19,15 +19,9 @@
     // Drawing code
 }
 */
-- (void)awakeFromNib {
-    NSLog(@"dddd");
-    [super awakeFromNib];
-    // Initialization code
-    self.cityLabel.text=self.city;
-}
 -(void)setCity:(NSString *)city{
     _city=city;
-    //[[NSBundle mainBundle]loadNibNamed:@"WeatherXibView" owner:nil options:nil];
+    self.cityLabel.text=self.city;
 
 }
 +(instancetype)weatherXibView{
