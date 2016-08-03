@@ -28,10 +28,10 @@
 }
 -(void)setNews:(NewsModel *)news{
     _news=news;
-    NSLog(@"%@",news.image_url);
-    if(!news.image_url){
+    
+    //如果没有图片，改变图片约束
+    if([news.image_url isEqual:@""]){
         //设置图片宽的约束是0
-        NSLog(@"无图片");
         self.pictureWidthConstraint.constant=0;
     }else{
         self.pictureWidthConstraint.constant=80;
