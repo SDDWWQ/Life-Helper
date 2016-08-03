@@ -9,7 +9,7 @@
 #import "NewsViewController.h"
 
 @interface NewsViewController ()
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+//@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
@@ -19,8 +19,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://3g.163.com/touch/"]];
-    NSURL *url=[NSURL URLWithString:@"http://3g.163.com/touch/"];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
+    UIWebView *webView=[[UIWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [self.view addSubview:webView];
+    NSURL *url=[NSURL URLWithString:self.url];
+    [webView loadRequest:[NSURLRequest requestWithURL:url]];
 
 }
 

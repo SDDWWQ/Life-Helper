@@ -102,6 +102,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="R3F-6I-zwQ" firstAttribute="leading" secondItem="ugK-l5-oU5" secondAttribute="trailing" constant="5" id="Bwx-eZ-lba"/>
+                                        <constraint firstAttribute="bottom" secondItem="R3F-6I-zwQ" secondAttribute="bottom" constant="13.5" id="OEY-QD-5qg"/>
                                         <constraint firstItem="R3F-6I-zwQ" firstAttribute="top" secondItem="FxD-EX-VTX" secondAttribute="bottom" constant="5" id="S8S-BP-S78"/>
                                         <constraint firstItem="FxD-EX-VTX" firstAttribute="top" secondItem="2Xj-PU-coT" secondAttribute="top" constant="5" id="dK2-Aj-4yR"/>
                                         <constraint firstItem="FxD-EX-VTX" firstAttribute="leading" secondItem="ugK-l5-oU5" secondAttribute="trailing" constant="5" id="ghp-38-HMN"/>
@@ -114,6 +115,7 @@
                                 <connections>
                                     <outlet property="detailLabel" destination="R3F-6I-zwQ" id="18N-jV-pdg"/>
                                     <outlet property="pictureView" destination="ugK-l5-oU5" id="aie-3p-XaH"/>
+                                    <outlet property="pictureWidthConstraint" destination="bMB-8d-kUL" id="YfG-EL-Rrn"/>
                                     <outlet property="titleLabel" destination="FxD-EX-VTX" id="60S-ws-YuJ"/>
                                 </connections>
                             </tableViewCell>

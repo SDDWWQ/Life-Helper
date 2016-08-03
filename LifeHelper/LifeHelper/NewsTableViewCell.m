@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *pictureView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *pictureWidthConstraint;
 @end
 @implementation NewsTableViewCell
 
@@ -27,8 +28,16 @@
 }
 -(void)setNews:(NewsModel *)news{
     _news=news;
-    NSURL *imgUrl=[NSURL URLWithString:news.image_url];
-    [self.pictureView sd_setImageWithURL:imgUrl];
+    NSLog(@"%@",news.image_url);
+    if(!news.image_url){
+        //设置图片宽的约束是0
+        NSLog(@"无图片");
+        self.pictureWidthConstraint.constant=0;
+    }else{
+        self.pictureWidthConstraint.constant=80;
+        NSURL *imgUrl=[NSURL URLWithString:news.image_url];
+        [self.pictureView sd_setImageWithURL:imgUrl];
+    }
     self.titleLabel.text=self.news.title;
     self.detailLabel.text=self.news.abstract;
 }
