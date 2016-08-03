@@ -165,6 +165,11 @@
 }
 
 -(void)back{
+    //逆传
+    if(self.CityBlock){
+        self.CityBlock(self.cityId);
+    }
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 -(void)jump2WeatherCity{
@@ -195,7 +200,7 @@
 }
 #pragma mark-WeatherCityTableViewController的代理方法
 -(void)getCityID:(WeatherCityTableViewController *)weatherCity withCityID:(NSString *)cityID{
-    //self.cityId=cityID;
+    self.cityId=cityID;
     NSString *httpUrl = @"http://apis.baidu.com/apistore/weatherservice/recentweathers";
     NSString *httpArg = [NSString stringWithFormat: @"cityname=%%E5%%8C%%97%%E4%%BA%%AC&cityid=%@",cityID];
     //存偏好设置preference

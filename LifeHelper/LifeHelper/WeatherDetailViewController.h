@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WeatherDetailViewController : UIViewController
-
+@property(nonatomic,copy)void (^CityBlock)(NSString *);
 @end
