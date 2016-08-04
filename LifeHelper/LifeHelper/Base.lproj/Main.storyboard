@@ -132,47 +132,6 @@
             </objects>
             <point key="canvasLocation" x="167" y="956"/>
         </scene>
-        <!--新闻-->
-        <scene sceneID="aWA-dG-5pn">
-            <objects>
-                <viewController id="FQp-LL-FEF" customClass="NewsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pVU-Eu-XEY"/>
-                        <viewControllerLayoutGuide type="bottom" id="5aA-as-Eot"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UNl-rq-esM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g2F-6c-VNv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="5aA-as-Eot" firstAttribute="top" secondItem="g2F-6c-VNv" secondAttribute="bottom" id="DQt-IZ-S1T"/>
-                            <constraint firstItem="g2F-6c-VNv" firstAttribute="leading" secondItem="UNl-rq-esM" secondAttribute="leading" id="GD8-hq-hhg"/>
-                            <constraint firstItem="g2F-6c-VNv" firstAttribute="top" secondItem="UNl-rq-esM" secondAttribute="top" id="ORi-4V-tqi"/>
-                            <constraint firstAttribute="trailing" secondItem="g2F-6c-VNv" secondAttribute="trailing" id="fbM-XO-loZ"/>
-                            <constraint firstAttribute="bottom" secondItem="g2F-6c-VNv" secondAttribute="bottom" id="xZf-uj-hoC"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="DQt-IZ-S1T"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" title="新闻" id="d7B-Tk-QKd"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="webView" destination="g2F-6c-VNv" id="N1u-8f-L8W"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5ze-Xz-x5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="909" y="970"/>
-        </scene>
         <!--团购-->
         <scene sceneID="Xhb-LW-1od">
             <objects>
@@ -184,7 +143,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="KSS-Jy-drw" kind="relationship" relationship="rootViewController" id="0lh-XC-Kf3"/>
+                        <segue destination="6xw-nF-P7B" kind="relationship" relationship="rootViewController" id="V5m-GN-hDK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2WG-lX-RAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -192,16 +151,53 @@
             <point key="canvasLocation" x="-225" y="1566"/>
         </scene>
         <!--团购-->
+        <scene sceneID="cDi-ke-Zjq">
+            <objects>
+                <viewController id="6xw-nF-P7B" customClass="GPCategoryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="diA-2o-koP"/>
+                        <viewControllerLayoutGuide type="bottom" id="tzx-DD-yAQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Nc-de-qlx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2n-2W-k3R">
+                                <rect key="frame" x="0.0" y="64" width="320" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="DPO-lv-72u"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="s2n-2W-k3R" secondAttribute="trailing" id="XeK-3n-rXG"/>
+                            <constraint firstItem="s2n-2W-k3R" firstAttribute="top" secondItem="diA-2o-koP" secondAttribute="bottom" id="ahw-ns-Ygw"/>
+                            <constraint firstItem="s2n-2W-k3R" firstAttribute="leading" secondItem="0Nc-de-qlx" secondAttribute="leading" id="x90-N1-772"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="团购" id="HeV-jd-el7"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="categoryView" destination="s2n-2W-k3R" id="zjt-yM-FFD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ae8-jH-URW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="167" y="1566"/>
+        </scene>
+        <!--团购-->
         <scene sceneID="uWG-eJ-kRk">
             <objects>
-                <tableViewController id="KSS-Jy-drw" customClass="GroupPurchaseTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="GPTableView" id="KSS-Jy-drw" customClass="GroupPurchaseTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="129" sectionHeaderHeight="28" sectionFooterHeight="28" id="hhL-nw-Kk3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Good_Cell" rowHeight="129" id="uGF-ec-kXw" customClass="GPTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="320" height="129"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="129"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uGF-ec-kXw" id="5Xw-Pd-KAM">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="128.5"/>
@@ -288,7 +284,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAI-np-nV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110" y="1566"/>
+            <point key="canvasLocation" x="591" y="1542"/>
         </scene>
         <!--微博-->
         <scene sceneID="igc-XI-CHU">
@@ -318,7 +314,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJS-gG-XEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="530" y="1586"/>
+            <point key="canvasLocation" x="556" y="1948"/>
         </scene>
         <!--Home Tab Bar Controller-->
         <scene sceneID="YUc-jd-BEZ">

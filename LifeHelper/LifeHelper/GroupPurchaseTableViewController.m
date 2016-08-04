@@ -24,6 +24,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
     NSString *httpUrl = @"http://apis.baidu.com/baidunuomi/openapi/shopdeals";
     NSString *httpArg = @"shop_id=1745896";
     [self request: httpUrl withHttpArg: httpArg];

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface GroupPurchaseTableViewController : UITableViewController
-
+@property(nonatomic,strong)NSNumber *cat_id;
 @end
