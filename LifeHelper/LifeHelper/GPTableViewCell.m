@@ -28,7 +28,7 @@
 }
 -(void)setGood:(Goods *)good{
     _good=good;
-    self.titleLabel.text=good.title;
+    self.titleLabel.text=good.min_title;
     int price=[good.current_price floatValue];
     self.priceLabel.text=[NSString stringWithFormat:@"¥%d",price/100];
     self.sellCountLabel.text=[NSString stringWithFormat:@"已售：%@",good.sale_num];

@@ -11,7 +11,7 @@
 @interface Goods : NSObject
 //团单id
 @property(nonatomic,strong)NSNumber *deal_id;
-//图片链接
+//大图链接
 @property(nonatomic,copy)NSString *image;
 //小图链接
 @property(nonatomic,copy)NSString *tiny_image;

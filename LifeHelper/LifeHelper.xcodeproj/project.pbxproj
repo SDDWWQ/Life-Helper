@@ -75,7 +75,9 @@
 		7EB1BF5A1D52F0C300464DF8 /* GPCategories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7EB1BF591D52F0C300464DF8 /* GPCategories.plist */; };
 		7EB1BF5D1D52F84100464DF8 /* GPCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB1BF5C1D52F84100464DF8 /* GPCategory.m */; };
 		7EB1BF601D52F85300464DF8 /* GPSubCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB1BF5F1D52F85300464DF8 /* GPSubCategory.m */; };
-		7EB1BF621D531EFA00464DF8 /* GPTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EB1BF611D531EFA00464DF8 /* GPTableView.xib */; };
+		7EB1BF651D5326EE00464DF8 /* GPShop.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB1BF641D5326EE00464DF8 /* GPShop.m */; };
+		7EB1BF671D5358FF00464DF8 /* GPHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EB1BF661D5358FF00464DF8 /* GPHeaderView.xib */; };
+		7EB1BF6A1D53591700464DF8 /* GPHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB1BF691D53591700464DF8 /* GPHeaderView.m */; };
 		7EEB1F831D4C4B1000272BC4 /* HomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEB1F821D4C4B1000272BC4 /* HomeTabBarController.m */; };
 		7EEB1F891D4C914300272BC4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EEB1F881D4C914300272BC4 /* HomeViewController.m */; };
 		7EEB1F901D4C965900272BC4 /* WeatherXibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EEB1F8F1D4C965900272BC4 /* WeatherXibView.xib */; };
@@ -237,7 +239,11 @@
 		7EB1BF5C1D52F84100464DF8 /* GPCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPCategory.m; sourceTree = "<group>"; };
 		7EB1BF5E1D52F85300464DF8 /* GPSubCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSubCategory.h; sourceTree = "<group>"; };
 		7EB1BF5F1D52F85300464DF8 /* GPSubCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSubCategory.m; sourceTree = "<group>"; };
-		7EB1BF611D531EFA00464DF8 /* GPTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPTableView.xib; sourceTree = "<group>"; };
+		7EB1BF631D5326EE00464DF8 /* GPShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPShop.h; sourceTree = "<group>"; };
+		7EB1BF641D5326EE00464DF8 /* GPShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPShop.m; sourceTree = "<group>"; };
+		7EB1BF661D5358FF00464DF8 /* GPHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPHeaderView.xib; sourceTree = "<group>"; };
+		7EB1BF681D53591700464DF8 /* GPHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPHeaderView.h; sourceTree = "<group>"; };
+		7EB1BF691D53591700464DF8 /* GPHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPHeaderView.m; sourceTree = "<group>"; };
 		7EEB1F811D4C4B1000272BC4 /* HomeTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTabBarController.h; sourceTree = "<group>"; };
 		7EEB1F821D4C4B1000272BC4 /* HomeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTabBarController.m; sourceTree = "<group>"; };
 		7EEB1F871D4C914300272BC4 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -391,7 +397,6 @@
 				7EB1BF531D52E3E200464DF8 /* GPCategoryViewController.m */,
 				7E02D3891D463B7D001F99FE /* GroupPurchaseTableViewController.h */,
 				7E02D38A1D463B7D001F99FE /* GroupPurchaseTableViewController.m */,
-				7EB1BF611D531EFA00464DF8 /* GPTableView.xib */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -405,6 +410,8 @@
 				7EB1BF5C1D52F84100464DF8 /* GPCategory.m */,
 				7EB1BF5E1D52F85300464DF8 /* GPSubCategory.h */,
 				7EB1BF5F1D52F85300464DF8 /* GPSubCategory.m */,
+				7EB1BF631D5326EE00464DF8 /* GPShop.h */,
+				7EB1BF641D5326EE00464DF8 /* GPShop.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -417,6 +424,9 @@
 				7EB1BF4D1D52DDF600464DF8 /* GroupPurchaseCategory.xib */,
 				7EB1BF4F1D52DF8500464DF8 /* GPCategoryView.h */,
 				7EB1BF501D52DF8500464DF8 /* GPCategoryView.m */,
+				7EB1BF661D5358FF00464DF8 /* GPHeaderView.xib */,
+				7EB1BF681D53591700464DF8 /* GPHeaderView.h */,
+				7EB1BF691D53591700464DF8 /* GPHeaderView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -785,11 +795,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EB1BF671D5358FF00464DF8 /* GPHeaderView.xib in Resources */,
 				7E8421EB1D4E276200AB51B6 /* Forecast.xib in Resources */,
 				7EF597051D4F35E8009E1E5C /* LifeSearch.xib in Resources */,
 				7EEB1F901D4C965900272BC4 /* WeatherXibView.xib in Resources */,
 				7EB1BF5A1D52F0C300464DF8 /* GPCategories.plist in Resources */,
-				7EB1BF621D531EFA00464DF8 /* GPTableView.xib in Resources */,
 				7EB1BF4E1D52DDF600464DF8 /* GroupPurchaseCategory.xib in Resources */,
 				7E02D35B1D460A47001F99FE /* LaunchScreen.storyboard in Resources */,
 				7E8421DA1D4DCD0800AB51B6 /* WeatherImage.plist in Resources */,
@@ -864,6 +874,7 @@
 				7EB1BF601D52F85300464DF8 /* GPSubCategory.m in Sources */,
 				7E02D3941D46418C001F99FE /* GPTableViewCell.m in Sources */,
 				7E13A1211D520981001AF866 /* MJRefreshComponent.m in Sources */,
+				7EB1BF6A1D53591700464DF8 /* GPHeaderView.m in Sources */,
 				7E427E271D484C320031F771 /* SDWebImagePrefetcher.m in Sources */,
 				7E8421DD1D4DD6EC00AB51B6 /* WeatherDetailByCityID.m in Sources */,
 				7E13A1241D520981001AF866 /* MJRefreshAutoGifFooter.m in Sources */,
@@ -883,6 +894,7 @@
 				7E13A1311D520981001AF866 /* UIScrollView+MJRefresh.m in Sources */,
 				7E9B26FD1D4CC7EE005CCE11 /* WeatherByCityID.m in Sources */,
 				7E02D3901D463EE6001F99FE /* Goods.m in Sources */,
+				7EB1BF651D5326EE00464DF8 /* GPShop.m in Sources */,
 				7EEC0D211D4715640020164D /* WeatherCityTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
