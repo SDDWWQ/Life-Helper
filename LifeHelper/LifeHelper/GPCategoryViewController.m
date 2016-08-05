@@ -54,6 +54,7 @@
         GPCategory *cat=self.categories[i];
         categoryView.title=cat.cat_name;
         categoryView.picture=cat.icon;
+        categoryView.cat_id=cat.cat_id;
         categoryView.delegate=self;
         [self.categoryView addSubview:categoryView];
     }
@@ -63,6 +64,7 @@
         GPCategory *cat=self.categories[i];
         categoryView.title=cat.cat_name;
         categoryView.picture=cat.icon;
+        categoryView.cat_id=cat.cat_id;
         categoryView.delegate=self;
         [self.categoryView addSubview:categoryView];
     }
@@ -76,6 +78,7 @@
     //由storyboard根据storyBoardID来获取我们要切换的视图,当storyboard中的视图前面不与任何界面相关联时，必须以这种方式从storyboard加载视图，不能直接从控制器跳转。
     GroupPurchaseTableViewController *GPtcv= [story instantiateViewControllerWithIdentifier:@"GPTableView"];
     GPtcv.cat_id=cat_id;//传递一级类别编号
+    NSLog(@"cat_id=%@",cat_id);
     [self.navigationController pushViewController:GPtcv animated:YES];
 }
 - (void)didReceiveMemoryWarning {

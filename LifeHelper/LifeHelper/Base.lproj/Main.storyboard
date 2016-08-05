@@ -181,6 +181,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="categoryView" destination="s2n-2W-k3R" id="zjt-yM-FFD"/>
+                        <segue destination="KSS-Jy-drw" kind="push" id="pi1-cm-sqV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ae8-jH-URW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -197,7 +198,7 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Good_Cell" rowHeight="129" id="uGF-ec-kXw" customClass="GPTableViewCell">
-                                <rect key="frame" x="0.0" y="49.5" width="320" height="129"/>
+                                <rect key="frame" x="0.0" y="113.5" width="320" height="129"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uGF-ec-kXw" id="5Xw-Pd-KAM">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
@@ -284,37 +285,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAI-np-nV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="595" y="1468"/>
-        </scene>
-        <!--微博-->
-        <scene sceneID="igc-XI-CHU">
-            <objects>
-                <tableViewController id="s6m-HF-GnO" customClass="MicroBlogTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DXY-Hp-ZRF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="F78-4R-Iw8">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F78-4R-Iw8" id="1Le-7V-d0h">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="s6m-HF-GnO" id="EwG-Qq-Kzj"/>
-                            <outlet property="delegate" destination="s6m-HF-GnO" id="gPi-Uj-qXn"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="微博" id="Rgz-fA-DQd"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aJS-gG-XEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="585" y="2074"/>
+            <point key="canvasLocation" x="517" y="1566"/>
         </scene>
         <!--Home Tab Bar Controller-->
         <scene sceneID="YUc-jd-BEZ">
@@ -355,10 +326,10 @@
             </objects>
             <point key="canvasLocation" x="-219" y="-373"/>
         </scene>
-        <!--Table View Controller-->
+        <!--More Table View Controller-->
         <scene sceneID="A6U-HQ-qBg">
             <objects>
-                <tableViewController id="QWW-IA-l5T" sceneMemberID="viewController">
+                <tableViewController id="QWW-IA-l5T" customClass="MoreTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jdc-tZ-4Po">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

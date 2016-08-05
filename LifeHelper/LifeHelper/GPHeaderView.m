@@ -40,6 +40,7 @@
 }
 +(instancetype)headerView{
     return [[NSBundle mainBundle]loadNibNamed:@"GPHeaderView" owner:nil options:nil][0];
+
 }
 - (IBAction)clickHeader:(id)sender {
 }

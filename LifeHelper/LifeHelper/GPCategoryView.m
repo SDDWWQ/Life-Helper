@@ -40,6 +40,7 @@
 - (IBAction)btnClick:(id)sender {
     if ([self.delegate respondsToSelector:@selector(jumpToGPTableView:withCatId:)]) {
         [self.delegate jumpToGPTableView:self withCatId:self.cat_id];
+        NSLog(@"cat_id=%@",self.cat_id);
     }
 }
 @end

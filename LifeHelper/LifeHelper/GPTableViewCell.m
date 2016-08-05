@@ -29,7 +29,7 @@
 -(void)setGood:(Goods *)good{
     _good=good;
     self.titleLabel.text=good.min_title;
-    int price=[good.current_price floatValue];
+    int price=[good.promotion_price floatValue];
     self.priceLabel.text=[NSString stringWithFormat:@"¥%d",price/100];
     self.sellCountLabel.text=[NSString stringWithFormat:@"已售：%@",good.sale_num];
     
@@ -44,7 +44,5 @@
     UIImage *defaultAvatar=[UIImage imageNamed:@"defaultAvatar.jpg"];//默认图片
     //格式为[UIImageView属性 sd_setImageWithURL:图片url placeholderImage:UIImage格式的默认图片];
     [self.pictureView sd_setImageWithURL:pictureUrl placeholderImage:defaultAvatar];
-
-
 }
 @end

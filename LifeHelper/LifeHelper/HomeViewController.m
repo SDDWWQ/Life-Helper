@@ -22,6 +22,7 @@
 @property(nonatomic,weak) UILabel *windStrengthLabel;
 @property(nonatomic,weak) UIImageView *weatherImageView;
 @property(nonatomic,weak) UILabel *weatherLabel;
+
 @end
 
 @implementation HomeViewController
@@ -30,11 +31,6 @@
     [super viewDidLoad];
     //加载天气数据
     [self loadData];
-    
-
-    
-   
-    
 }
 //懒加载
 -(WeatherByCityID *)weather{
