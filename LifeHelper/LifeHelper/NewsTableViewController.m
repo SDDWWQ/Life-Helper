@@ -11,6 +11,7 @@
 #import "NewsTableViewCell.h"
 #import "NewsViewController.h"
 #import "MJRefresh.h"
+#import "SVProgressHUD.h"
 //#import "MJExtension.h"
 @interface NewsTableViewController ()<UITableViewDataSource>
 
@@ -21,8 +22,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //提示框插件
+    [SVProgressHUD setDefaultMaskType: SVProgressHUDMaskTypeBlack];//灰色背景效果
+    [SVProgressHUD showWithStatus:@"正在加载"];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        //取消提示框
+        [SVProgressHUD dismiss];
+        });
     [self loadData];
-    
     //必须设置自动计算高度，否则cell的高度和storyboard中的高度一样，不会自动调整
     // 1.设置自动计算高度
     self.tableView.rowHeight=UITableViewAutomaticDimension;
@@ -81,7 +89,7 @@
     [request addValue: @"d2dfec542a6c211fa932b11248360ef9" forHTTPHeaderField: @"apikey"];
      NSData *data=[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];                                                                    NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                                    //NSLog(@"HttpResponseCode:%ld", responseCode);
-                                   NSLog(@"HttpResponseBody %@",responseString);
+                                   //NSLog(@"HttpResponseBody %@",responseString);
                                    
                                    NSError *error;
                                    //json反序列化
@@ -105,7 +113,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"%ld",self.newsArray.count);
+    //NSLog(@"%ld",self.newsArray.count);
     return self.newsArray.count;
 }
 

@@ -42,13 +42,16 @@
 -(void)loadData{
     NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
     self.cityId=[ud objectForKey:@"weathercityID"];
+    //NSLog(@"%@",_cityId);
     if (self.cityId==nil) {
+        //NSLog(@"wuwuwuw");
         self.cityId=@"101010100";
     }
     
     // Do any additional setup after loading the view.
     NSString *httpUrl = @"http://apis.baidu.com/apistore/weatherservice/cityid";
     NSString *httpArg = [NSString stringWithFormat:@"cityid=%@",self.cityId];
+
     [self request: httpUrl withHttpArg: httpArg];//加载天气信息
     CGFloat margin=10;
     UIView *weatherView=[[UIView alloc]init];
@@ -223,15 +226,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

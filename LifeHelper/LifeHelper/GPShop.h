@@ -35,6 +35,7 @@
 @property(nonatomic,copy)NSString *tiny_image;
 //团单
 @property(nonatomic,strong)NSArray *deals;
+@property(nonatomic,assign,getter=isVisible)BOOL visible;
 -(instancetype)initWithDict:(NSDictionary *)dict;
 +(instancetype)ShopWithDict:(NSDictionary *)dict;
 @end

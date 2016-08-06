@@ -24,6 +24,8 @@
 		7E10CB811D54656F0090D816 /* MoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E10CB801D54656F0090D816 /* MoreTableViewController.m */; };
 		7E10CB871D54712C0090D816 /* GPCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E10CB861D54712C0090D816 /* GPCities.plist */; };
 		7E10CB8A1D5477F00090D816 /* GPDealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E10CB891D5477F00090D816 /* GPDealViewController.m */; };
+		7E10CB8D1D54B2190090D816 /* GPFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E10CB8C1D54B2190090D816 /* GPFooterView.m */; };
+		7E10CB8F1D54B2270090D816 /* GPFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E10CB8E1D54B2270090D816 /* GPFooterView.xib */; };
 		7E13A0E31D51AE3E001AF866 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E13A0DC1D51AE3E001AF866 /* NewsTableViewCell.m */; };
 		7E13A0E41D51AE3E001AF866 /* NewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E13A0DE1D51AE3E001AF866 /* NewsTableViewController.m */; };
 		7E13A0E61D51AE3E001AF866 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E13A0E21D51AE3E001AF866 /* NewsViewController.m */; };
@@ -64,6 +66,12 @@
 		7E427E2C1D484C320031F771 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E427E1A1D484C320031F771 /* UIImageView+HighlightedWebCache.m */; };
 		7E427E2D1D484C320031F771 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E427E1C1D484C320031F771 /* UIImageView+WebCache.m */; };
 		7E427E2E1D484C320031F771 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E427E1E1D484C320031F771 /* UIView+WebCacheOperation.m */; };
+		7E5786EC1D559D19004FCC4B /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5786EB1D559D19004FCC4B /* AboutUsViewController.m */; };
+		7E5787491D55A78C004FCC4B /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5787401D55A78C004FCC4B /* SVIndefiniteAnimatedView.m */; };
+		7E57874A1D55A78C004FCC4B /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5787421D55A78C004FCC4B /* SVProgressAnimatedView.m */; };
+		7E57874B1D55A78C004FCC4B /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7E5787441D55A78C004FCC4B /* SVProgressHUD.bundle */; };
+		7E57874C1D55A78C004FCC4B /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5787461D55A78C004FCC4B /* SVProgressHUD.m */; };
+		7E57874D1D55A78C004FCC4B /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E5787481D55A78C004FCC4B /* SVRadialGradientLayer.m */; };
 		7E8421DA1D4DCD0800AB51B6 /* WeatherImage.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E8421D91D4DCD0800AB51B6 /* WeatherImage.plist */; };
 		7E8421DD1D4DD6EC00AB51B6 /* WeatherDetailByCityID.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8421DC1D4DD6EC00AB51B6 /* WeatherDetailByCityID.m */; };
 		7E8421E01D4E149F00AB51B6 /* Today.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E8421DF1D4E149F00AB51B6 /* Today.m */; };
@@ -145,6 +153,9 @@
 		7E10CB861D54712C0090D816 /* GPCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GPCities.plist; sourceTree = "<group>"; };
 		7E10CB881D5477F00090D816 /* GPDealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPDealViewController.h; sourceTree = "<group>"; };
 		7E10CB891D5477F00090D816 /* GPDealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPDealViewController.m; sourceTree = "<group>"; };
+		7E10CB8B1D54B2190090D816 /* GPFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPFooterView.h; sourceTree = "<group>"; };
+		7E10CB8C1D54B2190090D816 /* GPFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPFooterView.m; sourceTree = "<group>"; };
+		7E10CB8E1D54B2270090D816 /* GPFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPFooterView.xib; sourceTree = "<group>"; };
 		7E13A0DB1D51AE3E001AF866 /* NewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
 		7E13A0DC1D51AE3E001AF866 /* NewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
 		7E13A0DD1D51AE3E001AF866 /* NewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsTableViewController.h; sourceTree = "<group>"; };
@@ -226,6 +237,18 @@
 		7E427E1C1D484C320031F771 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		7E427E1D1D484C320031F771 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		7E427E1E1D484C320031F771 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		7E5786EA1D559D19004FCC4B /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
+		7E5786EB1D559D19004FCC4B /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
+		7E57873F1D55A78C004FCC4B /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		7E5787401D55A78C004FCC4B /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		7E5787411D55A78C004FCC4B /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		7E5787421D55A78C004FCC4B /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		7E5787431D55A78C004FCC4B /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		7E5787441D55A78C004FCC4B /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		7E5787451D55A78C004FCC4B /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		7E5787461D55A78C004FCC4B /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		7E5787471D55A78C004FCC4B /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		7E5787481D55A78C004FCC4B /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		7E8421D91D4DCD0800AB51B6 /* WeatherImage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WeatherImage.plist; sourceTree = "<group>"; };
 		7E8421DB1D4DD6EC00AB51B6 /* WeatherDetailByCityID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDetailByCityID.h; sourceTree = "<group>"; };
 		7E8421DC1D4DD6EC00AB51B6 /* WeatherDetailByCityID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDetailByCityID.m; sourceTree = "<group>"; };
@@ -448,6 +471,9 @@
 				7EB1BF661D5358FF00464DF8 /* GPHeaderView.xib */,
 				7EB1BF681D53591700464DF8 /* GPHeaderView.h */,
 				7EB1BF691D53591700464DF8 /* GPHeaderView.m */,
+				7E10CB8B1D54B2190090D816 /* GPFooterView.h */,
+				7E10CB8C1D54B2190090D816 /* GPFooterView.m */,
+				7E10CB8E1D54B2270090D816 /* GPFooterView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -486,6 +512,8 @@
 			children = (
 				7E10CB7F1D54656F0090D816 /* MoreTableViewController.h */,
 				7E10CB801D54656F0090D816 /* MoreTableViewController.m */,
+				7E5786EA1D559D19004FCC4B /* AboutUsViewController.h */,
+				7E5786EB1D559D19004FCC4B /* AboutUsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -532,6 +560,7 @@
 		7E13A0EF1D51D54F001AF866 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				7E57873E1D55A78C004FCC4B /* SVProgressHUD */,
 				7E10CB631D545B800090D816 /* CCLocationManager */,
 				7E13A0F01D520981001AF866 /* MJRefresh */,
 				7E427DFD1D484C310031F771 /* SDWebImage */,
@@ -672,6 +701,23 @@
 				7E427E1E1D484C320031F771 /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		7E57873E1D55A78C004FCC4B /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				7E57873F1D55A78C004FCC4B /* SVIndefiniteAnimatedView.h */,
+				7E5787401D55A78C004FCC4B /* SVIndefiniteAnimatedView.m */,
+				7E5787411D55A78C004FCC4B /* SVProgressAnimatedView.h */,
+				7E5787421D55A78C004FCC4B /* SVProgressAnimatedView.m */,
+				7E5787431D55A78C004FCC4B /* SVProgressHUD-Prefix.pch */,
+				7E5787441D55A78C004FCC4B /* SVProgressHUD.bundle */,
+				7E5787451D55A78C004FCC4B /* SVProgressHUD.h */,
+				7E5787461D55A78C004FCC4B /* SVProgressHUD.m */,
+				7E5787471D55A78C004FCC4B /* SVRadialGradientLayer.h */,
+				7E5787481D55A78C004FCC4B /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 		7EEB1F7E1D4C4AA300272BC4 /* Home */ = {
@@ -861,6 +907,8 @@
 				7EF597051D4F35E8009E1E5C /* LifeSearch.xib in Resources */,
 				7EEB1F901D4C965900272BC4 /* WeatherXibView.xib in Resources */,
 				7EB1BF5A1D52F0C300464DF8 /* GPCategories.plist in Resources */,
+				7E10CB8F1D54B2270090D816 /* GPFooterView.xib in Resources */,
+				7E57874B1D55A78C004FCC4B /* SVProgressHUD.bundle in Resources */,
 				7EB1BF4E1D52DDF600464DF8 /* GroupPurchaseCategory.xib in Resources */,
 				7E02D35B1D460A47001F99FE /* LaunchScreen.storyboard in Resources */,
 				7E8421DA1D4DCD0800AB51B6 /* WeatherImage.plist in Resources */,
@@ -901,6 +949,7 @@
 				7E427E2B1D484C320031F771 /* UIImage+WebP.m in Sources */,
 				7E13A1271D520981001AF866 /* MJRefreshBackGifFooter.m in Sources */,
 				7E427E281D484C320031F771 /* UIButton+WebCache.m in Sources */,
+				7E10CB8D1D54B2190090D816 /* GPFooterView.m in Sources */,
 				7E8421E31D4E17A200AB51B6 /* LifeIndex.m in Sources */,
 				7E13A1281D520981001AF866 /* MJRefreshBackNormalFooter.m in Sources */,
 				7E427E251D484C320031F771 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -911,11 +960,13 @@
 				7EEC0D291D471DF80020164D /* WeatherCityTableViewCell.m in Sources */,
 				7E13A1231D520981001AF866 /* MJRefreshHeader.m in Sources */,
 				7E13A0ED1D51AF89001AF866 /* NewsModel.m in Sources */,
+				7E57874D1D55A78C004FCC4B /* SVRadialGradientLayer.m in Sources */,
 				7E427E231D484C320031F771 /* SDWebImageDecoder.m in Sources */,
 				7E02D3831D463449001F99FE /* MicroBlogTableViewController.m in Sources */,
 				7E13A1221D520981001AF866 /* MJRefreshFooter.m in Sources */,
 				7EB1BF541D52E3E200464DF8 /* GPCategoryViewController.m in Sources */,
 				7E427E2C1D484C320031F771 /* UIImageView+HighlightedWebCache.m in Sources */,
+				7E57874A1D55A78C004FCC4B /* SVProgressAnimatedView.m in Sources */,
 				7E02D3501D460A47001F99FE /* AppDelegate.m in Sources */,
 				7E427E241D484C320031F771 /* SDWebImageDownloader.m in Sources */,
 				7EEB1F831D4C4B1000272BC4 /* HomeTabBarController.m in Sources */,
@@ -930,9 +981,11 @@
 				7E13A11F1D520981001AF866 /* MJRefreshAutoFooter.m in Sources */,
 				7E10CB771D545B800090D816 /* CCLocationManager.m in Sources */,
 				7EB1BF5D1D52F84100464DF8 /* GPCategory.m in Sources */,
+				7E5786EC1D559D19004FCC4B /* AboutUsViewController.m in Sources */,
 				7E13A1291D520981001AF866 /* MJRefreshBackStateFooter.m in Sources */,
 				7E13A0E41D51AE3E001AF866 /* NewsTableViewController.m in Sources */,
 				7EF597081D4F3602009E1E5C /* LifeSearchView.m in Sources */,
+				7E57874C1D55A78C004FCC4B /* SVProgressHUD.m in Sources */,
 				7E427E2A1D484C320031F771 /* UIImage+MultiFormat.m in Sources */,
 				7E13A1251D520981001AF866 /* MJRefreshAutoNormalFooter.m in Sources */,
 				7EB1BF601D52F85300464DF8 /* GPSubCategory.m in Sources */,
@@ -962,6 +1015,7 @@
 				7E02D3901D463EE6001F99FE /* Goods.m in Sources */,
 				7EB1BF651D5326EE00464DF8 /* GPShop.m in Sources */,
 				7EEC0D211D4715640020164D /* WeatherCityTableViewController.m in Sources */,
+				7E5787491D55A78C004FCC4B /* SVIndefiniteAnimatedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

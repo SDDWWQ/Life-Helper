@@ -75,7 +75,7 @@
     [request addValue: @"d2dfec542a6c211fa932b11248360ef9" forHTTPHeaderField: @"apikey"];
     NSData *data=[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"HttpResponseBody %@",responseString);
+    //NSLog(@"HttpResponseBody %@",responseString);
     NSError *error;
     NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
     dict=dict[@"retData"];
@@ -201,7 +201,7 @@
 #pragma mark-WeatherCityTableViewController的代理方法
 -(void)getCityID:(WeatherCityTableViewController *)weatherCity withCityID:(NSString *)cityID{
     self.cityId=cityID;
-    NSLog(@"%@",cityID);
+    //NSLog(@"%@",cityID);
     NSString *httpUrl = @"http://apis.baidu.com/apistore/weatherservice/recentweathers";
     NSString *httpArg = [NSString stringWithFormat: @"cityname=%%E5%%8C%%97%%E4%%BA%%AC&cityid=%@",cityID];
     //存偏好设置preference

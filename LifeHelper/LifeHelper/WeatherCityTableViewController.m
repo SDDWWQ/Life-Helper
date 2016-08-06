@@ -25,11 +25,16 @@
     UITextField *searchField=[[UITextField alloc]initWithFrame:CGRectMake(0, 0, 200, 35)];
     searchField.backgroundColor=[UIColor whiteColor];
     searchField.layer.cornerRadius=10;
+//    UIImageView *searchPic=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"eslf_icon_search_gray"]];
+//    searchPic.frame=CGRectMake(0, 0, 35, 35);
+//    [searchField.leftView addSubview:searchPic];
     self.navigationItem.titleView=searchField;
     self.searchTextField=searchField;
     //添加导航栏城市选择按钮
     UIBarButtonItem *cityItem=[[UIBarButtonItem alloc]initWithTitle:@"搜索" style:UIBarButtonItemStylePlain target:self action:@selector(searchCity)];
     self.navigationItem.rightBarButtonItem=cityItem;
+    self.tableView.tableFooterView=[[UIView alloc]init];//为了去掉空的cell下边的横线，如果有footerView空的cell下边的横线就不显示，否则显示
+
     
 }
 
