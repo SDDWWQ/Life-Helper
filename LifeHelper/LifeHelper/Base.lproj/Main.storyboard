@@ -62,13 +62,13 @@
         <scene sceneID="pXi-gC-AYY">
             <objects>
                 <tableViewController id="zE6-9D-RiS" customClass="NewsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="99" sectionHeaderHeight="28" sectionFooterHeight="28" id="Iy2-P2-am4">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="99" sectionHeaderHeight="18" sectionFooterHeight="18" id="Iy2-P2-am4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="News_Cell" rowHeight="99" id="bWZ-ag-tou" customClass="NewsTableViewCell">
-                                <rect key="frame" x="0.0" y="92" width="320" height="99"/>
+                                <rect key="frame" x="0.0" y="113.5" width="320" height="99"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bWZ-ag-tou" id="2Xj-PU-coT">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="98.5"/>
@@ -171,6 +171,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.32068462644910822" green="0.69885637764568309" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="s2n-2W-k3R" secondAttribute="trailing" id="XeK-3n-rXG"/>
                             <constraint firstItem="s2n-2W-k3R" firstAttribute="top" secondItem="diA-2o-koP" secondAttribute="bottom" id="ahw-ns-Ygw"/>
@@ -191,7 +192,7 @@
         <!--团购-->
         <scene sceneID="uWG-eJ-kRk">
             <objects>
-                <tableViewController storyboardIdentifier="GPTableView" id="KSS-Jy-drw" customClass="GroupPurchaseTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="GPTableView" hidesBottomBarWhenPushed="YES" id="KSS-Jy-drw" customClass="GroupPurchaseTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="96" sectionHeaderHeight="18" sectionFooterHeight="18" id="hhL-nw-Kk3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -474,7 +475,7 @@
         <!--About Us View Controller-->
         <scene sceneID="WSt-ed-QPY">
             <objects>
-                <viewController storyboardIdentifier="AboutUs" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n36-eh-KHm" customClass="AboutUsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutUs" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="n36-eh-KHm" customClass="AboutUsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dmg-ys-qiq"/>
                         <viewControllerLayoutGuide type="bottom" id="udF-b6-7Ga"/>

@@ -34,7 +34,7 @@
 //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 //    WeatherDetailViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"WeatherDetailView"];
 //    [self.navigationController pushViewController:vc animated:YES];
-    //加载界面
+        //加载界面
     [self loadMainView];
     
 }
@@ -53,6 +53,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 //懒加载
 -(NSMutableArray*)forecastWeatherViews{
     if (!_forecastWeatherViews) {
@@ -92,7 +93,8 @@
     self.navigationItem.title=@"天气预报";
     UIBarButtonItem *cityItem=[[UIBarButtonItem alloc]initWithTitle:@"城市" style:UIBarButtonItemStylePlain target:self action:@selector(jump2WeatherCity)];
     self.navigationItem.rightBarButtonItem=cityItem;
-    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc ]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    UIBarButtonItem *item=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_dealsmap_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    self.navigationItem.leftBarButtonItem=item;
     
     CGFloat margin=10;
     //显示城市Label
