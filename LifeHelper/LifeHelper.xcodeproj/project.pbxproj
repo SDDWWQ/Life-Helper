@@ -18,6 +18,9 @@
 		7E02D38B1D463B7D001F99FE /* GroupPurchaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E02D38A1D463B7D001F99FE /* GroupPurchaseTableViewController.m */; };
 		7E02D3901D463EE6001F99FE /* Goods.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E02D38F1D463EE6001F99FE /* Goods.m */; };
 		7E02D3941D46418C001F99FE /* GPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E02D3931D46418C001F99FE /* GPTableViewCell.m */; };
+		7E097D141D65653F0083B4EF /* LockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E097D131D65653F0083B4EF /* LockView.m */; };
+		7E097D171D6569050083B4EF /* LockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E097D161D6569050083B4EF /* LockViewController.m */; };
+		7E097D1A1D65764B0083B4EF /* SmallLockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E097D191D65764B0083B4EF /* SmallLockView.m */; };
 		7E10CB771D545B800090D816 /* CCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E10CB6C1D545B800090D816 /* CCLocationManager.m */; };
 		7E10CB781D545B800090D816 /* CLLocation+YCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E10CB6E1D545B800090D816 /* CLLocation+YCLocation.m */; };
 		7E10CB7C1D545B800090D816 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E10CB731D545B800090D816 /* ViewController.m */; };
@@ -142,6 +145,12 @@
 		7E02D38F1D463EE6001F99FE /* Goods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goods.m; sourceTree = "<group>"; };
 		7E02D3921D46418C001F99FE /* GPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPTableViewCell.h; sourceTree = "<group>"; };
 		7E02D3931D46418C001F99FE /* GPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPTableViewCell.m; sourceTree = "<group>"; };
+		7E097D121D65653F0083B4EF /* LockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LockView.h; sourceTree = "<group>"; };
+		7E097D131D65653F0083B4EF /* LockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockView.m; sourceTree = "<group>"; };
+		7E097D151D6569050083B4EF /* LockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LockViewController.h; sourceTree = "<group>"; };
+		7E097D161D6569050083B4EF /* LockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockViewController.m; sourceTree = "<group>"; };
+		7E097D181D65764B0083B4EF /* SmallLockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallLockView.h; sourceTree = "<group>"; };
+		7E097D191D65764B0083B4EF /* SmallLockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallLockView.m; sourceTree = "<group>"; };
 		7E10CB6B1D545B800090D816 /* CCLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationManager.h; sourceTree = "<group>"; };
 		7E10CB6C1D545B800090D816 /* CCLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationManager.m; sourceTree = "<group>"; };
 		7E10CB6D1D545B800090D816 /* CLLocation+YCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+YCLocation.h"; sourceTree = "<group>"; };
@@ -732,12 +741,16 @@
 		7EEB1F7F1D4C4AC500272BC4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7E097D121D65653F0083B4EF /* LockView.h */,
+				7E097D131D65653F0083B4EF /* LockView.m */,
 				7EEB1F8F1D4C965900272BC4 /* WeatherXibView.xib */,
 				7E9B26E71D4CA203005CCE11 /* WeatherXib.h */,
 				7E9B26E81D4CA203005CCE11 /* WeatherXib.m */,
 				7EF597041D4F35E8009E1E5C /* LifeSearch.xib */,
 				7EF597061D4F3602009E1E5C /* LifeSearchView.h */,
 				7EF597071D4F3602009E1E5C /* LifeSearchView.m */,
+				7E097D181D65764B0083B4EF /* SmallLockView.h */,
+				7E097D191D65764B0083B4EF /* SmallLockView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -749,6 +762,8 @@
 				7EEB1F821D4C4B1000272BC4 /* HomeTabBarController.m */,
 				7EEB1F871D4C914300272BC4 /* HomeViewController.h */,
 				7EEB1F881D4C914300272BC4 /* HomeViewController.m */,
+				7E097D151D6569050083B4EF /* LockViewController.h */,
+				7E097D161D6569050083B4EF /* LockViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -951,6 +966,7 @@
 				7E427E281D484C320031F771 /* UIButton+WebCache.m in Sources */,
 				7E10CB8D1D54B2190090D816 /* GPFooterView.m in Sources */,
 				7E8421E31D4E17A200AB51B6 /* LifeIndex.m in Sources */,
+				7E097D171D6569050083B4EF /* LockViewController.m in Sources */,
 				7E13A1281D520981001AF866 /* MJRefreshBackNormalFooter.m in Sources */,
 				7E427E251D484C320031F771 /* SDWebImageDownloaderOperation.m in Sources */,
 				7E02D38B1D463B7D001F99FE /* GroupPurchaseTableViewController.m in Sources */,
@@ -960,6 +976,7 @@
 				7EEC0D291D471DF80020164D /* WeatherCityTableViewCell.m in Sources */,
 				7E13A1231D520981001AF866 /* MJRefreshHeader.m in Sources */,
 				7E13A0ED1D51AF89001AF866 /* NewsModel.m in Sources */,
+				7E097D141D65653F0083B4EF /* LockView.m in Sources */,
 				7E57874D1D55A78C004FCC4B /* SVRadialGradientLayer.m in Sources */,
 				7E427E231D484C320031F771 /* SDWebImageDecoder.m in Sources */,
 				7E02D3831D463449001F99FE /* MicroBlogTableViewController.m in Sources */,
@@ -1008,6 +1025,7 @@
 				7E427E2E1D484C320031F771 /* UIView+WebCacheOperation.m in Sources */,
 				7E13A1261D520981001AF866 /* MJRefreshAutoStateFooter.m in Sources */,
 				7E10CB781D545B800090D816 /* CLLocation+YCLocation.m in Sources */,
+				7E097D1A1D65764B0083B4EF /* SmallLockView.m in Sources */,
 				7E427E261D484C320031F771 /* SDWebImageManager.m in Sources */,
 				7EB1BF511D52DF8500464DF8 /* GPCategoryView.m in Sources */,
 				7E13A1311D520981001AF866 /* UIScrollView+MJRefresh.m in Sources */,

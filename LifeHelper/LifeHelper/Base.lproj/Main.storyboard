@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q4y-pB-a3c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6w7-83-FH9">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -287,10 +287,65 @@
             </objects>
             <point key="canvasLocation" x="517" y="1566"/>
         </scene>
+        <!--Lock View Controller-->
+        <scene sceneID="MRj-uL-mLI">
+            <objects>
+                <viewController id="6w7-83-FH9" customClass="LockViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gdb-0z-Vs2"/>
+                        <viewControllerLayoutGuide type="bottom" id="k0e-bY-qpj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Wm-zQ-O5V">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zP6-A9-0e1" customClass="LockView">
+                                <rect key="frame" x="10" y="134" width="300" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="4TC-hc-zSU"/>
+                                    <constraint firstAttribute="width" constant="300" id="SVL-m3-TUp"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqd-6n-fNX" customClass="SmallLockView">
+                                <rect key="frame" x="120" y="25" width="80" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="IC8-Cs-lqz"/>
+                                    <constraint firstAttribute="height" constant="80" id="TkN-sg-WFP"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpA-Yy-EhO">
+                                <rect key="frame" x="139" y="110" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kqd-6n-fNX" firstAttribute="centerX" secondItem="3Wm-zQ-O5V" secondAttribute="centerX" id="5kh-ND-Jxx"/>
+                            <constraint firstItem="zP6-A9-0e1" firstAttribute="centerX" secondItem="3Wm-zQ-O5V" secondAttribute="centerX" id="9Tp-u9-X30"/>
+                            <constraint firstItem="mpA-Yy-EhO" firstAttribute="centerX" secondItem="3Wm-zQ-O5V" secondAttribute="centerX" id="SjM-HQ-Sr8"/>
+                            <constraint firstItem="kqd-6n-fNX" firstAttribute="top" secondItem="3Wm-zQ-O5V" secondAttribute="top" constant="25" id="c9M-Tf-IcW"/>
+                            <constraint firstItem="mpA-Yy-EhO" firstAttribute="top" secondItem="kqd-6n-fNX" secondAttribute="bottom" constant="5" id="f1k-2A-qbH"/>
+                            <constraint firstItem="zP6-A9-0e1" firstAttribute="centerY" secondItem="3Wm-zQ-O5V" secondAttribute="centerY" id="zZG-48-w0c"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="label" destination="mpA-Yy-EhO" id="tHM-Yt-HqD"/>
+                        <outlet property="lockView" destination="zP6-A9-0e1" id="acN-DM-P2b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LNx-Tf-R2t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1180" y="357"/>
+        </scene>
         <!--Home Tab Bar Controller-->
         <scene sceneID="YUc-jd-BEZ">
             <objects>
-                <tabBarController id="Q4y-pB-a3c" customClass="HomeTabBarController" colorLabel="IBBuiltInLabel-Blue" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Tabbar" id="Q4y-pB-a3c" customClass="HomeTabBarController" colorLabel="IBBuiltInLabel-Blue" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" autoresizesSubviews="NO" contentMode="scaleToFill" id="NMO-dN-Gru">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -428,7 +483,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S7N-2s-JEO">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S7N-2s-JEO">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="5PG-TL-4RL">
@@ -456,7 +511,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SDD为您精心定制" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFY-hN-11W">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SDD为您精心定制" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFY-hN-11W">
                                         <rect key="frame" x="107" y="339" width="105" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
