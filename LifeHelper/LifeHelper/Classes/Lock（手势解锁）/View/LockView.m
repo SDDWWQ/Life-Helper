@@ -114,7 +114,7 @@
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self setUserInteractionEnabled:NO];//不允许用户交互
     NSString *password=@"";
-     NSLog(@"%ld",self.lineBtn.count);
+     //NSLog(@"%ld",self.lineBtn.count);
     for (UIButton *btn in self.lineBtn) {
         password=[password stringByAppendingString:[NSString stringWithFormat:@"%ld",btn.tag]];
     }
@@ -144,11 +144,20 @@
         });
 
     }
-    else{//密码正确
-            UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            HomeTabBarController *tabvc=[storyboard instantiateViewControllerWithIdentifier:@"Tabbar"];
-            self.window.rootViewController=tabvc;
-            [self.window makeKeyAndVisible];
+    else{//密码正确,从storyboard加载TabBar页面并设置为当前窗口的根控制器
+        UIStoryboard *storyboard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        HomeTabBarController *tabvc=[storyboard instantiateViewControllerWithIdentifier:@"Tabbar"];
+        //HomeTabBarController *tabvc=[[HomeTabBarController alloc]init];
+        
+        //方法1：设置主窗口的根控制器方式
+        [UIApplication sharedApplication].keyWindow.rootViewController=tabvc;
+        
+        //方法2：设置当前窗口的根控制器方式
+        //self.window.rootViewController=tabvc;
+        //[self.window makeKeyAndVisible];
+        
+        //方法3：
+        //[self presentViewControoler:tabvc animated:NO completion:nil];//若是在控制器里写，可以使用modal的方式跳转，但此页面的内存不会释放，不推荐。
     }
    
 }

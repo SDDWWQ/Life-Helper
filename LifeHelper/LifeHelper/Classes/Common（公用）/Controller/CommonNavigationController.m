@@ -1,29 +1,38 @@
 //
-//  HomeTabBarController.m
+//  CommonNavigationController.m
 //  LifeHelper
 //
-//  Created by shadandan on 16/7/30.
+//  Created by shadandan on 16/8/20.
 //  Copyright © 2016年 SDD. All rights reserved.
 //
 
-#import "HomeTabBarController.h"
+#import "CommonNavigationController.h"
 
-@interface HomeTabBarController ()
+@interface CommonNavigationController ()
 
 @end
 
-@implementation HomeTabBarController
+@implementation CommonNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //[self.navigationBar setBackgroundColor:[UIColor blackColor]];
+    [self.navigationBar setTintColor:[UIColor whiteColor]];
+    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationBar"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+//设置状态栏颜色为白色
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
 /*
 #pragma mark - Navigation
 

@@ -12,6 +12,7 @@
 #import "NewsViewController.h"
 #import "MJRefresh.h"
 #import "SVProgressHUD.h"
+#import "CategoryTableViewController.h"
 //#import "MJExtension.h"
 @interface NewsTableViewController ()<UITableViewDataSource>
 
@@ -75,31 +76,32 @@
 
 
 -(void)loadData{
-    NSString *httpUrl = @"http://apis.baidu.com/songshuxiansheng/news/news";
-    NSString *httpArg = @"";
+    NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
+    NSString *newsCategory=[ud objectForKey:@"newsCategory"];
+    NSString *httpUrl = @"http://apis.baidu.com/showapi_open_bus/channel_news/search_news";
+    NSString *httpArg = [NSString stringWithFormat:@"channelId=%@&page=1&needContent=0&needHtml=0",newsCategory];
+    //@"channelId=5572a109b3cdc86cf39001db&channelName=%E5%9B%BD%E5%86%85%E6%9C%80%E6%96%B0&title=%E4%B8%8A%E5%B8%82&page=1&needContent=0&needHtml=0";
     [self request: httpUrl withHttpArg: httpArg];
 }
 
 -(void)request: (NSString*)httpUrl withHttpArg: (NSString*)HttpArg  {
-    
     NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, HttpArg];
     NSURL *url = [NSURL URLWithString: urlStr];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
     [request setHTTPMethod: @"GET"];
     [request addValue: @"d2dfec542a6c211fa932b11248360ef9" forHTTPHeaderField: @"apikey"];
-     NSData *data=[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];                                                                    NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                                   //NSLog(@"HttpResponseCode:%ld", responseCode);
-                                   //NSLog(@"HttpResponseBody %@",responseString);
-                                   
-                                   NSError *error;
-                                   //json反序列化
-                                   NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-                                   NSArray *array=dict[@"retData"];
-                                   for (NSDictionary *newsDict in array) {
-                                       NewsModel *news=[NewsModel NewsWithDict:newsDict];
-                                        [self.newsArray addObject:news];
-                                   }
-                                   [self.tableView reloadData];
+    [NSURLConnection sendAsynchronousRequest: request
+                                       queue: [NSOperationQueue mainQueue]
+                           completionHandler: ^(NSURLResponse *response, NSData *data, NSError *error){
+                               if (error) {
+                                   NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
+                               } else {
+                                   NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
+                                   NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                                   NSLog(@"HttpResponseCode:%ld", responseCode);
+                                   NSLog(@"HttpResponseBody %@",responseString);
+                               }
+                           }];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -131,49 +133,17 @@
     [self.navigationController pushViewController:vc animated:YES];
     
 }
+- (IBAction)categoryClick:(id)sender {
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    //自定义转场动画
+    CATransition *anim=[CATransition animation];
+    anim.type=kCATransitionReveal;
+    anim.subtype=kCATransitionFromLeft;
+    [self.navigationController.view.layer addAnimation:anim forKey:nil];
+    CategoryTableViewController *catTVC=[[CategoryTableViewController alloc]initWithStyle:UITableViewStyleGrouped];
+    catTVC.navigationItem.title=@"新闻频道";
+    catTVC.plistName=@"NewsCategory";//要加载的plist的名称
+    [self.navigationController pushViewController:catTVC animated:NO];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -43,8 +43,8 @@
         <!--新闻-->
         <scene sceneID="Dzf-D6-VUJ">
             <objects>
-                <navigationController id="slb-k8-7y3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="新闻" image="icon_tabbar_news_normal" id="Lrm-Ls-pFv"/>
+                <navigationController id="slb-k8-7y3" customClass="CommonNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="新闻" image="icon_tabbar_discovery" id="Lrm-Ls-pFv"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1rC-9L-rtF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -66,6 +66,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="News_Cell" rowHeight="99" id="bWZ-ag-tou" customClass="NewsTableViewCell">
                                 <rect key="frame" x="0.0" y="113.5" width="320" height="99"/>
@@ -125,7 +126,13 @@
                             <outlet property="delegate" destination="zE6-9D-RiS" id="Wtq-ge-PSp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="新闻" id="k5G-If-IeQ"/>
+                    <navigationItem key="navigationItem" title="新闻" id="k5G-If-IeQ">
+                        <barButtonItem key="leftBarButtonItem" image="icon_cate_normal_-1" id="x8p-sC-scn">
+                            <connections>
+                                <action selector="categoryClick:" destination="zE6-9D-RiS" id="CfX-tu-eg3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCP-mU-sgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -135,7 +142,7 @@
         <!--团购-->
         <scene sceneID="Xhb-LW-1od">
             <objects>
-                <navigationController id="86a-ep-IoU" sceneMemberID="viewController">
+                <navigationController id="86a-ep-IoU" customClass="CommonNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="团购" image="icon_tabbar_merchant_normal" id="gWk-41-9fg"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mMJ-Ek-YVn">
@@ -367,7 +374,7 @@
         <!--更多-->
         <scene sceneID="8RE-wP-iej">
             <objects>
-                <navigationController id="de6-KZ-FSL" sceneMemberID="viewController">
+                <navigationController id="de6-KZ-FSL" customClass="CommonNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="更多" image="icon_tabbar_misc" id="2jc-eO-juz"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yLS-8k-loi">
@@ -552,7 +559,7 @@
         <!--首页-->
         <scene sceneID="5vO-rY-Hc9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Em3-Bk-i3R" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Em3-Bk-i3R" customClass="CommonNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" image="icon_tabbar_homepage" id="Hl1-Ha-J8E"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -573,11 +580,12 @@
     <resources>
         <image name="food_shike_loading" width="54" height="54"/>
         <image name="icon" width="256" height="256"/>
+        <image name="icon_cate_normal_-1" width="19" height="19"/>
         <image name="icon_login_user" width="32" height="34"/>
-        <image name="icon_tabbar_homepage" width="38" height="38"/>
-        <image name="icon_tabbar_merchant_normal" width="38" height="38"/>
-        <image name="icon_tabbar_misc" width="38" height="38"/>
-        <image name="icon_tabbar_news_normal" width="38" height="38"/>
+        <image name="icon_tabbar_discovery" width="26" height="26"/>
+        <image name="icon_tabbar_homepage" width="26" height="26"/>
+        <image name="icon_tabbar_merchant_normal" width="26" height="26"/>
+        <image name="icon_tabbar_misc" width="26" height="26"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
