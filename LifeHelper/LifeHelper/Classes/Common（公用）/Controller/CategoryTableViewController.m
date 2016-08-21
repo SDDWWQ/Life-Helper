@@ -101,9 +101,13 @@
     NSDictionary *item=items[indexPath.row];
     if (item[@"channelId"]&&[item[@"channelId"] length]>0) {//判断是否存在这个key，且是否有内容
          NSString *categoryId=item[@"channelId"];
+        NSLog(@"%@",categoryId);
         NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
         [defaults setObject:categoryId forKey:@"newsCategory"];
         [defaults synchronize];//立即存入
+        if (self.block) {
+            self.block(categoryId);
+        }
     }
    
     
@@ -121,6 +125,7 @@
     */
     //向前跳转的
     [self transformAnimate];//调用自定义转场动画
+
     [self.navigationController popViewControllerAnimated:YES];
 }
 

@@ -62,6 +62,8 @@
 				<string>互联网焦点</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -70,6 +72,8 @@
 				<string>房产焦点</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -78,6 +82,8 @@
 				<string>汽车焦点</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -86,6 +92,8 @@
 				<string>体育焦点</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -94,6 +102,8 @@
 				<string>娱乐焦点</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -102,6 +112,8 @@
 				<string>游戏焦点</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -110,6 +122,8 @@
 				<string>教育焦点</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -118,6 +132,8 @@
 				<string>女人焦点</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -126,6 +142,8 @@
 				<string>科技焦点</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -134,6 +152,8 @@
 				<string>社会焦点</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -142,6 +162,8 @@
 				<string>国内最新</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -150,6 +172,8 @@
 				<string>台湾最新</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -158,6 +182,8 @@
 				<string>港澳最新</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -166,6 +192,8 @@
 				<string>国际最新</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -174,6 +202,8 @@
 				<string>军事最新</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -182,6 +212,8 @@
 				<string>财经最新</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -190,6 +222,8 @@
 				<string>理财最新</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -198,6 +232,8 @@
 				<string>宏观经济最新</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -206,6 +242,8 @@
 				<string>互联网最新</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -214,6 +252,8 @@
 				<string>房产最新</string>
 			</dict>
 			<dict>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>accessaryView</key>
 				<string>UIImageView</string>
 				<key>channelId</key>
@@ -222,114 +262,190 @@
 				<string>汽车最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a109b3cdc86cf39001e6</string>
 				<key>name</key>
 				<string>体育最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10ab3cdc86cf39001e7</string>
 				<key>name</key>
 				<string>国际足球最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10ab3cdc86cf39001e8</string>
 				<key>name</key>
 				<string>国内足球最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10ab3cdc86cf39001e9</string>
 				<key>name</key>
 				<string>CBA最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10ab3cdc86cf39001ea</string>
 				<key>name</key>
 				<string>综合体育最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10ab3cdc86cf39001eb</string>
 				<key>name</key>
 				<string>娱乐最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10ab3cdc86cf39001ec</string>
 				<key>name</key>
 				<string>电影最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10ab3cdc86cf39001ed</string>
 				<key>name</key>
 				<string>电视最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10ab3cdc86cf39001ee</string>
 				<key>name</key>
 				<string>游戏最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10ab3cdc86cf39001ef</string>
 				<key>name</key>
 				<string>教育最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10ab3cdc86cf39001f0</string>
 				<key>name</key>
 				<string>女人最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10ab3cdc86cf39001f1</string>
 				<key>name</key>
 				<string>美容护肤最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10ab3cdc86cf39001f2</string>
 				<key>name</key>
 				<string>情感两性最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10ab3cdc86cf39001f3</string>
 				<key>name</key>
 				<string>健康养生最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10ab3cdc86cf39001f4</string>
 				<key>name</key>
 				<string>科技最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10bb3cdc86cf39001f5</string>
 				<key>name</key>
 				<string>数码最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10bb3cdc86cf39001f6</string>
 				<key>name</key>
 				<string>电脑最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10bb3cdc86cf39001f7</string>
 				<key>name</key>
 				<string>科普最新</string>
 			</dict>
 			<dict>
+				<key>accessaryView</key>
+				<string>UIImageView</string>
+				<key>accessaryContent</key>
+				<string>icon_cell_rightArrow</string>
 				<key>channelId</key>
 				<string>5572a10bb3cdc86cf39001f8</string>
 				<key>name</key>

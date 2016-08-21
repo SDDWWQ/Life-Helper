@@ -30,15 +30,19 @@
     _news=news;
     
     //如果没有图片，改变图片约束
-    if([news.image_url isEqual:@""]){
+    if(news.imageurls.count==0){
         //设置图片宽的约束是0
         self.pictureWidthConstraint.constant=0;
     }else{
+        NSDictionary *dict=news.imageurls[0];
+        NSString *image_url=dict[@"url"];
         self.pictureWidthConstraint.constant=80;
-        NSURL *imgUrl=[NSURL URLWithString:news.image_url];
+        NSURL *imgUrl=[NSURL URLWithString:image_url];
         [self.pictureView sd_setImageWithURL:imgUrl];
     }
+    //self.pictureView.image=[UIImage imageNamed:@"00"];
     self.titleLabel.text=self.news.title;
-    self.detailLabel.text=self.news.abstract;
+    //NSLog(@"%@",self.news.title);
+    self.detailLabel.text=self.news.desc;
 }
 @end

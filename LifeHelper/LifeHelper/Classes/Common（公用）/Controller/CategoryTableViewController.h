@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CategoryTableViewController : UITableViewController
-@property(nonatomic,weak)NSString *plistName;//要加载的plist的名称
+@property(nonatomic,copy)NSString *plistName;//要加载的plist的名称
+@property(nonatomic,copy)void(^block)(NSString *);
 @end
