@@ -17,28 +17,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="455" translatesAutoresizingMaskIntoConstraints="NO" id="LyO-Hr-fsb">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deL-8U-Kup">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LyO-Hr-fsb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="FQt-V5-xxy"/>
-                            <constraint firstItem="LyO-Hr-fsb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Iep-vH-THJ"/>
-                            <constraint firstAttribute="trailing" secondItem="LyO-Hr-fsb" secondAttribute="trailing" id="WlA-UE-PSg"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LyO-Hr-fsb" secondAttribute="bottom" id="Wpx-xd-GKb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="deL-8U-Kup" secondAttribute="bottom" id="7VV-vN-DgY"/>
+                            <constraint firstItem="deL-8U-Kup" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MIL-ah-uV3"/>
+                            <constraint firstItem="deL-8U-Kup" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="TZf-y6-lpr"/>
+                            <constraint firstAttribute="trailing" secondItem="deL-8U-Kup" secondAttribute="trailing" id="gaM-f1-gUy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="生活小助手" id="NUv-qz-Hwp"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="homeScrollView" destination="LyO-Hr-fsb" id="vmm-g7-AeS"/>
+                        <outlet property="homeScrollView" destination="deL-8U-Kup" id="e7v-6r-wAP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="167" y="338"/>
+            <point key="canvasLocation" x="161" y="272"/>
+        </scene>
+        <!--App View Controller-->
+        <scene sceneID="OwV-ZP-LXu">
+            <objects>
+                <viewController id="Ne7-0f-2kt" customClass="AppViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tPG-Gk-Vl8"/>
+                        <viewControllerLayoutGuide type="bottom" id="nJ9-RX-iCn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oad-dG-Em4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NJ8-iU-fnn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="657" y="288"/>
         </scene>
         <!--新闻-->
         <scene sceneID="Dzf-D6-VUJ">

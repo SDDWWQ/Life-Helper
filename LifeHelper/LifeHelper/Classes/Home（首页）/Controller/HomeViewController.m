@@ -10,7 +10,9 @@
 //#import "WeatherXib.h"
 #import "WeatherDetailViewController.h"
 #import "WeatherByCityID.h"
-
+#import "ApsCollectionViewController.h"
+#import "AppView.h"
+#import "ApsViewController.h"
 @interface HomeViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *homeScrollView;
 @property(nonatomic,strong)WeatherByCityID *weather;
@@ -22,6 +24,7 @@
 @property(nonatomic,weak) UILabel *windStrengthLabel;
 @property(nonatomic,weak) UIImageView *weatherImageView;
 @property(nonatomic,weak) UILabel *weatherLabel;
+@property(nonatomic,strong)NSArray *apps;
 
 @end
 
@@ -29,8 +32,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     //加载天气数据
     [self loadData];
+    [self createFrame];
+    [self setData];
 }
 //懒加载
 -(WeatherByCityID *)weather{
@@ -39,12 +45,21 @@
     }
     return _weather;
 }
+-(NSArray *)apps{
+    if (!_apps) {
+        NSString *path=[[NSBundle mainBundle]pathForResource:@"app" ofType:@"plist"];
+        NSArray *array=[NSArray arrayWithContentsOfFile:path];
+        _apps=array;
+        NSLog(@"count=%ld",array.count);
+    }
+    
+    return _apps;
+}
 -(void)loadData{
     NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
     self.cityId=[ud objectForKey:@"weathercityID"];
     //NSLog(@"%@",_cityId);
     if (self.cityId==nil) {
-        //NSLog(@"wuwuwuw");
         self.cityId=@"101010100";
     }
     
@@ -53,94 +68,7 @@
     NSString *httpArg = [NSString stringWithFormat:@"cityid=%@",self.cityId];
 
     [self request: httpUrl withHttpArg: httpArg];//加载天气信息
-    CGFloat margin=10;
-    UIView *weatherView=[[UIView alloc]init];
-    weatherView.frame=CGRectMake(0, 0, self.view.frame.size.width, 150);
-    //天气整个大button
-    UIButton *weatherBtn=[[UIButton alloc]init];
-    [weatherBtn setBackgroundImage:[UIImage imageNamed:@"weather_background"] forState:UIControlStateNormal];
-    weatherBtn.frame=weatherView.frame;
-    [weatherView addSubview:weatherBtn];
     
-    //显示城市Label
-    UILabel *cityLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, margin, self.view.frame.size.width*0.5, 15)];
-    cityLabel.text=self.weather.city;
-    [weatherBtn addSubview:cityLabel];
-    self.cityLabel=cityLabel;
-    
-    //更新时间Label
-    UILabel *timeLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(cityLabel.frame)+margin, self.view.frame.size.width*0.5, 12)];
-    NSDate *nowDate=[NSDate date];//格林威治时间
-    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc]init];
-    dateFormatter.dateFormat=@"yy-MM-dd HH:mm";
-    //NSString *nowDateStr=[dateFormatter stringFromDate:nowDate];//格式化之后就是本地时间
-    //NSLog(@"%@",nowDateStr);
-    NSString *weatherDateStr=[NSString stringWithFormat:@"%@ %@",self.weather.date,self.weather.time];
-    NSDate *weatherDate=[dateFormatter dateFromString:weatherDateStr];
-    //NSLog(@"%@",weatherDate);
-    //创建一个日历对象
-    NSCalendar *calendar=[NSCalendar currentCalendar];
-    //比较时间
-    int unit=NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute;
-    NSDateComponents *compare=[calendar components:unit fromDate:weatherDate toDate:nowDate options:0];
-    NSString *timeStr;
-    if (compare.year!=0) {
-        timeStr=[NSString stringWithFormat:@"%ld年前更新",compare.year];
-    }else if (compare.month){
-        timeStr=[NSString stringWithFormat:@"%ld个月前更新",compare.month];
-    }else if(compare.hour!=0) {
-        timeStr=[NSString stringWithFormat:@"%ld小时前更新",compare.hour];
-    }else if(compare.minute){
-        timeStr=[NSString stringWithFormat:@"%ld分钟前更新",compare.minute];
-    }
-    else if(compare.minute==0){
-        timeStr=@"刚刚更新";
-    }
-    timeLabel.text=timeStr;
-    timeLabel.font=[UIFont systemFontOfSize:10];
-    [weatherBtn addSubview:timeLabel];
-    self.timeLabel=timeLabel;
-    
-    //温度Label
-    UILabel *tempratureLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(timeLabel.frame)+margin, self.view.frame.size.width*0.5, 16)];
-    tempratureLabel.text=[NSString stringWithFormat:@"%@°C",self.weather.temp];
-    tempratureLabel.font=[UIFont systemFontOfSize:12];
-    [weatherBtn addSubview:tempratureLabel];
-    self.tempratureLabel=tempratureLabel;
-    
-    //风向风力Label
-    UILabel *windDirectionLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(tempratureLabel.frame)+margin, self.view.frame.size.width*0.5, 16)];
-    windDirectionLabel.text=[NSString stringWithFormat:@"%@",self.weather.WD];
-    windDirectionLabel.font=[UIFont systemFontOfSize:12];
-    //windDirectionLabel.numberOfLines=0 ;
-    [weatherBtn addSubview:windDirectionLabel];
-    //风力Label
-    UILabel *windStrengthLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(windDirectionLabel.frame)+margin, self.view.frame.size.width*0.5, 16)];
-    windStrengthLabel.font=[UIFont systemFontOfSize:12];
-    windStrengthLabel.text=[NSString stringWithFormat:@"%@",self.self.weather.WS];
-    //windStrengthLabel.numberOfLines=0 ;
-    [weatherBtn addSubview:windStrengthLabel];
-    self.windDirectionLabel=windDirectionLabel;
-    
-    //天气图片
-    NSString *weather=self.weather.weather;
-    NSString *path=[[NSBundle mainBundle]pathForResource:@"WeatherImage" ofType:@"plist"];
-    NSDictionary *weatherImgDict=[NSDictionary dictionaryWithContentsOfFile:path];
-    UIImageView *weatherImageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:weatherImgDict[weather]]];//根据天气获取对应的天气图片
-    weatherImageView.frame=CGRectMake(self.view.frame.size.width-120, 10, 100, 100);
-    [weatherBtn addSubview:weatherImageView];
-    self.weatherImageView=weatherImageView;
-    
-    //天气Label
-    UILabel *weatherLabel=[[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.5, 100, self.view.frame.size.width*0.5, 15)];
-    weatherLabel.text=self.weather.weather;
-    weatherLabel.textAlignment=NSTextAlignmentCenter;
-    [weatherBtn addSubview:weatherLabel];
-    self.weatherLabel=weatherLabel;
-    
-    [self.homeScrollView addSubview:weatherView];
-    
-    [weatherBtn addTarget:self action:@selector(jump2WeatherDetailView) forControlEvents:UIControlEventTouchUpInside];
 }
 -(void)request: (NSString*)httpUrl withHttpArg: (NSString*)HttpArg  {
     NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, HttpArg];
@@ -158,24 +86,93 @@
     self.weather=weather;
     //NSLog(@"qqq");
 }
+-(void)createFrame{
 
--(void)jump2WeatherDetailView{
-    WeatherDetailViewController *detailView=[[WeatherDetailViewController alloc]init];
-    //为了逆传实现block
-    detailView.CityBlock=^(NSString *cityID){
-        self.cityId=cityID;
-        //NSLog(@"%@",cityID);
-        [self refreshWeater];
-    };
-    [self.navigationController pushViewController:detailView animated:YES];
+    CGFloat margin=10;
+    UIView *weatherView=[[UIView alloc]init];
+    weatherView.frame=CGRectMake(0, 0, self.view.frame.size.width, 150);
+    
+    //天气整个大button
+    UIButton *weatherBtn=[[UIButton alloc]init];
+    [weatherBtn setBackgroundImage:[UIImage imageNamed:@"weather_background"] forState:UIControlStateNormal];
+    weatherBtn.frame=weatherView.frame;
+    [weatherView addSubview:weatherBtn];
+    
+    //显示城市Label
+    UILabel *cityLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, margin, self.view.frame.size.width*0.5, 15)];
+    [weatherBtn addSubview:cityLabel];
+    self.cityLabel=cityLabel;
+    
+    //更新时间Label
+    UILabel *timeLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(cityLabel.frame)+margin, self.view.frame.size.width*0.5, 12)];
+
+    timeLabel.font=[UIFont systemFontOfSize:10];
+    [weatherBtn addSubview:timeLabel];
+    self.timeLabel=timeLabel;
+    
+    //温度Label
+    UILabel *tempratureLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(timeLabel.frame)+margin, self.view.frame.size.width*0.5, 16)];
+    tempratureLabel.font=[UIFont systemFontOfSize:12];
+    [weatherBtn addSubview:tempratureLabel];
+    self.tempratureLabel=tempratureLabel;
+    
+    //风向风力Label
+    UILabel *windDirectionLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(tempratureLabel.frame)+margin, self.view.frame.size.width*0.5, 16)];
+    windDirectionLabel.font=[UIFont systemFontOfSize:12];
+    //windDirectionLabel.numberOfLines=0 ;
+    [weatherBtn addSubview:windDirectionLabel];
+    
+    //风力Label
+    UILabel *windStrengthLabel=[[UILabel alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(windDirectionLabel.frame)+margin, self.view.frame.size.width*0.5, 16)];
+    windStrengthLabel.font=[UIFont systemFontOfSize:12];
+    //windStrengthLabel.numberOfLines=0 ;
+    [weatherBtn addSubview:windStrengthLabel];
+    self.windDirectionLabel=windDirectionLabel;
+    
+    //天气图片
+    UIImageView *weatherImageView=[[UIImageView alloc]init];//根据天气获取对应的天气图片
+    weatherImageView.frame=CGRectMake(self.view.frame.size.width-120, 10, 100, 100);
+    [weatherBtn addSubview:weatherImageView];
+    self.weatherImageView=weatherImageView;
+    
+    //天气Label
+    UILabel *weatherLabel=[[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width*0.5, 100, self.view.frame.size.width*0.5, 15)];
+   // weatherLabel.text=self.weather.weather;
+    weatherLabel.textAlignment=NSTextAlignmentCenter;
+    [weatherBtn addSubview:weatherLabel];
+    self.weatherLabel=weatherLabel;
+    
+    [self.homeScrollView addSubview:weatherView];
+    
+    [weatherBtn addTarget:self action:@selector(jump2WeatherDetailView) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    //创建应用图标
+    CGFloat w=80;
+    CGFloat h=100;
+    for (int i=0; i<self.apps.count; i++) {
+        AppView *app=[AppView appView];
+        app.appDict=self.apps[i];
+        [app setFrame:CGRectMake(margin+i%4*(margin+w), 150+i/4*(margin+h), w, h)];
+        [self.homeScrollView addSubview:app];
+        app.appBlock=^(){//实现appView的block，当点击button时进行跳转
+        ApsViewController *appVC=[[ApsViewController alloc]init];
+            NSLog(@"sssss");
+            NSLog(@"%@",self.navigationController);
+            [self.navigationController pushViewController:appVC animated:YES];
+        };
+        
+        
+    }
+    
+    
+    //创建流水布局
+    //ApsCollectionViewController *appCV=[[ApsCollectionViewController alloc]init];
+    //[appCV.view setFrame:CGRectMake(0, 150, kScreenWidth, 500)];
+    //[self.navigationController pushViewController:appCV animated:YES];
+    
 }
-
-//更新城市天气
--(void)refreshWeater{
-    //
-    NSString *httpUrl = @"http://apis.baidu.com/apistore/weatherservice/cityid";
-    NSString *httpArg = [NSString stringWithFormat:@"cityid=%@",self.cityId];
-    [self request: httpUrl withHttpArg: httpArg];//加载天气信息
+-(void)setData{
     //城市Label
     self.cityLabel.text=self.weather.city;
     //NSLog(@"更新了%@",self.weather.city);
@@ -221,6 +218,27 @@
     self.weatherImageView.image=[UIImage imageNamed:weatherImgDict[weather]];//根据天气获取对应的天气图片
     //天气Label
     self.weatherLabel.text=self.weather.weather;
+}
+-(void)jump2WeatherDetailView{
+    WeatherDetailViewController *detailView=[[WeatherDetailViewController alloc]init];
+    //为了逆传实现block
+    detailView.CityBlock=^(NSString *cityID){
+        self.cityId=cityID;
+        //NSLog(@"%@",cityID);
+        [self refreshWeater];
+    };
+    //NSLog(@"%@",self.navigationController);
+    [self.navigationController pushViewController:detailView animated:YES];
+    
+}
+
+//更新城市天气
+-(void)refreshWeater{
+    //
+    NSString *httpUrl = @"http://apis.baidu.com/apistore/weatherservice/cityid";
+    NSString *httpArg = [NSString stringWithFormat:@"cityid=%@",self.cityId];
+    [self request: httpUrl withHttpArg: httpArg];//加载天气信息
+    [self setData];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -12,7 +12,7 @@
 @interface WeatherCityTableViewController ()<UITableViewDataSource>
 
 @property(nonatomic,strong)NSMutableArray *cities;
-@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
+@property (weak, nonatomic) UITextField *searchTextField;
 @property(nonatomic,copy)NSString *cityId;
 
 @end
@@ -32,7 +32,9 @@
     self.searchTextField=searchField;
     //添加导航栏城市选择按钮
     UIBarButtonItem *cityItem=[[UIBarButtonItem alloc]initWithTitle:@"搜索" style:UIBarButtonItemStylePlain target:self action:@selector(searchCity)];
+    UIBarButtonItem *backItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_dealsmap_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     self.navigationItem.rightBarButtonItem=cityItem;
+    self.navigationItem.leftBarButtonItem=backItem;
     self.tableView.tableFooterView=[[UIView alloc]init];//为了去掉空的cell下边的横线，如果有footerView空的cell下边的横线就不显示，否则显示
 
     
@@ -92,7 +94,9 @@
                                }
                            }];
 }
-
+-(void)back{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

@@ -118,8 +118,8 @@
     for (UIButton *btn in self.lineBtn) {
         password=[password stringByAppendingString:[NSString stringWithFormat:@"%ld",btn.tag]];
     }
-    NSLog(@"%@",password);
-    NSLog(@"%@",self.gesturePassword);
+    //NSLog(@"%@",password);
+    //NSLog(@"%@",self.gesturePassword);
     if (self.gesturePassword==nil) {//设置手势密码
         NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
         [defaults setObject:password forKey:@"gesturePassword"];

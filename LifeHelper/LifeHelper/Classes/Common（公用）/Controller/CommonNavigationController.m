@@ -4,7 +4,7 @@
 //
 //  Created by shadandan on 16/8/20.
 //  Copyright © 2016年 SDD. All rights reserved.
-//
+//  四个navigationController公用
 
 #import "CommonNavigationController.h"
 
