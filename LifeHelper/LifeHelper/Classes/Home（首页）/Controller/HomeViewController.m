@@ -13,6 +13,7 @@
 #import "ApsCollectionViewController.h"
 #import "AppView.h"
 #import "ApsViewController.h"
+#import "MapViewController.h"
 @interface HomeViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *homeScrollView;
 @property(nonatomic,strong)WeatherByCityID *weather;
@@ -156,9 +157,10 @@
         [app setFrame:CGRectMake(margin+i%4*(margin+w), 150+i/4*(margin+h), w, h)];
         [self.homeScrollView addSubview:app];
         app.appBlock=^(){//实现appView的block，当点击button时进行跳转
-        ApsViewController *appVC=[[ApsViewController alloc]init];
-            NSLog(@"sssss");
-            NSLog(@"%@",self.navigationController);
+        //ApsViewController *appVC=[[ApsViewController alloc]init];
+            //NSLog(@"sssss");
+            //NSLog(@"%@",self.navigationController);
+            MapViewController *appVC=[[MapViewController alloc]init];
             [self.navigationController pushViewController:appVC animated:YES];
         };
         

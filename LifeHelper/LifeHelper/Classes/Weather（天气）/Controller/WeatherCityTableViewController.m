@@ -9,7 +9,7 @@
 #import "WeatherCityTableViewController.h"
 #import "WeatherCity.h"
 #import "WeatherCityTableViewCell.h"
-@interface WeatherCityTableViewController ()<UITableViewDataSource>
+@interface WeatherCityTableViewController ()<UITableViewDataSource,UITextFieldDelegate>
 
 @property(nonatomic,strong)NSMutableArray *cities;
 @property (weak, nonatomic) UITextField *searchTextField;
@@ -25,9 +25,14 @@
     UITextField *searchField=[[UITextField alloc]initWithFrame:CGRectMake(0, 0, 200, 35)];
     searchField.backgroundColor=[UIColor whiteColor];
     searchField.layer.cornerRadius=10;
-//    UIImageView *searchPic=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"eslf_icon_search_gray"]];
-//    searchPic.frame=CGRectMake(0, 0, 35, 35);
-//    [searchField.leftView addSubview:searchPic];
+    UIView *leftVw=[[UIView alloc]init];
+    leftVw.frame=CGRectMake(0, 0, 8, 1);
+    searchField.leftView=leftVw;
+    searchField.leftViewMode=UITextFieldViewModeAlways;//设置左边的View什么时候显示（一直都显示，只在编辑时显示等）
+    searchField.tintColor=[UIColor blackColor];
+    searchField.placeholder=@"搜索";
+    searchField.returnKeyType=UIReturnKeySearch;//键盘的return显示“搜索”
+    searchField.delegate=self;
     self.navigationItem.titleView=searchField;
     self.searchTextField=searchField;
     //添加导航栏城市选择按钮
@@ -97,6 +102,17 @@
 -(void)back{
     [self.navigationController popViewControllerAnimated:YES];
 }
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    NSLog(@"ffff");
+    [textField resignFirstResponder]; //不作为第一响应者
+    [self searchCity];
+    return YES;
+}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self resignFirstResponder];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

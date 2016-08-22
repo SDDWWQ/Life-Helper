@@ -39,24 +39,6 @@
             </objects>
             <point key="canvasLocation" x="161" y="272"/>
         </scene>
-        <!--App View Controller-->
-        <scene sceneID="OwV-ZP-LXu">
-            <objects>
-                <viewController id="Ne7-0f-2kt" customClass="AppViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tPG-Gk-Vl8"/>
-                        <viewControllerLayoutGuide type="bottom" id="nJ9-RX-iCn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="oad-dG-Em4">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NJ8-iU-fnn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="657" y="288"/>
-        </scene>
         <!--新闻-->
         <scene sceneID="Dzf-D6-VUJ">
             <objects>
@@ -188,6 +170,13 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2n-2W-k3R">
                                 <rect key="frame" x="0.0" y="64" width="320" height="200"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fC4-yl-QDa">
+                                        <rect key="frame" x="165" y="96" width="97" height="30"/>
+                                        <attributedString key="attributedText"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="DPO-lv-72u"/>

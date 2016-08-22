@@ -11,7 +11,6 @@
 		7E0201BA1D69C8F50026E0B8 /* AppView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0201B91D69C8F50026E0B8 /* AppView.m */; };
 		7E0201BC1D69C9070026E0B8 /* AppView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0201BB1D69C9070026E0B8 /* AppView.xib */; };
 		7E0201CA1D69E9120026E0B8 /* ApsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0201C71D69E9120026E0B8 /* ApsCollectionViewController.m */; };
-		7E0201CB1D69E9120026E0B8 /* ApsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0201C91D69E9120026E0B8 /* ApsViewController.m */; };
 		7E0201CF1D69E9230026E0B8 /* ApsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0201CD1D69E9230026E0B8 /* ApsCollectionViewCell.m */; };
 		7E0201D01D69E9230026E0B8 /* ApsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0201CE1D69E9230026E0B8 /* ApsCollectionViewCell.xib */; };
 		7E0201D31D69ED3D0026E0B8 /* ApsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0201D21D69ED3D0026E0B8 /* ApsModel.m */; };
@@ -108,9 +107,31 @@
 		7E3615AB1D68355700F682BD /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7E36157D1D68355600F682BD /* SVProgressHUD.bundle */; };
 		7E3615AC1D68355700F682BD /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E36157F1D68355600F682BD /* SVProgressHUD.m */; };
 		7E3615AD1D68355700F682BD /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3615811D68355600F682BD /* SVRadialGradientLayer.m */; };
-		7E3615B11D68356500F682BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3615B01D68356500F682BD /* AppDelegate.m */; };
 		7E3615BD1D6871DD00F682BD /* CommonNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3615BC1D6871DD00F682BD /* CommonNavigationController.m */; };
 		7E3616041D68850200F682BD /* NewsCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E3616031D68850200F682BD /* NewsCategory.plist */; };
+		7EF7FAB91D6AAED300DD3D61 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FAB21D6AAED300DD3D61 /* BaiduMapAPI_Base.framework */; };
+		7EF7FABA1D6AAED300DD3D61 /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FAB31D6AAED300DD3D61 /* BaiduMapAPI_Cloud.framework */; };
+		7EF7FABB1D6AAED300DD3D61 /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FAB41D6AAED300DD3D61 /* BaiduMapAPI_Location.framework */; };
+		7EF7FABC1D6AAED400DD3D61 /* BaiduMapAPI_Map.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FAB51D6AAED300DD3D61 /* BaiduMapAPI_Map.framework */; };
+		7EF7FABD1D6AAED400DD3D61 /* BaiduMapAPI_Radar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FAB61D6AAED300DD3D61 /* BaiduMapAPI_Radar.framework */; };
+		7EF7FABE1D6AAED400DD3D61 /* BaiduMapAPI_Search.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FAB71D6AAED300DD3D61 /* BaiduMapAPI_Search.framework */; };
+		7EF7FABF1D6AAED400DD3D61 /* BaiduMapAPI_Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FAB81D6AAED300DD3D61 /* BaiduMapAPI_Utils.framework */; };
+		7EF7FACE1D6AB5F200DD3D61 /* ApsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7FACD1D6AB5F200DD3D61 /* ApsViewController.mm */; };
+		7EF7FAD31D6AB63100DD3D61 /* MapViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7FAD21D6AB63100DD3D61 /* MapViewController.mm */; };
+		7EF7FAD51D6AB97100DD3D61 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7EF7FAD41D6AB97100DD3D61 /* mapapi.bundle */; };
+		7EF7FAD91D6ABE6400DD3D61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7FAD81D6ABE6400DD3D61 /* AppDelegate.m */; };
+		7EF7FADB1D6AC03A00DD3D61 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FADA1D6AC03A00DD3D61 /* CoreLocation.framework */; };
+		7EF7FADD1D6AC05600DD3D61 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FADC1D6AC05600DD3D61 /* QuartzCore.framework */; };
+		7EF7FADF1D6AC06D00DD3D61 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FADE1D6AC06D00DD3D61 /* OpenGLES.framework */; };
+		7EF7FAE11D6AC07E00DD3D61 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FAE01D6AC07E00DD3D61 /* SystemConfiguration.framework */; };
+		7EF7FAE31D6AC08B00DD3D61 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FAE21D6AC08B00DD3D61 /* CoreGraphics.framework */; };
+		7EF7FAE51D6AC0A600DD3D61 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FAE41D6AC0A600DD3D61 /* Security.framework */; };
+		7EF7FAE71D6AC0C600DD3D61 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FAE61D6AC0C600DD3D61 /* libsqlite3.0.tbd */; };
+		7EF7FAE91D6AC0D800DD3D61 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FAE81D6AC0D800DD3D61 /* CoreTelephony.framework */; };
+		7EF7FAEB1D6AC0F600DD3D61 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FAEA1D6AC0F600DD3D61 /* libstdc++.6.0.9.tbd */; };
+		7EF7FAF11D6B2A3800DD3D61 /* WayPointRouteSearchDemoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7FAF01D6B2A3800DD3D61 /* WayPointRouteSearchDemoViewController.mm */; };
+		7EF7FAF41D6B2A5A00DD3D61 /* PoiSearchDemoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7FAF31D6B2A5A00DD3D61 /* PoiSearchDemoViewController.mm */; };
+		7EF7FAF71D6B2AAD00DD3D61 /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF7FAF61D6B2AAD00DD3D61 /* UIImage+Rotate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,8 +159,6 @@
 		7E0201BB1D69C9070026E0B8 /* AppView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppView.xib; sourceTree = "<group>"; };
 		7E0201C61D69E9120026E0B8 /* ApsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApsCollectionViewController.h; sourceTree = "<group>"; };
 		7E0201C71D69E9120026E0B8 /* ApsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApsCollectionViewController.m; sourceTree = "<group>"; };
-		7E0201C81D69E9120026E0B8 /* ApsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApsViewController.h; sourceTree = "<group>"; };
-		7E0201C91D69E9120026E0B8 /* ApsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApsViewController.m; sourceTree = "<group>"; };
 		7E0201CC1D69E9230026E0B8 /* ApsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApsCollectionViewCell.h; sourceTree = "<group>"; };
 		7E0201CD1D69E9230026E0B8 /* ApsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApsCollectionViewCell.m; sourceTree = "<group>"; };
 		7E0201CE1D69E9230026E0B8 /* ApsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -326,10 +345,37 @@
 		7E3615801D68355600F682BD /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		7E3615811D68355600F682BD /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		7E3615AF1D68356500F682BD /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7E3615B01D68356500F682BD /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7E3615BB1D6871DD00F682BD /* CommonNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonNavigationController.h; sourceTree = "<group>"; };
 		7E3615BC1D6871DD00F682BD /* CommonNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonNavigationController.m; sourceTree = "<group>"; };
 		7E3616031D68850200F682BD /* NewsCategory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NewsCategory.plist; sourceTree = "<group>"; };
+		7EF7FAB21D6AAED300DD3D61 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
+		7EF7FAB31D6AAED300DD3D61 /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
+		7EF7FAB41D6AAED300DD3D61 /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
+		7EF7FAB51D6AAED300DD3D61 /* BaiduMapAPI_Map.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Map.framework; sourceTree = "<group>"; };
+		7EF7FAB61D6AAED300DD3D61 /* BaiduMapAPI_Radar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Radar.framework; sourceTree = "<group>"; };
+		7EF7FAB71D6AAED300DD3D61 /* BaiduMapAPI_Search.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Search.framework; sourceTree = "<group>"; };
+		7EF7FAB81D6AAED300DD3D61 /* BaiduMapAPI_Utils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Utils.framework; sourceTree = "<group>"; };
+		7EF7FACC1D6AB5F200DD3D61 /* ApsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApsViewController.h; sourceTree = "<group>"; };
+		7EF7FACD1D6AB5F200DD3D61 /* ApsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ApsViewController.mm; sourceTree = "<group>"; };
+		7EF7FACF1D6AB61100DD3D61 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		7EF7FAD21D6AB63100DD3D61 /* MapViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MapViewController.mm; sourceTree = "<group>"; };
+		7EF7FAD41D6AB97100DD3D61 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
+		7EF7FAD81D6ABE6400DD3D61 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7EF7FADA1D6AC03A00DD3D61 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7EF7FADC1D6AC05600DD3D61 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7EF7FADE1D6AC06D00DD3D61 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		7EF7FAE01D6AC07E00DD3D61 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7EF7FAE21D6AC08B00DD3D61 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7EF7FAE41D6AC0A600DD3D61 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7EF7FAE61D6AC0C600DD3D61 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		7EF7FAE81D6AC0D800DD3D61 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		7EF7FAEA1D6AC0F600DD3D61 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		7EF7FAEF1D6B2A3800DD3D61 /* WayPointRouteSearchDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WayPointRouteSearchDemoViewController.h; path = "../../../../../../../插件/百度地图sdk/BaiduMap_IOSSDK_v3.0_All/BaiduMap_IOSSDK_v3.0.0_Sample/BMKOCDemo/src/WayPointRouteSearchDemoViewController.h"; sourceTree = "<group>"; };
+		7EF7FAF01D6B2A3800DD3D61 /* WayPointRouteSearchDemoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = WayPointRouteSearchDemoViewController.mm; path = "../../../../../../../插件/百度地图sdk/BaiduMap_IOSSDK_v3.0_All/BaiduMap_IOSSDK_v3.0.0_Sample/BMKOCDemo/src/WayPointRouteSearchDemoViewController.mm"; sourceTree = "<group>"; };
+		7EF7FAF21D6B2A5A00DD3D61 /* PoiSearchDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PoiSearchDemoViewController.h; path = "../../../../../../../插件/百度地图sdk/BaiduMap_IOSSDK_v3.0_All/BaiduMap_IOSSDK_v3.0.0_Sample/BMKOCDemo/src/PoiSearchDemoViewController.h"; sourceTree = "<group>"; };
+		7EF7FAF31D6B2A5A00DD3D61 /* PoiSearchDemoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PoiSearchDemoViewController.mm; path = "../../../../../../../插件/百度地图sdk/BaiduMap_IOSSDK_v3.0_All/BaiduMap_IOSSDK_v3.0.0_Sample/BMKOCDemo/src/PoiSearchDemoViewController.mm"; sourceTree = "<group>"; };
+		7EF7FAF51D6B2AAD00DD3D61 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Rotate.h"; path = "../../../../../../../插件/百度地图sdk/BaiduMap_IOSSDK_v3.0_All/BaiduMap_IOSSDK_v3.0.0_Sample/BMKOCDemo/src/UIImage+Rotate.h"; sourceTree = "<group>"; };
+		7EF7FAF61D6B2AAD00DD3D61 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Rotate.m"; path = "../../../../../../../插件/百度地图sdk/BaiduMap_IOSSDK_v3.0_All/BaiduMap_IOSSDK_v3.0.0_Sample/BMKOCDemo/src/UIImage+Rotate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +383,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF7FAEB1D6AC0F600DD3D61 /* libstdc++.6.0.9.tbd in Frameworks */,
+				7EF7FAE91D6AC0D800DD3D61 /* CoreTelephony.framework in Frameworks */,
+				7EF7FAE71D6AC0C600DD3D61 /* libsqlite3.0.tbd in Frameworks */,
+				7EF7FAE51D6AC0A600DD3D61 /* Security.framework in Frameworks */,
+				7EF7FAE31D6AC08B00DD3D61 /* CoreGraphics.framework in Frameworks */,
+				7EF7FAE11D6AC07E00DD3D61 /* SystemConfiguration.framework in Frameworks */,
+				7EF7FADF1D6AC06D00DD3D61 /* OpenGLES.framework in Frameworks */,
+				7EF7FADD1D6AC05600DD3D61 /* QuartzCore.framework in Frameworks */,
+				7EF7FADB1D6AC03A00DD3D61 /* CoreLocation.framework in Frameworks */,
+				7EF7FABA1D6AAED300DD3D61 /* BaiduMapAPI_Cloud.framework in Frameworks */,
+				7EF7FABB1D6AAED300DD3D61 /* BaiduMapAPI_Location.framework in Frameworks */,
+				7EF7FABE1D6AAED400DD3D61 /* BaiduMapAPI_Search.framework in Frameworks */,
+				7EF7FABD1D6AAED400DD3D61 /* BaiduMapAPI_Radar.framework in Frameworks */,
+				7EF7FAB91D6AAED300DD3D61 /* BaiduMapAPI_Base.framework in Frameworks */,
+				7EF7FABC1D6AAED400DD3D61 /* BaiduMapAPI_Map.framework in Frameworks */,
+				7EF7FABF1D6AAED400DD3D61 /* BaiduMapAPI_Utils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +433,14 @@
 		7E0201591D6982AF0026E0B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7EF7FAEF1D6B2A3800DD3D61 /* WayPointRouteSearchDemoViewController.h */,
+				7EF7FAF01D6B2A3800DD3D61 /* WayPointRouteSearchDemoViewController.mm */,
+				7EF7FACF1D6AB61100DD3D61 /* MapViewController.h */,
+				7EF7FAD21D6AB63100DD3D61 /* MapViewController.mm */,
+				7EF7FAF21D6B2A5A00DD3D61 /* PoiSearchDemoViewController.h */,
+				7EF7FAF31D6B2A5A00DD3D61 /* PoiSearchDemoViewController.mm */,
+				7EF7FAF51D6B2AAD00DD3D61 /* UIImage+Rotate.h */,
+				7EF7FAF61D6B2AAD00DD3D61 /* UIImage+Rotate.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -603,8 +673,8 @@
 				7E3614A21D68354100F682BD /* HomeViewController.m */,
 				7E0201C61D69E9120026E0B8 /* ApsCollectionViewController.h */,
 				7E0201C71D69E9120026E0B8 /* ApsCollectionViewController.m */,
-				7E0201C81D69E9120026E0B8 /* ApsViewController.h */,
-				7E0201C91D69E9120026E0B8 /* ApsViewController.m */,
+				7EF7FACC1D6AB5F200DD3D61 /* ApsViewController.h */,
+				7EF7FACD1D6AB5F200DD3D61 /* ApsViewController.mm */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -844,6 +914,7 @@
 		7E36151D1D68355600F682BD /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				7EF7FAB11D6AAED300DD3D61 /* BaiduMapAPI */,
 				7E36151E1D68355600F682BD /* CCLocationManager */,
 				7E3615261D68355600F682BD /* MJRefresh */,
 				7E3615551D68355600F682BD /* SDWebImage */,
@@ -1029,7 +1100,7 @@
 			isa = PBXGroup;
 			children = (
 				7E3615AF1D68356500F682BD /* AppDelegate.h */,
-				7E3615B01D68356500F682BD /* AppDelegate.m */,
+				7EF7FAD81D6ABE6400DD3D61 /* AppDelegate.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1040,6 +1111,30 @@
 				7E3616031D68850200F682BD /* NewsCategory.plist */,
 			);
 			path = other;
+			sourceTree = "<group>";
+		};
+		7EF7FAB11D6AAED300DD3D61 /* BaiduMapAPI */ = {
+			isa = PBXGroup;
+			children = (
+				7EF7FAEA1D6AC0F600DD3D61 /* libstdc++.6.0.9.tbd */,
+				7EF7FAE81D6AC0D800DD3D61 /* CoreTelephony.framework */,
+				7EF7FAE61D6AC0C600DD3D61 /* libsqlite3.0.tbd */,
+				7EF7FAE41D6AC0A600DD3D61 /* Security.framework */,
+				7EF7FAE21D6AC08B00DD3D61 /* CoreGraphics.framework */,
+				7EF7FAE01D6AC07E00DD3D61 /* SystemConfiguration.framework */,
+				7EF7FADE1D6AC06D00DD3D61 /* OpenGLES.framework */,
+				7EF7FADC1D6AC05600DD3D61 /* QuartzCore.framework */,
+				7EF7FADA1D6AC03A00DD3D61 /* CoreLocation.framework */,
+				7EF7FAD41D6AB97100DD3D61 /* mapapi.bundle */,
+				7EF7FAB21D6AAED300DD3D61 /* BaiduMapAPI_Base.framework */,
+				7EF7FAB31D6AAED300DD3D61 /* BaiduMapAPI_Cloud.framework */,
+				7EF7FAB41D6AAED300DD3D61 /* BaiduMapAPI_Location.framework */,
+				7EF7FAB51D6AAED300DD3D61 /* BaiduMapAPI_Map.framework */,
+				7EF7FAB61D6AAED300DD3D61 /* BaiduMapAPI_Radar.framework */,
+				7EF7FAB71D6AAED300DD3D61 /* BaiduMapAPI_Search.framework */,
+				7EF7FAB81D6AAED300DD3D61 /* BaiduMapAPI_Utils.framework */,
+			);
+			path = BaiduMapAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1146,6 +1241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF7FAD51D6AB97100DD3D61 /* mapapi.bundle in Resources */,
 				7E3614FE1D68354100F682BD /* GroupPurchaseCategory.xib in Resources */,
 				7E02D35B1D460A47001F99FE /* LaunchScreen.storyboard in Resources */,
 				7E3614F61D68354100F682BD /* GPCategories.plist in Resources */,
@@ -1195,6 +1291,7 @@
 				7E36159A1D68355700F682BD /* NSData+ImageContentType.m in Sources */,
 				7E3615821D68355600F682BD /* CCLocationManager.m in Sources */,
 				7E3614F31D68354100F682BD /* GPCategory.m in Sources */,
+				7EF7FAD31D6AB63100DD3D61 /* MapViewController.mm in Sources */,
 				7E3615141D68354100F682BD /* WeatherCity.m in Sources */,
 				7E3615A71D68355700F682BD /* UIImageView+WebCache.m in Sources */,
 				7E3614F91D68354100F682BD /* GPFooterView.m in Sources */,
@@ -1202,6 +1299,8 @@
 				7E36158A1D68355700F682BD /* MJRefreshAutoGifFooter.m in Sources */,
 				7E3615921D68355700F682BD /* MJRefreshStateHeader.m in Sources */,
 				7E3615851D68355700F682BD /* MJRefreshAutoFooter.m in Sources */,
+				7EF7FAD91D6ABE6400DD3D61 /* AppDelegate.m in Sources */,
+				7EF7FAF41D6B2A5A00DD3D61 /* PoiSearchDemoViewController.mm in Sources */,
 				7E3615071D68354100F682BD /* AboutUsViewController.m in Sources */,
 				7E3615121D68354100F682BD /* Today.m in Sources */,
 				7E3615A41D68355700F682BD /* UIImage+MultiFormat.m in Sources */,
@@ -1218,16 +1317,15 @@
 				7E36150B1D68354100F682BD /* NewsCategory.m in Sources */,
 				7E3615991D68355700F682BD /* MKAnnotationView+WebCache.m in Sources */,
 				7E3615981D68355700F682BD /* UIView+MJExtension.m in Sources */,
+				7EF7FAF11D6B2A3800DD3D61 /* WayPointRouteSearchDemoViewController.mm in Sources */,
 				7E3615BD1D6871DD00F682BD /* CommonNavigationController.m in Sources */,
 				7E36158F1D68355700F682BD /* MJRefreshBackStateFooter.m in Sources */,
 				7E3615861D68355700F682BD /* MJRefreshBackFooter.m in Sources */,
 				7E3615131D68354100F682BD /* WeatherByCityID.m in Sources */,
 				7E3615031D68354100F682BD /* LockViewController.m in Sources */,
-				7E0201CB1D69E9120026E0B8 /* ApsViewController.m in Sources */,
 				7E3615901D68355700F682BD /* MJRefreshGifHeader.m in Sources */,
 				7E3614F21D68354100F682BD /* Goods.m in Sources */,
 				7E02D34D1D460A47001F99FE /* main.m in Sources */,
-				7E3615B11D68356500F682BD /* AppDelegate.m in Sources */,
 				7E3614FD1D68354100F682BD /* GPTableViewCell.m in Sources */,
 				7E3615181D68354100F682BD /* ForecastView.m in Sources */,
 				7E3615101D68354100F682BD /* Forecast.m in Sources */,
@@ -1258,6 +1356,7 @@
 				7E3615871D68355700F682BD /* MJRefreshComponent.m in Sources */,
 				7E3614EF1D68354100F682BD /* GPCategoryViewController.m in Sources */,
 				7E3615951D68355700F682BD /* NSBundle+MJRefresh.m in Sources */,
+				7EF7FAF71D6B2AAD00DD3D61 /* UIImage+Rotate.m in Sources */,
 				7E3614FB1D68354100F682BD /* GPHeaderView.m in Sources */,
 				7E3615111D68354100F682BD /* LifeIndex.m in Sources */,
 				7E3614F81D68354100F682BD /* GPCategoryView.m in Sources */,
@@ -1266,6 +1365,7 @@
 				7E36150F1D68354100F682BD /* WeatherDetailViewController.m in Sources */,
 				7E3615831D68355600F682BD /* CLLocation+YCLocation.m in Sources */,
 				7E3614F11D68354100F682BD /* GroupPurchaseTableViewController.m in Sources */,
+				7EF7FACE1D6AB5F200DD3D61 /* ApsViewController.mm in Sources */,
 				7E3615911D68355700F682BD /* MJRefreshNormalHeader.m in Sources */,
 				7E3615151D68354100F682BD /* WeatherDetailByCityID.m in Sources */,
 				7E3614EE1D68354100F682BD /* CategoryTableViewController.m in Sources */,
@@ -1351,6 +1451,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = LifeHelper/PrefixHeader.pch;
@@ -1395,6 +1496,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = LifeHelper/PrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1415,8 +1517,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LifeHelper/lib/BaiduMapAPI",
+				);
 				INFOPLIST_FILE = LifeHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.sdd.LifeHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1427,8 +1534,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LifeHelper/lib/BaiduMapAPI",
+				);
 				INFOPLIST_FILE = LifeHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.sdd.LifeHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
