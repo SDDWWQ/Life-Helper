@@ -43,7 +43,21 @@
 
 
 
-@interface MapViewController()<BMKMapViewDelegate,BMKLocationServiceDelegate,UITextFieldDelegate,BMKRouteSearchDelegate>
+@interface MapViewController()<BMKMapViewDelegate,BMKLocationServiceDelegate,UITextFieldDelegate,BMKRouteSearchDelegate,BMKPoiSearchDelegate>
+
+{
+    UITextField* _cityText;
+    UITextField* _keyText;
+    UIButton* _nextPageButton;
+    BMKPoiSearch* _poisearch;
+    BMKPoiResult*_result;
+    BMKSearchErrorCode errorcode;
+    int curPage;
+    NSString *_cityStr;//街道名
+    NSString *_cityName;//城市名
+    
+}
+
 @property(nonatomic,strong)BMKMapView* mapView;//基础地图
 @property(nonatomic,strong)BMKLocationService *locService;//定位服务
 @property(nonatomic,strong)BMKUserLocation *userLocation;//用户当前位置
@@ -56,52 +70,66 @@
 @property(nonatomic,weak) UITextField* endCityText;
 @property(nonatomic,weak) UITextField* endAddrText;
 @property(nonatomic,strong)BMKRouteSearch* routesearch;
+@property(nonatomic,strong)BMKPoiSearch* poisearch;//搜索要用到的
+@property(nonatomic,strong)UIView *waySearchView;//交通工具框
+
 
 @end
 @implementation MapViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    //设置导航栏
-//    UIBarButtonItem *backItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_dealsmap_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
-//    self.navigationItem.leftBarButtonItem=backItem;
-//    self.title=@"地图";
 
+    //初始化BMKLocationService定位服务
+    _locService = [[BMKLocationService alloc]init];
+    [self getUserLocation];//开始定位
+    
     
     //创建地图对象
     BMKMapView* mapView = [[BMKMapView alloc]initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHight-80)];
-    
+    [mapView setShowsUserLocation:YES];//显示定位的蓝点儿
     self.mapView = mapView;
-    
+    [self.view addSubview:mapView];
+   
     //设置初始显示区域
-    BMKCoordinateRegion region;
-    region.center={41.68,123.35};//沈阳市的经纬度
-    region.span={0.8,0.8};
-    [mapView setRegion:region];
-    [mapView setMapCenterToScreenPt:CGPointMake(kScreenWidth*0.5, kScreenHight*0.5)];//设置地图中点在屏幕上显示的位置
+    //    BMKCoordinateRegion region;
+    //    NSLog(@"%@",self.userLocation);
+    //    region.center=self.userLocation.location.coordinate;//当前位置的经纬度
+    //    region.span={0.8,0.8};//设置显示范围
+    //    [self.mapView setRegion:region];
     
-    //初始化BMKLocationService定位服务
-    _locService = [[BMKLocationService alloc]init];
-    _locService.delegate = self;
+    //self.userLocation=self.locService.userLocation;
+    //NSLog(@"%@",self.userLocation.location.coordinate);
+//    [mapView setMapCenterToScreenPt:CGPointMake(kScreenWidth*0.5, kScreenHight*0.5)];//设置地图中点在屏幕上显示的位置
+    
+    
     
     //_mapView.mapType = BMKMapTypeNone;//设置地图为空白类型
     //切换为卫星图
     //[_mapView setMapType:BMKMapTypeSatellite];
     
     
-    [self.view addSubview:mapView];
+    _poisearch = [[BMKPoiSearch alloc]init];//search类，搜索的时候会用到
+    
+
+    //[self positionSearch];
+    
+    
     
     //创建定位按钮
     [self createLocationBtn];
     
     //设置导航栏
     [self setNavigationBar];
+    
+    //创建交通工具view
+    [self createWaySearchView];
     //创建搜索框
     //[self createSearchBtn];
     _routesearch = [[BMKRouteSearch alloc]init];
-    _startCityText.text = @"北京";
-    _startAddrText.text = @"天安门";
-    _endCityText.text = @"北京";
-    _endAddrText.text = @"百度大厦";
+    _startCityText.text = @"沈阳";
+    _startAddrText.text = @"东北大学";
+    _endCityText.text = @"沈阳";
+    _endAddrText.text = @"辽宁电视台";
     
     
 }
@@ -109,7 +137,10 @@
 {
     //[_mapView viewWillAppear];
     _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+    _locService.delegate = self;
     _routesearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+    _poisearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+
 }
 -(void)viewWillDisappear:(BOOL)animated
 {
@@ -117,21 +148,34 @@
     [self stopLocation];
     _mapView.delegate = nil; // 不用时，置nil
      _routesearch.delegate = nil; //不用时，置nil
+     _poisearch.delegate = nil; // 不用时，置nil
 }
 
 //创建定位按钮
 -(void)createLocationBtn{
     UIButton *locationBtn=[[UIButton alloc]init];
-    locationBtn.frame=CGRectMake(20, kScreenHight-150, 20, 30);
-    [locationBtn setBackgroundImage:[UIImage imageNamed:@"eslf_icon_location_selected"] forState:UIControlStateNormal];
-    [locationBtn setBackgroundImage:[UIImage imageNamed:@"eslf_icon_location_selected"] forState:UIControlStateHighlighted];
+    locationBtn.frame=CGRectMake(20, kScreenHight-150, 30, 30);
+    [locationBtn setBackgroundImage:[UIImage imageNamed:@"icon_navigationItem_map"] forState:UIControlStateNormal];
     [locationBtn addTarget:self action:@selector(startLocation) forControlEvents:UIControlEventTouchUpInside];
     self.locationBtn=locationBtn;
     [self.view addSubview:locationBtn];
 }
+-(void)getUserLocation
+{
+    NSLog(@"进入普通定位态");
+    
+    [_locService startUserLocationService];
+    _mapView.showsUserLocation = NO;//先关闭显示的定位图层
+    _mapView.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态
+    _mapView.showsUserLocation = YES;//显示定位图层
+    [_mapView setShowsUserLocation:YES];//显示定位的蓝点儿
+    [_mapView setCenterCoordinate:self.userLocation.location.coordinate animated:YES];
+    
+}
+
 -(void)startLocation
 {
-    //NSLog(@"进入跟随定位态");
+    NSLog(@"进入跟随定位态");
 
     [_locService startUserLocationService];
     _mapView.showsUserLocation = NO;//先关闭显示的定位图层
@@ -153,27 +197,180 @@
     self.userLocation=userLocation;
     
 }
+
 //处理位置坐标更新
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
 {
-    //NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+    NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
     self.userLocation=userLocation;
+    if ( _mapView.userTrackingMode==BMKUserTrackingModeNone) {
+        [self stopLocation];
+        [_mapView setCenterCoordinate:self.userLocation.location.coordinate animated:YES];
+
+    }
+        CLGeocoder *Geocoder=[[CLGeocoder alloc]init];//地理编码
+    
+    CLGeocodeCompletionHandler handler = ^(NSArray *place, NSError *error) {
+        
+        for (CLPlacemark *placemark in place) {
+            
+            _cityStr=placemark.thoroughfare;
+            
+            _cityName=placemark.locality;
+            
+            //NSLog(@"city %@",cityStr);//获取街道地址
+            
+            //NSLog(@"cityName %@",cityName);//获取城市名
+            
+            break;
+            
+        }
+        
+    };
+    CLLocation *loc = [[CLLocation alloc] initWithLatitude:userLocation.location.coordinate.latitude longitude:userLocation.location.coordinate.longitude];
+    
+    [Geocoder reverseGeocodeLocation:loc completionHandler:handler];
+
     [_mapView updateLocationData:userLocation];
 }
-#pragma mark-路线规划相关
+#pragma mark-POI检索
+
+-(void)positionSearch
+{
+    [_searchTextField resignFirstResponder];
+    curPage = 0;
+    BMKNearbySearchOption *citySearchOption = [[BMKNearbySearchOption alloc]init];
+    citySearchOption.pageIndex = curPage;
+    citySearchOption.pageCapacity = 10;
+    citySearchOption.location = self.userLocation.location.coordinate;
+    //citySearchOption.city= @"沈阳";//_cityText.text;
+    citySearchOption.keyword =self.searchTextField.text;// _keyText.text;
+    BOOL flag = [_poisearch poiSearchNearBy:citySearchOption];
+    if(flag)
+    {
+        NSLog(@"地点检索发送成功");
+        
+    }
+    else
+    {
+        NSLog(@"地点检索发送失败");
+    }
+    
+    
+}
+
+
+-(void)onClickNextPage
+{
+    curPage++;
+    //城市内检索，请求发送成功返回YES，请求发送失败返回NO
+    BMKCitySearchOption *citySearchOption = [[BMKCitySearchOption alloc]init];
+    citySearchOption.pageIndex = curPage;
+    citySearchOption.pageCapacity = 10;
+    citySearchOption.city= _cityText.text;
+    citySearchOption.keyword = _keyText.text;
+    BOOL flag = [_poisearch poiSearchInCity:citySearchOption];
+    if(flag)
+    {
+        NSLog(@"城市内检索发送成功");
+        _nextPageButton.enabled = true;
+        
+    }
+    else
+    {
+        _nextPageButton.enabled = false;
+        NSLog(@"城市内检索发送失败");
+    }
+    
+    
+}
+
+#pragma mark -
+#pragma mark implement BMKMapViewDelegate
+
+/**
+ *根据anntation生成对应的View
+ *@param mapView 地图View
+ *@param annotation 指定的标注
+ *@return 生成的标注View
+ */
+- (BMKAnnotationView *)mapView:(BMKMapView *)view viewForAnnotation:(id <BMKAnnotation>)annotation
+{
+    // 生成重用标示identifier
+    NSString *AnnotationViewID = @"xidanMark";
+    
+    // 检查是否有重用的缓存
+    BMKAnnotationView* annotationView = [view dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
+    
+    // 缓存没有命中，自己构造一个，一般首次添加annotation代码会运行到此处
+    if (annotationView == nil) {
+        annotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+        ((BMKPinAnnotationView*)annotationView).pinColor = BMKPinAnnotationColorRed;
+        // 设置重天上掉下的效果(annotation)
+        ((BMKPinAnnotationView*)annotationView).animatesDrop = YES;
+    }
+    
+    // 设置位置
+    annotationView.centerOffset = CGPointMake(0, -(annotationView.frame.size.height * 0.5));
+    annotationView.annotation = annotation;
+    // 单击弹出泡泡，弹出泡泡前提annotation必须实现title属性
+    annotationView.canShowCallout = YES;
+    // 设置是否可以拖拽
+    annotationView.draggable = NO;
+    
+    return annotationView;
+}
+- (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view
+{
+    [mapView bringSubviewToFront:view];
+    [mapView setNeedsDisplay];
+}
+- (void)mapView:(BMKMapView *)mapView didAddAnnotationViews:(NSArray *)views
+{
+    NSLog(@"didAddAnnotationViews");
+}
+
+#pragma mark -
+#pragma mark implement BMKSearchDelegate
+- (void)onGetPoiResult:(BMKPoiSearch *)searcher result:(BMKPoiResult*)result errorCode:(BMKSearchErrorCode)error
+{
+    NSLog(@"ddddd");
+    // 清楚屏幕中所有的annotation
+    NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
+    [_mapView removeAnnotations:array];
+    
+    if (error == BMK_SEARCH_NO_ERROR) {//正确
+        NSMutableArray *annotations = [NSMutableArray array];
+        for (int i = 0; i < result.poiInfoList.count; i++) {
+            BMKPoiInfo* poi = [result.poiInfoList objectAtIndex:i];
+            BMKPointAnnotation* item = [[BMKPointAnnotation alloc]init];
+            item.coordinate = poi.pt;
+            item.title = poi.name;
+            NSLog(@"%@",item.title);
+            [annotations addObject:item];
+        }
+        [_mapView addAnnotations:annotations];
+        [_mapView showAnnotations:annotations animated:YES];
+    } else if (error == BMK_SEARCH_AMBIGUOUS_ROURE_ADDR){
+        NSLog(@"起始点有歧义");
+    } else {
+        // 各种情况的判断。。。
+    }
+}
+
+#pragma mark-navigationBar设置
+
 -(void)setNavigationBar{
     UITextField *searchField=[[UITextField alloc]initWithFrame:CGRectMake(0, 0, 200, 35)];
     searchField.backgroundColor=[UIColor whiteColor];
     searchField.layer.cornerRadius=10;
-    //    UIImageView *searchPic=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"eslf_icon_search_gray"]];
-    //    searchPic.frame=CGRectMake(0, 0, 35, 35);
-    //    [searchField.leftView addSubview:searchPic];
+    searchField.font=[UIFont systemFontOfSize:12];
     UIView *leftVw=[[UIView alloc]init];
     leftVw.frame=CGRectMake(0, 0, 8, 1);
     searchField.leftView=leftVw;
     searchField.leftViewMode=UITextFieldViewModeAlways;//设置左边的View什么时候显示（一直都显示，只在编辑时显示等）
     searchField.tintColor=[UIColor blackColor];
-    searchField.placeholder=@"搜索";
+    searchField.placeholder=@"搜地点、搜路线";
     searchField.returnKeyType=UIReturnKeySearch;//键盘的return显示“搜索”
     searchField.delegate=self;//用于键盘点击的响应事件
     self.navigationItem.titleView=searchField;
@@ -181,12 +378,22 @@
     self.searchTextField=searchField;
     
     //导航栏右侧按钮
-    UIBarButtonItem* btnWayPoint = [[UIBarButtonItem alloc]init];
-    btnWayPoint.target = self;
-    btnWayPoint.action = @selector(wayPointDemo);
-    btnWayPoint.title = @"到这去";
-    btnWayPoint.enabled=TRUE;
-    self.navigationItem.rightBarButtonItem = btnWayPoint;
+    UIBarButtonItem* poiSearchBtn = [[UIBarButtonItem alloc]init];
+    poiSearchBtn.target = self;
+    poiSearchBtn.action = @selector(positionSearch);
+    poiSearchBtn.title = @"搜索";
+    poiSearchBtn.enabled=TRUE;
+//    UIBarButtonItem* busBtn = [[UIBarButtonItem alloc]init];
+//    busBtn.target = self;
+//    busBtn.action = @selector(wayPointDemo);
+//    busBtn.title = @"查公交";
+//    busBtn.enabled=TRUE;
+    UIBarButtonItem* gotoBtn = [[UIBarButtonItem alloc]init];
+    gotoBtn.target = self;
+    gotoBtn.action = @selector(createWaySearchView);//加载交通工具页面
+    gotoBtn.title = @"到这去";
+    gotoBtn.enabled=TRUE;
+    self.navigationItem.rightBarButtonItems = @[gotoBtn,poiSearchBtn];
     
     //添加导航栏返回按钮
     UIBarButtonItem *backItem=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_dealsmap_back"] style:UIBarButtonItemStylePlain target:self action:@selector(back)];
@@ -199,27 +406,68 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{//必须遵循textfield的代理协议，并设置当前控制器为其代理
     //NSLog(@"ffff");
-    [self onClickBusSearch];
+    [self positionSearch];//搜地点
     [textField resignFirstResponder]; //不作为第一响应者
-    [self searchRote];
     return YES;
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self resignFirstResponder];
 }
--(void)searchRote{
-    [self onClickDriveSearch];
-}
+
 - (void)dealloc {
     if (_routesearch != nil) {
         _routesearch = nil;
+    }
+    if (_poisearch != nil) {
+        _poisearch = nil;
     }
     if (_mapView) {
         _mapView = nil;
     }
 }
+#pragma mark-路线规划相关 加载交通工具选择界面
+-(void)createWaySearchView{
+    CGFloat margin=10;
+    CGFloat w=kScreenWidth-2*margin;
+    CGFloat btnW=(w-4*margin)/3.0;
+    CGFloat btnH=30;
+    UIView *waySearchView=[[UIView alloc]initWithFrame:CGRectMake(margin, 0, kScreenWidth-2*10, btnH)];
+    waySearchView.backgroundColor=[UIColor blackColor];
+    waySearchView.alpha=0.8;
+    waySearchView.layer.cornerRadius=5;
+    UIButton *walk=[[UIButton alloc]initWithFrame:CGRectMake(margin,0,btnW, btnH)];
+    //walk.layer.cornerRadius=5;
+    //[walk setBackgroundColor:[UIColor blackColor]];
+    
+    [walk setTitle:@"步行" forState:UIControlStateNormal];
+    [walk addTarget:self action:@selector(onClickWalkSearch) forControlEvents:UIControlEventTouchUpInside];
+    [waySearchView addSubview:walk];
+    UIButton *bus=[[UIButton alloc]initWithFrame:CGRectMake(2*margin+btnW,0,btnW, btnH)];
+    [bus setTitle:@"公交" forState:UIControlStateNormal];
+    [bus addTarget:self action:@selector(onClickBusSearch) forControlEvents:UIControlEventTouchUpInside];
+    [waySearchView addSubview:bus];
+    UIButton *drive=[[UIButton alloc]initWithFrame:CGRectMake(3*margin+2*btnW,0,btnW, btnH)];
+    [drive setTitle:@"驾车" forState:UIControlStateNormal];
+    [drive addTarget:self action:@selector(onClickDriveSearch) forControlEvents:UIControlEventTouchUpInside];
+    [waySearchView addSubview:drive];
+    [self.view addSubview:waySearchView];
+    self.waySearchView=waySearchView;
+}
+-(void)loadWayView{
+    CGFloat margin=10;
+    CGFloat w=kScreenWidth-2*margin;
+    CGFloat btnH=30;
+    [_searchTextField resignFirstResponder];
+    [UIView beginAnimations:nil context:nil];
+    //0.1设置动画的时间
+    [UIView setAnimationDuration:1.0];
+    [self.waySearchView setFrame:CGRectMake(margin, 64, kScreenWidth-2*10, btnH)];
+    //4.提交动画
+    [UIView commitAnimations];
 
+}
+#pragma mark-路线规划相关
 - (void)wayPointDemo {
     
     WayPointRouteSearchDemoViewController * wayPointCont = [[WayPointRouteSearchDemoViewController alloc]init];
@@ -232,13 +480,13 @@
 
 #pragma mark - BMKMapViewDelegate
 
-- (BMKAnnotationView *)mapView:(BMKMapView *)view viewForAnnotation:(id <BMKAnnotation>)annotation
-{
-    if ([annotation isKindOfClass:[RouteAnnotation class]]) {
-        return [self getRouteAnnotationView:view viewForAnnotation:(RouteAnnotation*)annotation];
-    }
-    return nil;
-}
+//- (BMKAnnotationView *)mapView:(BMKMapView *)view viewForAnnotation:(id <BMKAnnotation>)annotation
+//{
+//    if ([annotation isKindOfClass:[RouteAnnotation class]]) {
+//        return [self getRouteAnnotationView:view viewForAnnotation:(RouteAnnotation*)annotation];
+//    }
+//    return nil;
+//}
 
 - (BMKOverlayView*)mapView:(BMKMapView *)map viewForOverlay:(id<BMKOverlay>)overlay
 {
@@ -504,17 +752,18 @@
     }
 }
 
-#pragma mark - action
+#pragma mark - 检索公交
 
--(IBAction)onClickBusSearch
+-(void)onClickBusSearch
 {
     BMKPlanNode* start = [[BMKPlanNode alloc]init];
-    start.name = _startAddrText.text;
+    //start.name = _startAddrText.text;
+    start.pt=self.userLocation.location.coordinate;
     BMKPlanNode* end = [[BMKPlanNode alloc]init];
-    end.name = _endAddrText.text;
+    end.name = _searchTextField.text;
     
     BMKTransitRoutePlanOption *transitRouteSearchOption = [[BMKTransitRoutePlanOption alloc]init];
-    transitRouteSearchOption.city= @"北京市";
+    transitRouteSearchOption.city= _cityName;
     transitRouteSearchOption.from = start;
     transitRouteSearchOption.to = end;
     BOOL flag = [_routesearch transitSearch:transitRouteSearchOption];
@@ -533,14 +782,15 @@
     [sender resignFirstResponder];
 }
 
--(IBAction)onClickDriveSearch
+-(void)onClickDriveSearch
 {
     BMKPlanNode* start = [[BMKPlanNode alloc]init];
-    start.name = _startAddrText.text;
-    start.cityName = @"北京市";
+    //start.name = _startAddrText.text;
+    start.cityName = _cityName;
+    start.pt=self.userLocation.location.coordinate;
     BMKPlanNode* end = [[BMKPlanNode alloc]init];
-    end.name = _endAddrText.text;
-    end.cityName = @"北京市";
+    end.name = _searchTextField.text;
+    end.cityName =_cityName;
     
     BMKDrivingRoutePlanOption *drivingRouteSearchOption = [[BMKDrivingRoutePlanOption alloc]init];
     drivingRouteSearchOption.from = start;
@@ -561,11 +811,12 @@
 -(IBAction)onClickWalkSearch
 {
     BMKPlanNode* start = [[BMKPlanNode alloc]init];
-    start.name = _startAddrText.text;
-    start.cityName = @"北京市";
+    //start.name = _startAddrText.text;
+    start.pt=self.userLocation.location.coordinate;
+    start.cityName = _cityName;
     BMKPlanNode* end = [[BMKPlanNode alloc]init];
     end.name = _endAddrText.text;
-    end.cityName = @"北京市";
+    end.cityName = _cityName;
     
     
     BMKWalkingRoutePlanOption *walkingRouteSearchOption = [[BMKWalkingRoutePlanOption alloc]init];

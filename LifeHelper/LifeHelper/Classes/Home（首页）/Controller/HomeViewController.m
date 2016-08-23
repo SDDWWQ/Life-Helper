@@ -14,7 +14,11 @@
 #import "AppView.h"
 #import "ApsViewController.h"
 #import "MapViewController.h"
+#import "NameCardViewController.h"
+
+
 @interface HomeViewController ()
+
 @property (weak, nonatomic) IBOutlet UIScrollView *homeScrollView;
 @property(nonatomic,strong)WeatherByCityID *weather;
 @property(nonatomic,copy)NSString *cityId;
@@ -26,6 +30,8 @@
 @property(nonatomic,weak) UIImageView *weatherImageView;
 @property(nonatomic,weak) UILabel *weatherLabel;
 @property(nonatomic,strong)NSArray *apps;
+
+
 
 @end
 
@@ -153,15 +159,28 @@
     CGFloat h=100;
     for (int i=0; i<self.apps.count; i++) {
         AppView *app=[AppView appView];
-        app.appDict=self.apps[i];
+        NSDictionary *dict=self.apps[i];
+        app.appDict=dict;
         [app setFrame:CGRectMake(margin+i%4*(margin+w), 150+i/4*(margin+h), w, h)];
         [self.homeScrollView addSubview:app];
         app.appBlock=^(){//实现appView的block，当点击button时进行跳转
         //ApsViewController *appVC=[[ApsViewController alloc]init];
             //NSLog(@"sssss");
             //NSLog(@"%@",self.navigationController);
-            MapViewController *appVC=[[MapViewController alloc]init];
-            [self.navigationController pushViewController:appVC animated:YES];
+            NSLog(@"%@",dict[@"targetVC"]);
+            NSString *targetVCStr=dict[@"targetVC"];
+            Class claz=NSClassFromString(targetVCStr);
+            //Class claz=[targetVCStr class];
+            UIViewController *vc=[[claz alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+//            if([targetVCStr isEqualToString:@"MapViewController"]){
+//                MapViewController *appVC=[[MapViewController alloc]init];
+//                [self.navigationController pushViewController:appVC animated:YES];
+//            }
+//            else if([targetVCStr isEqualToString:@"NameCardViewController"]){
+//                
+//                
+//            }
         };
         
         
@@ -248,3 +267,5 @@
 }
 
 @end
+
+

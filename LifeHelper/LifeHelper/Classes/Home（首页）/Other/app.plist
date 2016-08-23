@@ -3,10 +3,20 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>targetVC</key>
+		<string>MapViewController</string>
 		<key>name</key>
 		<string>百度地图</string>
 		<key>icon</key>
 		<string>baiduMap</string>
+	</dict>
+	<dict>
+		<key>targetVC</key>
+		<string>NameCardViewController</string>
+		<key>name</key>
+		<string>名片识别</string>
+		<key>icon</key>
+		<string>nameCard</string>
 	</dict>
 </array>
 </plist>
