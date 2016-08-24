@@ -15,7 +15,7 @@
     }
     return self;
 }
-+(instancetype)NewsCateoryWithDict:(NSDictionary *)dict{
++(instancetype)NewsCategoryWithDict:(NSDictionary *)dict{
     return [[self alloc]initWithDict:dict];
 }
 @end

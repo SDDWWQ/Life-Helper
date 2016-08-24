@@ -13,6 +13,10 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "AddressBookHelper.h"
 
+#import "Conf.h"
+#import "Auth.h"
+#import "TXQcloudFrSDK.h"
+
 @interface NameCardViewController()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
     UIImagePickerController *_imagePickerController;
@@ -20,7 +24,11 @@
 }
 
 @property(nonatomic,weak)UIImageView *imageView;
+@property(nonatomic,copy)NSString *name;
+@property(nonatomic,copy)NSString *phone;
+
 @end
+
 @implementation NameCardViewController
 -(void)viewDidLoad{
     self.view.backgroundColor=[UIColor whiteColor];
@@ -31,7 +39,7 @@
 
 #pragma mark-创建imageView 和两个button
 -(void)createView{
-
+    
     CGFloat w=kScreenWidth*0.8;
     CGFloat h=w;
     UIImageView *imageView=[[UIImageView alloc]initWithFrame:CGRectMake(kScreenWidth*0.1, 84, w, h)];
@@ -53,6 +61,7 @@
     [albumBtn setImage:[UIImage imageNamed:@"bg_uploadimage_addimage"] forState:UIControlStateNormal];
     [albumBtn addTarget:self action:@selector(selectImageFromAlbum) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:albumBtn];
+    //[self savePerson];
 }
 #pragma mark-创建照相机视图
 -(void)createCameraModel{
@@ -141,6 +150,7 @@
 #pragma mark 图片保存完毕的回调
 - (void) image: (UIImage *) image didFinishSavingWithError:(NSError *) error contextInfo: (void *)contextInf{
         NSLog(@"保存完毕");
+        [self NameCardOcr];
 }
 
 #pragma mark 视频保存完毕的回调
@@ -151,9 +161,71 @@
     //        NSLog(@"视频保存成功.");
     //    }
     //}
-#pragma mark-保存到通讯录相关
+//腾讯优图api
+-(void)NameCardOcr{
+    [Conf instance].appId = @"1000284";
+    [Conf instance].secretId = @"AKIDIqiBiXmVYrIm3SvvtyB2t1F2Kh4KtYvv";
+    [Conf instance].secretKey = @"mAO0XW8l50QdwrPyXGvTqg5Tn4sHhXRm";
+    
+    NSString *auth = [Auth appSign:1000000 userId:nil];
+    TXQcloudFrSDK *sdk = [[TXQcloudFrSDK alloc] initWithName:[Conf instance].appId authorization:auth];
+    
+    sdk.API_END_POINT = @"http://api.youtu.qq.com/youtu";
+    
+    //    UIImage *local = [UIImage imageNamed:@"id.jpg"];
+    UIImage *local = self.imageView.image;
+    //NSString *remote = @"http://a.hiphotos.baidu.com/image/pic/item/42166d224f4a20a4be2c49a992529822720ed0aa.jpg";
+    id image = local;
+    
+    //    [sdk detectFace:image successBlock:^(id responseObject) {
+    //        NSLog(@"responseObject: %@", responseObject);
+    //    } failureBlock:^(NSError *error) {
+    //        NSLog(@"error");
+    //    }];
+    //
+//    [sdk idcardOcr:image cardType:1 sessionId:nil successBlock:^(id responseObject) {
+//        NSLog(@"idcardOcr: %@", responseObject);
+//    } failureBlock:^(NSError *error) {
+//        
+//    }];
+    //
+    [sdk namecardOcr:image sessionId:nil successBlock:^(id responseObject) {
+        NSLog(@"namecardOcr: %@", responseObject);
+        NSDictionary *dict=responseObject;
+        self.name=dict[@"name"];//responseObject.name;
+        self.phone=dict[@"phone"];//responseObject.phone;
+        NSLog(@"name:%@",dict[@"name"]);
+        [self savePerson];
+    } failureBlock:^(NSError *error) {
+        
+    }];
+    //    [sdk imageTag:image cookie:nil seq:nil successBlock:^(id responseObject) {
+    //        NSLog(@"responseObject: %@", responseObject);
+    //    } failureBlock:^(NSError *error) {
+    //
+    //    }];
+    //
+    //    [sdk imagePorn:image cookie:nil seq:nil successBlock:^(id responseObject) {
+    //        NSLog(@"responseObject: %@", responseObject);
+    //    } failureBlock:^(NSError *error) {
+    //
+    //    }];
+    //
+    //    [sdk foodDetect:image cookie:nil seq:nil successBlock:^(id responseObject) {
+    //        NSLog(@"responseObject: %@", responseObject);
+    //    } failureBlock:^(NSError *error) {
+    //
+    //    }];
+    //    [sdk fuzzyDetect:image cookie:nil seq:nil successBlock:^(id responseObject) {
+    //        NSLog(@"responseObject: %@", responseObject);
+    //    } failureBlock:^(NSError *error) {
+    //        
+    //    }];
+
+}
+//保存联系人
 -(void)savePerson{
-    NSString *phone = @"222222341";
+    NSString *phone = self.phone;
     
     if ([AddressBookHelper existPhone:phone] == ABHelperExistSpecificContact)
     {
@@ -162,7 +234,7 @@
     }
     else
     {
-        if ([AddressBookHelper addContactName:@"刘德华" phoneNum:phone withLabel:@"测试"])
+        if ([AddressBookHelper addContactName:self.name phoneNum:phone withLabel:@"手机"])
         {
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"消息提示" message:@"添加到通讯录成功" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];

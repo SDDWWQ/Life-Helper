@@ -444,7 +444,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于我们" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqQ-Gr-V2e">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="关于" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqQ-Gr-V2e">
                                                     <rect key="frame" x="62" y="5" width="68" height="33.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -534,6 +534,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="HFY-hN-11W" firstAttribute="top" secondItem="ljM-ab-kSI" secondAttribute="bottom" constant="64" id="1pb-f2-SJf"/>
                                     <constraint firstItem="ljM-ab-kSI" firstAttribute="centerX" secondItem="S7N-2s-JEO" secondAttribute="centerX" id="7t1-Vb-3KL"/>
                                     <constraint firstItem="5PG-TL-4RL" firstAttribute="top" secondItem="S7N-2s-JEO" secondAttribute="top" constant="50" id="IN4-L9-wOc"/>
                                     <constraint firstItem="NRb-k6-SfR" firstAttribute="centerX" secondItem="S7N-2s-JEO" secondAttribute="centerX" id="Sg3-Ef-2Fu"/>
@@ -543,7 +544,6 @@
                                     <constraint firstItem="ljM-ab-kSI" firstAttribute="top" secondItem="nAR-i5-Vof" secondAttribute="bottom" constant="20" id="oED-BS-2X0"/>
                                     <constraint firstItem="nAR-i5-Vof" firstAttribute="top" secondItem="NRb-k6-SfR" secondAttribute="bottom" constant="10" id="oi6-6Y-4dN"/>
                                     <constraint firstItem="NRb-k6-SfR" firstAttribute="top" secondItem="5PG-TL-4RL" secondAttribute="bottom" constant="10" id="qWo-Km-Evi"/>
-                                    <constraint firstAttribute="bottom" secondItem="HFY-hN-11W" secondAttribute="bottom" constant="100" id="uIv-qe-Lkn"/>
                                 </constraints>
                             </view>
                         </subviews>

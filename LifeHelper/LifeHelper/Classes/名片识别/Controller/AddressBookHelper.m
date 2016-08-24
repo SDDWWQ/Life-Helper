@@ -9,6 +9,8 @@
 #import "AddressBookHelper.h"
 #import <AddressBook/AddressBook.h>
 @implementation AddressBookHelper
+#pragma mark-保存到通讯录相关
+
 // 单列模式
 + (AddressBookHelper*)shareControl
 {

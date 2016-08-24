@@ -30,8 +30,9 @@
     searchField.leftView=leftVw;
     searchField.leftViewMode=UITextFieldViewModeAlways;//设置左边的View什么时候显示（一直都显示，只在编辑时显示等）
     searchField.tintColor=[UIColor blackColor];
-    searchField.placeholder=@"搜索";
+    searchField.placeholder=@"城市搜索";
     searchField.returnKeyType=UIReturnKeySearch;//键盘的return显示“搜索”
+    searchField.font=[UIFont systemFontOfSize:12];
     searchField.delegate=self;
     self.navigationItem.titleView=searchField;
     self.searchTextField=searchField;

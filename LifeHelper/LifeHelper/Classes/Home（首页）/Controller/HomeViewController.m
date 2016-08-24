@@ -18,7 +18,9 @@
 
 
 @interface HomeViewController ()
-
+{
+    dispatch_semaphore_t disp;
+}
 @property (weak, nonatomic) IBOutlet UIScrollView *homeScrollView;
 @property(nonatomic,strong)WeatherByCityID *weather;
 @property(nonatomic,copy)NSString *cityId;
@@ -41,9 +43,14 @@
     [super viewDidLoad];
     
     //加载天气数据
+    disp = dispatch_semaphore_create(1);//设置初始信号量
+    dispatch_semaphore_wait(disp, DISPATCH_TIME_FOREVER);
     [self loadData];
     [self createFrame];
+    //等待天气数据的信号量为1
+    dispatch_semaphore_wait(disp, DISPATCH_TIME_FOREVER);
     [self setData];
+    
 }
 //懒加载
 -(WeatherByCityID *)weather{
@@ -63,9 +70,10 @@
     return _apps;
 }
 -(void)loadData{
+    NSLog(@"loadData");
     NSUserDefaults *ud=[NSUserDefaults standardUserDefaults];
     self.cityId=[ud objectForKey:@"weathercityID"];
-    //NSLog(@"%@",_cityId);
+    
     if (self.cityId==nil) {
         self.cityId=@"101010100";
     }
@@ -83,17 +91,18 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
     [request setHTTPMethod: @"GET"];
     [request addValue: @"d2dfec542a6c211fa932b11248360ef9" forHTTPHeaderField: @"apikey"];
-    NSData *data=[NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    //NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    //NSLog(@"HttpResponseBody %@",responseString);
-    NSError *error;
-    NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-    dict=dict[@"retData"];
-    WeatherByCityID *weather=[WeatherByCityID WeatherWithDict:dict];
-    self.weather=weather;
-    //NSLog(@"qqq");
+    NSURLSessionDataTask *dataTask=[[NSURLSession sharedSession]dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers  error:nil];
+        dict=dict[@"retData"];
+        WeatherByCityID *weather=[WeatherByCityID WeatherWithDict:dict];
+        self.weather=weather;
+        dispatch_semaphore_signal(disp);//信号量置为1
+        NSLog(@"getData");
+    }];
+    [dataTask resume];//恢复线程，启动任务
 }
 -(void)createFrame{
+    NSLog(@"createFrame");
 
     CGFloat margin=10;
     UIView *weatherView=[[UIView alloc]init];
@@ -194,6 +203,7 @@
     
 }
 -(void)setData{
+    NSLog(@"setData");
     //城市Label
     self.cityLabel.text=self.weather.city;
     //NSLog(@"更新了%@",self.weather.city);
@@ -259,6 +269,8 @@
     NSString *httpUrl = @"http://apis.baidu.com/apistore/weatherservice/cityid";
     NSString *httpArg = [NSString stringWithFormat:@"cityid=%@",self.cityId];
     [self request: httpUrl withHttpArg: httpArg];//加载天气信息
+    //等待天气数据的信号量为1
+    dispatch_semaphore_wait(disp, DISPATCH_TIME_FOREVER);
     [self setData];
 }
 - (void)didReceiveMemoryWarning {

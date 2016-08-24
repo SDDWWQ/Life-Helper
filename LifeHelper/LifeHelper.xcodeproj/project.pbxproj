@@ -109,8 +109,11 @@
 		7E3615AD1D68355700F682BD /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3615811D68355600F682BD /* SVRadialGradientLayer.m */; };
 		7E3615BD1D6871DD00F682BD /* CommonNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3615BC1D6871DD00F682BD /* CommonNavigationController.m */; };
 		7E3616041D68850200F682BD /* NewsCategory.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E3616031D68850200F682BD /* NewsCategory.plist */; };
+		7E982DFF1D6D8923005E1F82 /* Auth.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E982DF71D6D8923005E1F82 /* Auth.m */; };
+		7E982E001D6D8923005E1F82 /* Conf.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E982DF91D6D8923005E1F82 /* Conf.m */; };
+		7E982E011D6D8923005E1F82 /* TXQcloudFrSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E982DFB1D6D8923005E1F82 /* TXQcloudFrSDK.m */; };
+		7E982E021D6D8923005E1F82 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E982DFE1D6D8923005E1F82 /* NSData+Base64.m */; };
 		7EDF1BBE1D6C3EC000F549F8 /* NameCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDF1BBD1D6C3EC000F549F8 /* NameCardViewController.m */; };
-		7EDF1BC11D6C8A3100F549F8 /* PoiSearchDemoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7EDF1BC01D6C8A3100F549F8 /* PoiSearchDemoViewController.mm */; };
 		7EDF1BC41D6C926300F549F8 /* AddressBookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EDF1BC31D6C926300F549F8 /* AddressBookHelper.m */; };
 		7EF7FAB91D6AAED300DD3D61 /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FAB21D6AAED300DD3D61 /* BaiduMapAPI_Base.framework */; };
 		7EF7FABA1D6AAED300DD3D61 /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EF7FAB31D6AAED300DD3D61 /* BaiduMapAPI_Cloud.framework */; };
@@ -350,10 +353,16 @@
 		7E3615BB1D6871DD00F682BD /* CommonNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonNavigationController.h; sourceTree = "<group>"; };
 		7E3615BC1D6871DD00F682BD /* CommonNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonNavigationController.m; sourceTree = "<group>"; };
 		7E3616031D68850200F682BD /* NewsCategory.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NewsCategory.plist; sourceTree = "<group>"; };
+		7E982DF61D6D8923005E1F82 /* Auth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Auth.h; sourceTree = "<group>"; };
+		7E982DF71D6D8923005E1F82 /* Auth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Auth.m; sourceTree = "<group>"; };
+		7E982DF81D6D8923005E1F82 /* Conf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conf.h; sourceTree = "<group>"; };
+		7E982DF91D6D8923005E1F82 /* Conf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conf.m; sourceTree = "<group>"; };
+		7E982DFA1D6D8923005E1F82 /* TXQcloudFrSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXQcloudFrSDK.h; sourceTree = "<group>"; };
+		7E982DFB1D6D8923005E1F82 /* TXQcloudFrSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXQcloudFrSDK.m; sourceTree = "<group>"; };
+		7E982DFD1D6D8923005E1F82 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		7E982DFE1D6D8923005E1F82 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		7EDF1BBC1D6C3EC000F549F8 /* NameCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameCardViewController.h; sourceTree = "<group>"; };
 		7EDF1BBD1D6C3EC000F549F8 /* NameCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameCardViewController.m; sourceTree = "<group>"; };
-		7EDF1BBF1D6C8A3100F549F8 /* PoiSearchDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PoiSearchDemoViewController.h; path = ../../../../../../../../.Trash/PoiSearchDemoViewController.h; sourceTree = "<group>"; };
-		7EDF1BC01D6C8A3100F549F8 /* PoiSearchDemoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = PoiSearchDemoViewController.mm; path = ../../../../../../../../.Trash/PoiSearchDemoViewController.mm; sourceTree = "<group>"; };
 		7EDF1BC21D6C926300F549F8 /* AddressBookHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressBookHelper.h; sourceTree = "<group>"; };
 		7EDF1BC31D6C926300F549F8 /* AddressBookHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressBookHelper.m; sourceTree = "<group>"; };
 		7EF7FAB21D6AAED300DD3D61 /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
@@ -443,8 +452,6 @@
 				7EF7FAF01D6B2A3800DD3D61 /* WayPointRouteSearchDemoViewController.mm */,
 				7EF7FACF1D6AB61100DD3D61 /* MapViewController.h */,
 				7EF7FAD21D6AB63100DD3D61 /* MapViewController.mm */,
-				7EDF1BBF1D6C8A3100F549F8 /* PoiSearchDemoViewController.h */,
-				7EDF1BC01D6C8A3100F549F8 /* PoiSearchDemoViewController.mm */,
 				7EF7FAF51D6B2AAD00DD3D61 /* UIImage+Rotate.h */,
 				7EF7FAF61D6B2AAD00DD3D61 /* UIImage+Rotate.m */,
 			);
@@ -921,6 +928,7 @@
 		7E36151D1D68355600F682BD /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				7E982DF51D6D8923005E1F82 /* TencentYoutuYun */,
 				7EF7FAB11D6AAED300DD3D61 /* BaiduMapAPI */,
 				7E36151E1D68355600F682BD /* CCLocationManager */,
 				7E3615261D68355600F682BD /* MJRefresh */,
@@ -1118,6 +1126,30 @@
 				7E3616031D68850200F682BD /* NewsCategory.plist */,
 			);
 			path = other;
+			sourceTree = "<group>";
+		};
+		7E982DF51D6D8923005E1F82 /* TencentYoutuYun */ = {
+			isa = PBXGroup;
+			children = (
+				7E982DF61D6D8923005E1F82 /* Auth.h */,
+				7E982DF71D6D8923005E1F82 /* Auth.m */,
+				7E982DF81D6D8923005E1F82 /* Conf.h */,
+				7E982DF91D6D8923005E1F82 /* Conf.m */,
+				7E982DFA1D6D8923005E1F82 /* TXQcloudFrSDK.h */,
+				7E982DFB1D6D8923005E1F82 /* TXQcloudFrSDK.m */,
+				7E982DFC1D6D8923005E1F82 /* vendor */,
+			);
+			name = TencentYoutuYun;
+			path = "../../../../../插件/腾讯优图SDK/ios_sdk-master/TencentYoutuYun";
+			sourceTree = "<group>";
+		};
+		7E982DFC1D6D8923005E1F82 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				7E982DFD1D6D8923005E1F82 /* NSData+Base64.h */,
+				7E982DFE1D6D8923005E1F82 /* NSData+Base64.m */,
+			);
+			path = vendor;
 			sourceTree = "<group>";
 		};
 		7EDF1BB71D6C3E9800F549F8 /* 名片识别 */ = {
@@ -1375,7 +1407,7 @@
 				7E3615861D68355700F682BD /* MJRefreshBackFooter.m in Sources */,
 				7E3615131D68354100F682BD /* WeatherByCityID.m in Sources */,
 				7E3615031D68354100F682BD /* LockViewController.m in Sources */,
-				7EDF1BC11D6C8A3100F549F8 /* PoiSearchDemoViewController.mm in Sources */,
+				7E982E001D6D8923005E1F82 /* Conf.m in Sources */,
 				7E3615901D68355700F682BD /* MJRefreshGifHeader.m in Sources */,
 				7E3614F21D68354100F682BD /* Goods.m in Sources */,
 				7E02D34D1D460A47001F99FE /* main.m in Sources */,
@@ -1385,6 +1417,7 @@
 				7E3614F01D68354100F682BD /* GPDealViewController.m in Sources */,
 				7E3614F41D68354100F682BD /* GPShop.m in Sources */,
 				7E36150D1D68354100F682BD /* NewsTableViewCell.m in Sources */,
+				7E982E021D6D8923005E1F82 /* NSData+Base64.m in Sources */,
 				7E3615AD1D68355700F682BD /* SVRadialGradientLayer.m in Sources */,
 				7E0201BA1D69C8F50026E0B8 /* AppView.m in Sources */,
 				7E3615961D68355700F682BD /* UIScrollView+MJExtension.m in Sources */,
@@ -1397,6 +1430,7 @@
 				7E3615A21D68355700F682BD /* UIButton+WebCache.m in Sources */,
 				7E3615A91D68355700F682BD /* SVIndefiniteAnimatedView.m in Sources */,
 				7E3615A51D68355700F682BD /* UIImage+WebP.m in Sources */,
+				7E982E011D6D8923005E1F82 /* TXQcloudFrSDK.m in Sources */,
 				7E3615001D68354100F682BD /* HomeViewController.m in Sources */,
 				7E36150E1D68354100F682BD /* WeatherCityTableViewController.m in Sources */,
 				7E0201D31D69ED3D0026E0B8 /* ApsModel.m in Sources */,
@@ -1416,6 +1450,7 @@
 				7E36159B1D68355700F682BD /* SDImageCache.m in Sources */,
 				7E36150C1D68354100F682BD /* NewsModel.m in Sources */,
 				7E36150F1D68354100F682BD /* WeatherDetailViewController.m in Sources */,
+				7E982DFF1D6D8923005E1F82 /* Auth.m in Sources */,
 				7E3615831D68355600F682BD /* CLLocation+YCLocation.m in Sources */,
 				7E3614F11D68354100F682BD /* GroupPurchaseTableViewController.m in Sources */,
 				7EF7FACE1D6AB5F200DD3D61 /* ApsViewController.mm in Sources */,

@@ -113,7 +113,7 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     NSURLSessionDataTask *dataTask=[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (!error) {
-            NSString *dataStr=[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            //NSString *dataStr=[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
             //NSLog(@"%@",dataStr);
             NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             dict=dict[@"showapi_res_body"];
@@ -152,7 +152,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"%ld",self.newsArray.count);
+    //NSLog(@"%ld",self.newsArray.count);
     return self.newsArray.count;
 }
 

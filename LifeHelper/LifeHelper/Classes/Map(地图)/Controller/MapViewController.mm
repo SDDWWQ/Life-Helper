@@ -17,7 +17,6 @@
 #import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
 
 #import "WayPointRouteSearchDemoViewController.h"
-#import "PoiSearchDemoViewController.h"
 #import "UIImage+Rotate.h"
 
 #define MYBUNDLE_NAME @ "mapapi.bundle"
@@ -462,7 +461,7 @@
     [UIView beginAnimations:nil context:nil];
     //0.1设置动画的时间
     [UIView setAnimationDuration:1.0];
-    [self.waySearchView setFrame:CGRectMake(margin, 64, kScreenWidth-2*10, btnH)];
+    [self.waySearchView setFrame:CGRectMake(margin, 64, w, btnH)];
     //4.提交动画
     [UIView commitAnimations];
 
