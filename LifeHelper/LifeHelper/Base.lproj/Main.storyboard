@@ -149,58 +149,48 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="6xw-nF-P7B" kind="relationship" relationship="rootViewController" id="V5m-GN-hDK"/>
+                        <segue destination="Bzx-Nn-fGH" kind="relationship" relationship="rootViewController" id="mYw-8i-ZSn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2WG-lX-RAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-225" y="1566"/>
         </scene>
-        <!--团购-->
-        <scene sceneID="cDi-ke-Zjq">
+        <!--Collection View Controller-->
+        <scene sceneID="49f-fs-1N7">
             <objects>
-                <viewController id="6xw-nF-P7B" customClass="GPCategoryViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="diA-2o-koP"/>
-                        <viewControllerLayoutGuide type="bottom" id="tzx-DD-yAQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0Nc-de-qlx">
+                <collectionViewController id="Bzx-Nn-fGH" customClass="GPCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="ASP-sP-dgV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2n-2W-k3R">
-                                <rect key="frame" x="0.0" y="64" width="320" height="200"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fC4-yl-QDa">
-                                        <rect key="frame" x="165" y="96" width="97" height="30"/>
-                                        <attributedString key="attributedText"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="DPO-lv-72u"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.32068462644910822" green="0.69885637764568309" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="s2n-2W-k3R" secondAttribute="trailing" id="XeK-3n-rXG"/>
-                            <constraint firstItem="s2n-2W-k3R" firstAttribute="top" secondItem="diA-2o-koP" secondAttribute="bottom" id="ahw-ns-Ygw"/>
-                            <constraint firstItem="s2n-2W-k3R" firstAttribute="leading" secondItem="0Nc-de-qlx" secondAttribute="leading" id="x90-N1-772"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="团购" id="HeV-jd-el7"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="4I0-3u-Fic">
+                            <size key="itemSize" width="80" height="80"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Gfh-9T-Vkw">
+                                <rect key="frame" x="0.0" y="64" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Bzx-Nn-fGH" id="Be6-g8-nit"/>
+                            <outlet property="delegate" destination="Bzx-Nn-fGH" id="KS9-PO-1gg"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="vYS-aU-x5Y"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="categoryView" destination="s2n-2W-k3R" id="zjt-yM-FFD"/>
-                        <segue destination="KSS-Jy-drw" kind="push" id="pi1-cm-sqV"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ae8-jH-URW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8qY-aI-rTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="167" y="1566"/>
+            <point key="canvasLocation" x="167" y="1574"/>
         </scene>
         <!--团购-->
         <scene sceneID="uWG-eJ-kRk">
@@ -212,7 +202,7 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Good_Cell" rowHeight="96" id="uGF-ec-kXw" customClass="GPTableViewCell">
-                                <rect key="frame" x="0.0" y="113.5" width="320" height="96"/>
+                                <rect key="frame" x="0.0" y="49.5" width="320" height="96"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uGF-ec-kXw" id="5Xw-Pd-KAM">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
@@ -444,8 +434,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="关于" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqQ-Gr-V2e">
-                                                    <rect key="frame" x="62" y="5" width="68" height="33.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关于" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqQ-Gr-V2e">
+                                                    <rect key="frame" x="62" y="5" width="34" height="33.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>

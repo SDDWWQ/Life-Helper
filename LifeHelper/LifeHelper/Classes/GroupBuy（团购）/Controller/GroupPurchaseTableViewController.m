@@ -104,8 +104,14 @@
 -(void)searchGoods{
     NSString *httpUrl = @"http://apis.baidu.com/baidunuomi/openapi/searchshops";
     //NSString *httpArg = @"city_id=100010000&cat_ids=326&subcat_ids=962%2C994&district_ids=394%2C395&bizarea_ids=1322%2C1328&location=116.418993%2C39.915597&keyword=%E4%BF%8F%E6%B1%9F%E5%8D%97&radius=3000&page=1&page_size=5&deals_per_shop=10";
+    //美食的类别是一级类别，所以要处理一下
+    NSString *cat=[NSString stringWithFormat:@"subcat_ids=%@",self.cat_id];
+    if ([self.cat_id isEqualToNumber:@326]) {
+
+        cat=[NSString stringWithFormat:@"cat_ids=%@",self.cat_id];
+    }
     
-    NSString * httpArg = [NSString stringWithFormat:@"city_id=1300020000&location=%@%%2C%@&cat_ids=%@&page_size=25",self.longitude,self.latitude,self.cat_id];
+    NSString * httpArg = [NSString stringWithFormat:@"city_id=1300020000&location=%@%%2C%@&@&%@&page_size=25",self.longitude,self.latitude,cat];
     //NSString * httpArg = [NSString stringWithFormat:@"city_id=100010000&page_size=15&cat_ids=%@",self.cat_id];
     NSLog(@"%@",httpArg);
     [self request: httpUrl withHttpArg: httpArg];

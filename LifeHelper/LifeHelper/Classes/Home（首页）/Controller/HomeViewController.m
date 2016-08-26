@@ -10,7 +10,6 @@
 //#import "WeatherXib.h"
 #import "WeatherDetailViewController.h"
 #import "WeatherByCityID.h"
-#import "ApsCollectionViewController.h"
 #import "AppView.h"
 #import "ApsViewController.h"
 #import "MapViewController.h"

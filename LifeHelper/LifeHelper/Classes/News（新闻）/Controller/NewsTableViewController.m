@@ -32,12 +32,12 @@
     //提示框插件
     [SVProgressHUD setDefaultMaskType: SVProgressHUDMaskTypeBlack];//灰色背景效果
     [SVProgressHUD showWithStatus:@"正在加载"];
-    //开启异步线程，加载数据
-    dispatch_async(dispatch_get_global_queue(0,0), ^{
-        [self loadData];
+    [self loadData];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //取消提示框
         [SVProgressHUD dismiss];
     });
+    
     //必须设置自动计算高度，否则cell的高度和storyboard中的高度一样，不会自动调整
     // 1.设置自动计算高度
     self.tableView.rowHeight=UITableViewAutomaticDimension;
