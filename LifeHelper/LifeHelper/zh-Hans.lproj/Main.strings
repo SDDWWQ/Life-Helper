@@ -1,0 +1,60 @@
+
+/* Class = "UITabBarItem"; title = "更多"; ObjectID = "2jc-eO-juz"; */
+"2jc-eO-juz.title" = "更多";
+
+/* Class = "UINavigationItem"; title = "更多"; ObjectID = "6yB-Hu-5Gk"; */
+"6yB-Hu-5Gk.title" = "更多";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "94V-vs-VVe"; */
+"94V-vs-VVe.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "团购"; ObjectID = "FsT-oT-N0b"; */
+"FsT-oT-N0b.title" = "团购";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "FxD-EX-VTX"; */
+"FxD-EX-VTX.text" = "Label";
+
+/* Class = "UILabel"; text = "SDD为您精心定制"; ObjectID = "HFY-hN-11W"; */
+"HFY-hN-11W.text" = "SDD为您精心定制";
+
+/* Class = "UITabBarItem"; title = "首页"; ObjectID = "Hl1-Ha-J8E"; */
+"Hl1-Ha-J8E.title" = "首页";
+
+/* Class = "UILabel"; text = "关于"; ObjectID = "HqQ-Gr-V2e"; */
+"HqQ-Gr-V2e.text" = "关于";
+
+/* Class = "UITabBarItem"; title = "新闻"; ObjectID = "Lrm-Ls-pFv"; */
+"Lrm-Ls-pFv.title" = "新闻";
+
+/* Class = "UILabel"; text = "Life-Helper"; ObjectID = "NRb-k6-SfR"; */
+"NRb-k6-SfR.text" = "Life-Helper";
+
+/* Class = "UINavigationItem"; title = "生活小助手"; ObjectID = "NUv-qz-Hwp"; */
+"NUv-qz-Hwp.title" = "生活小助手";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "R3F-6I-zwQ"; */
+"R3F-6I-zwQ.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "团购"; ObjectID = "gWk-41-9fg"; */
+"gWk-41-9fg.title" = "团购";
+
+/* Class = "UINavigationItem"; title = "新闻"; ObjectID = "k5G-If-IeQ"; */
+"k5G-If-IeQ.title" = "新闻";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kOT-Io-oTu"; */
+"kOT-Io-oTu.text" = "Label";
+
+/* Class = "UILabel"; text = "当前版本：V1.0"; ObjectID = "ljM-ab-kSI"; */
+"ljM-ab-kSI.text" = "当前版本：V1.0";
+
+/* Class = "UILabel"; text = "您贴心的生活小帮手"; ObjectID = "nAR-i5-Vof"; */
+"nAR-i5-Vof.text" = "您贴心的生活小帮手";
+
+/* Class = "UILabel"; text = "清除缓存"; ObjectID = "q74-oc-RKx"; */
+"q74-oc-RKx.text" = "清除缓存";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "vQU-pg-95f"; */
+"vQU-pg-95f.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "团购"; ObjectID = "vYS-aU-x5Y"; */
+"vYS-aU-x5Y.title" = "团购";

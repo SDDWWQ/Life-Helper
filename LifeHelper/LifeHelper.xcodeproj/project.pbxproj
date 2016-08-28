@@ -17,6 +17,7 @@
 		7E02D35B1D460A47001F99FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E02D3591D460A47001F99FE /* LaunchScreen.storyboard */; };
 		7E02D3661D460A48001F99FE /* LifeHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E02D3651D460A48001F99FE /* LifeHelperTests.m */; };
 		7E02D3711D460A48001F99FE /* LifeHelperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E02D3701D460A48001F99FE /* LifeHelperUITests.m */; };
+		7E2AAC3B1D72DAAA00E0A37E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E2AAC3D1D72DAAA00E0A37E /* InfoPlist.strings */; };
 		7E3614EE1D68354100F682BD /* CategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3614761D68354100F682BD /* CategoryTableViewController.m */; };
 		7E3614F01D68354100F682BD /* GPDealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3614821D68354100F682BD /* GPDealViewController.m */; };
 		7E3614F11D68354100F682BD /* GroupPurchaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3614841D68354100F682BD /* GroupPurchaseTableViewController.m */; };
@@ -172,6 +173,12 @@
 		7E02D36C1D460A48001F99FE /* LifeHelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LifeHelperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E02D3701D460A48001F99FE /* LifeHelperUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LifeHelperUITests.m; sourceTree = "<group>"; };
 		7E02D3721D460A48001F99FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E2AAC371D72D87D00E0A37E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		7E2AAC381D72D87D00E0A37E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		7E2AAC3C1D72DAAA00E0A37E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7E2AAC3E1D72DB1400E0A37E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7E2AAC3F1D72DB1500E0A37E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		7E2AAC411D730A5700E0A37E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		7E3614751D68354100F682BD /* CategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewController.h; sourceTree = "<group>"; };
 		7E3614761D68354100F682BD /* CategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewController.m; sourceTree = "<group>"; };
 		7E3614811D68354100F682BD /* GPDealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPDealViewController.h; sourceTree = "<group>"; };
@@ -516,6 +523,7 @@
 			isa = PBXGroup;
 			children = (
 				7E02D34C1D460A47001F99FE /* main.m */,
+				7E2AAC3D1D72DAAA00E0A37E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1288,6 +1296,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 7E02D33F1D460A47001F99FE;
 			productRefGroup = 7E02D3491D460A47001F99FE /* Products */;
@@ -1311,6 +1320,7 @@
 				7E3614F61D68354100F682BD /* GPCategories.plist in Resources */,
 				7E3614FA1D68354100F682BD /* GPFooterView.xib in Resources */,
 				7E02D3581D460A47001F99FE /* Assets.xcassets in Resources */,
+				7E2AAC3B1D72DAAA00E0A37E /* InfoPlist.strings in Resources */,
 				7E3615AB1D68355700F682BD /* SVProgressHUD.bundle in Resources */,
 				7E3615931D68355700F682BD /* MJRefresh.bundle in Resources */,
 				7EF0A11D1D7044C90092E34B /* GPCollectionViewCell.xib in Resources */,
@@ -1477,6 +1487,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				7E02D3551D460A47001F99FE /* Base */,
+				7E2AAC371D72D87D00E0A37E /* zh-Hans */,
+				7E2AAC411D730A5700E0A37E /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1485,8 +1497,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				7E02D35A1D460A47001F99FE /* Base */,
+				7E2AAC381D72D87D00E0A37E /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7E2AAC3D1D72DAAA00E0A37E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E2AAC3C1D72DAAA00E0A37E /* Base */,
+				7E2AAC3E1D72DB1400E0A37E /* en */,
+				7E2AAC3F1D72DB1500E0A37E /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

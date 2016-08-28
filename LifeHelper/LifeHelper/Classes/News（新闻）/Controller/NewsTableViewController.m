@@ -18,6 +18,7 @@
 
 @property(nonatomic,strong)NSMutableArray *newsArray;
 @property(nonatomic,copy)NSString *newsCategory;
+@property(nonatomic,assign)int page;
 @end
 
 @implementation NewsTableViewController
@@ -32,6 +33,7 @@
     //提示框插件
     [SVProgressHUD setDefaultMaskType: SVProgressHUDMaskTypeBlack];//灰色背景效果
     [SVProgressHUD showWithStatus:@"正在加载"];
+    self.page=1;
     [self loadData];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         //取消提示框
@@ -47,6 +49,7 @@
     // 下拉刷新
     self.tableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         self.newsArray=nil;
+        self.page=1;
         [self loadData];
         // 结束刷新
         [self.tableView.mj_header endRefreshing];
@@ -57,13 +60,14 @@
     
     // 上拉刷新
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        
         //获取当前最后一行的行号
         NSIndexPath *lastRowIndexPath=[NSIndexPath indexPathForRow:self.newsArray.count-1 inSection:0];
         
         //NSLog(@"%ld",lastRowIndexPath.row);
         //加载更多数据
-        [self loadData];
-        //把之前的最后一行滚到中间
+        self.page++;
+        [self loadData];        //把之前的最后一行滚到中间
         [self.tableView scrollToRowAtIndexPath:lastRowIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
         // 结束刷新
         [self.tableView.mj_footer endRefreshing];
@@ -97,7 +101,7 @@
         self.newsCategory=@"5572a109b3cdc86cf39001db";
     }
     NSString *httpUrl = @"http://apis.baidu.com/showapi_open_bus/channel_news/search_news";
-    NSString *httpArg = [NSString stringWithFormat:@"channelId=%@&page=1&needContent=0&needHtml=0",self.newsCategory];
+    NSString *httpArg = [NSString stringWithFormat:@"channelId=%@&page=%d&needContent=0&needHtml=0",self.newsCategory,self.page];
     //@"channelId=5572a109b3cdc86cf39001db&channelName=%E5%9B%BD%E5%86%85%E6%9C%80%E6%96%B0&title=%E4%B8%8A%E5%B8%82&page=1&needContent=0&needHtml=0";
     [self request: httpUrl withHttpArg: httpArg];
 }

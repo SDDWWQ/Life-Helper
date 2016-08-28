@@ -17,6 +17,7 @@
 #import "GPDealViewController.h"
 #import "GPFooterView.h"
 #import "SVProgressHUD.h"
+#import "MJRefresh.h"
 @interface GroupPurchaseTableViewController ()<UITableViewDataSource,GPHeaderViewDelegate,CLLocationManagerDelegate,GPFooterViewDelegate>
 {
     CLLocationManager *locationmanager;
@@ -27,6 +28,7 @@
 @property(nonatomic,copy)NSString *longitude;
 @property(nonatomic,copy)NSString *latitude;
 @property(nonatomic,getter=isnull,assign)Boolean Null;
+@property(nonatomic,assign)int page;
 
 @end
 
@@ -34,6 +36,8 @@
 //改成Viewwillload
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.page=1;
     
     UIBarButtonItem *item=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_dealsmap_back"] style:UIBarButtonItemStyleDone target:self action:@selector(back)];
     self.navigationItem.leftBarButtonItem=item;
@@ -84,6 +88,21 @@
             }];
             
         }
+    self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        
+        //获取当前最后一行的行号
+        //NSIndexPath *lastRowIndexPath=[NSIndexPath indexPathForRow:self.shops.count-1 inSection:0];
+        
+        //NSLog(@"%ld",lastRowIndexPath.row);
+        //加载更多数据
+        self.page++;
+        [self searchGoods];        //把之前的最后一行滚到中间
+        //[self.tableView scrollToRowAtIndexPath:lastRowIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        // 结束刷新
+        [self.tableView.mj_footer endRefreshing];
+        
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -111,7 +130,7 @@
         cat=[NSString stringWithFormat:@"cat_ids=%@",self.cat_id];
     }
     
-    NSString * httpArg = [NSString stringWithFormat:@"city_id=1300020000&location=%@%%2C%@&@&%@&page_size=25",self.longitude,self.latitude,cat];
+    NSString * httpArg = [NSString stringWithFormat:@"city_id=1300020000&location=%@%%2C%@&@&%@&page=%d&page_size=25",self.longitude,self.latitude,cat,self.page];
     //NSString * httpArg = [NSString stringWithFormat:@"city_id=100010000&page_size=15&cat_ids=%@",self.cat_id];
     NSLog(@"%@",httpArg);
     [self request: httpUrl withHttpArg: httpArg];
