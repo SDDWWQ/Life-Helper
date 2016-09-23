@@ -13,6 +13,7 @@
 @property(nonatomic,copy)NSString *pubDate;//发布时间
 @property(nonatomic,copy)NSString *title; //新闻标题
 @property(nonatomic,copy)NSString *channelName;
+@property(nonatomic,assign)Boolean havePic;//是否有图片
 @property(nonatomic,strong)NSArray *imageurls; //图片链接地址
 
 @property(nonatomic,copy)NSString *desc; //新闻描述

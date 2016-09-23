@@ -120,8 +120,6 @@
                 NSData *fileData = UIImageJPEGRepresentation(self.imageView.image, 1.0);
                 //保存图片至相册
                 UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
-                //上传图片
-                [self uploadImageWithData:fileData];
         
             }else{
         //        //如果是视频
@@ -144,9 +142,7 @@
            }
             [self dismissViewControllerAnimated:YES completion:nil];
     }
--(void)uploadImageWithData:fileData{
-    
-}
+
 #pragma mark 图片保存完毕的回调
 - (void) image: (UIImage *) image didFinishSavingWithError:(NSError *) error contextInfo: (void *)contextInf{
         NSLog(@"保存完毕");

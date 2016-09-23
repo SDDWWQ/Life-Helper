@@ -104,7 +104,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    NSLog(@"ffff");
+    //NSLog(@"ffff");
     [textField resignFirstResponder]; //不作为第一响应者
     [self searchCity];
     return YES;

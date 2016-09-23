@@ -11,7 +11,7 @@
 @implementation AddressBookHelper
 #pragma mark-保存到通讯录相关
 
-// 单列模式
+// 单例模式
 + (AddressBookHelper*)shareControl
 {
     static AddressBookHelper *instance;
